@@ -5,10 +5,10 @@ CoreImagePlayground
 
 Sample App of
 
-- `SimpleCamera`
-- `SimpleAVPlayer`
-- `GPUCIImageView`
-- `CIFilterExtension`
+- [`SimpleCamera`](https://github.com/dnpp73/SimpleCamera)
+- [`SimpleAVPlayer`](https://github.com/dnpp73/SimpleAVPlayer)
+- [`GPUCIImageView`](https://github.com/dnpp73/GPUCIImageView)
+- [`CIFilterExtension`](https://github.com/dnpp73/CIFilterExtension)
 
 
 ## Build
