@@ -24,7 +24,7 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
         super.viewDidAppear(animated)
         
         // SimpleCamera.shared.add(videoOutputObserver: self)
-        SimpleCamera.shared.setSessionTo(captureVideoPreviewView: captureVideoPreviewView)
+        SimpleCamera.shared.setSession(to: captureVideoPreviewView)
         SimpleCamera.shared.captureLimitSize = CGSize(width: 120.0, height: 120.0)
         SimpleCamera.shared.setPhotoMode()
         SimpleCamera.shared.startRunning()

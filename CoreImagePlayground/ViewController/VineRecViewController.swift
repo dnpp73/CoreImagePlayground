@@ -18,7 +18,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        SimpleCamera.shared.setSessionTo(captureVideoPreviewView: cameraFinderView.captureVideoPreviewView)
+        SimpleCamera.shared.setSession(to: cameraFinderView.captureVideoPreviewView)
         SimpleCamera.shared.setMovieMode()
         SimpleCamera.shared.startRunning()
     }

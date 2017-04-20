@@ -1,4 +1,4 @@
-github "dnpp73/SimpleCamera"
-github "dnpp73/SimpleAVPlayer"
-github "dnpp73/GPUCIImageView"
-github "dnpp73/CIFilterExtension"
+github "dnpp73/SimpleCamera" "master"
+github "dnpp73/SimpleAVPlayer" "master"
+github "dnpp73/GPUCIImageView" "master"
+github "dnpp73/CIFilterExtension" "master"

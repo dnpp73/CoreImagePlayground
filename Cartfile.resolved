@@ -1,4 +1,4 @@
-github "dnpp73/CIFilterExtension" "0.0.1"
-github "dnpp73/GPUCIImageView" "0.0.1"
-github "dnpp73/SimpleAVPlayer" "0.0.1"
-github "dnpp73/SimpleCamera" "0.0.1"
+github "dnpp73/CIFilterExtension" "fccee0db18de3193dae181935ab0347e095d5a5c"
+github "dnpp73/GPUCIImageView" "d439c947f5d1ddc0c56b082e1538daf9d8365732"
+github "dnpp73/SimpleAVPlayer" "532c4c4b3ebd874f4bc0b9737a9ed2cebda1dfce"
+github "dnpp73/SimpleCamera" "e60878df70b3263a2da8088c774fdeb91b301fff"
