@@ -174,8 +174,8 @@ final class CIImageCameraVRViewController: UIViewController {
         // print(type(of: element)) // _GCControllerButtonInput だったり _GCControllerDirectionPad だったりする。
         switch element {
         case gamepad.leftThumbstick:
-            let x: CGFloat = CGFloat(gamepad.leftThumbstick.xAxis.value) + 0.5
-            let y: CGFloat = CGFloat(gamepad.leftThumbstick.yAxis.value) + 0.5
+            let x: CGFloat = CGFloat(gamepad.leftThumbstick.xAxis.value) * 0.3
+            let y: CGFloat = CGFloat(gamepad.leftThumbstick.yAxis.value) * 0.3
             centerOffset = CGPoint(x: x, y: y)
         default:
             break
@@ -185,13 +185,13 @@ final class CIImageCameraVRViewController: UIViewController {
     // MARK:- CIFilter
     
     private let date = Date()
-    private var centerOffset: CGPoint = CGPoint(x: 0.5, y: 0.5)
+    private var centerOffset: CGPoint = CGPoint(x: 0.0, y: 0.0)
     
     fileprivate func generateFilter(extent: CGRect) -> Filter {
         let factor = CGFloat(sin(date.timeIntervalSinceNow * Double(speedSlider.value)))
         let level = CGFloat(levelSlider.value)
-        let center = XYPosition(x: extent.midX + extent.width  * (centerOffset.x - 0.5),
-                                y: extent.midY + extent.height * (centerOffset.y - 0.5))
+        let center = XYPosition(x: extent.midX + extent.width  * centerOffset.x,
+                                y: extent.midY + extent.height * centerOffset.y)
         
         switch segmentedControl.selectedSegmentIndex {
         case 0:
