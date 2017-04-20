@@ -208,11 +208,11 @@ final class CIImageCameraVRViewController: UIViewController {
         case 3:
             return TwirlDistortion.filter(inputCenter: center,
                                           inputRadius: min(extent.width, extent.height) * level,
-                                          inputAngle: factor * CGFloat(M_PI) * level)
+                                          inputAngle: factor * CGFloat.pi * level)
         case 4:
             return VortexDistortion.filter(inputCenter: center,
                                            inputRadius: min(extent.width, extent.height) * level,
-                                           inputAngle: factor * CGFloat(M_PI * 20.0) * level)
+                                           inputAngle: factor * CGFloat.pi * 20.0 * level)
         case 5:
             return Pixellate.filterWithClampAndCrop(inputCenter: center, inputScale: 80.0 * level * (factor + 1.0) * 0.5)
         case 6:

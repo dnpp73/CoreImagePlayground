@@ -235,11 +235,11 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "TwirlDistortion", key: "centerX", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
         (name: "TwirlDistortion", key: "centerY", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
         (name: "TwirlDistortion", key: "radius", defaultValue: 300.0, value: 300.0, min: -100.0, max: 600.0, isOn: false),
-        (name: "TwirlDistortion", key: "angle", defaultValue: Float(M_PI), value: Float(M_PI), min: -1.0, max: 9.0, isOn: false),
+        (name: "TwirlDistortion", key: "angle", defaultValue: Float.pi, value: Float.pi, min: -1.0, max: 9.0, isOn: false),
         (name: "VortexDistortion", key: "centerX", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
         (name: "VortexDistortion", key: "centerY", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
         (name: "VortexDistortion", key: "radius", defaultValue: 300.0, value: 300.0, min: -100.0, max: 600.0, isOn: false),
-        (name: "VortexDistortion", key: "angle", defaultValue: Float(M_PI * 18.0), value: Float(M_PI * 18.0), min: -50.0, max: 100.0, isOn: false),
+        (name: "VortexDistortion", key: "angle", defaultValue: Float.pi * 18.0, value: Float.pi * 18.0, min: -50.0, max: 100.0, isOn: false),
         
         // 6. Generator
         

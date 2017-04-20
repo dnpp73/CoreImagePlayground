@@ -37,7 +37,7 @@ final class CIImageTransformViewController: UIViewController {
     
     private var transform: CGAffineTransform {
         get {
-            let angle = CGFloat(tuningAngleSlider.value) * CGFloat(M_PI_2)
+            let angle = CGFloat(tuningAngleSlider.value) * CGFloat.pi / 2.0
             let scale = CGFloat(scaleSlider.value)
             let dx = CGFloat(xSlider.value) * 0.0
             let dy = CGFloat(ySlider.value) * 0.0
