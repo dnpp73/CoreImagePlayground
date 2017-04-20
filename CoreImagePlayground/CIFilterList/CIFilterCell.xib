@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="CIFilterCell" id="Vml-fO-Wdh" customClass="CIFilterCell" customModule="DebugApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vml-fO-Wdh" id="uuw-ey-Fqf">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHr-7p-aQV">
+                        <rect key="frame" x="8" y="17" width="54" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="Qhh-F3-Ri5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl5-af-aRf">
+                        <rect key="frame" x="70" y="9" width="38" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="38" id="hai-rr-rTN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="default"/>
+                        <connections>
+                            <action selector="touchUpInsideDefaultButton:" destination="Vml-fO-Wdh" eventType="touchUpInside" id="b5A-hh-TbF"/>
+                        </connections>
+                    </button>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gqr-7a-l5C">
+                        <rect key="frame" x="114" y="7" width="160" height="31"/>
+                        <connections>
+                            <action selector="valueChangedSlider:" destination="Vml-fO-Wdh" eventType="valueChanged" id="adp-VI-sg8"/>
+                        </connections>
+                    </slider>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zh-4s-cOX">
+                        <rect key="frame" x="280" y="17" width="30" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="YX2-kb-f9p"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4z-Wd-gkx">
+                        <rect key="frame" x="318" y="7" width="51" height="31"/>
+                        <connections>
+                            <action selector="valueChangedSwitch:" destination="Vml-fO-Wdh" eventType="valueChanged" id="HXV-5g-f2k"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0Zh-4s-cOX" firstAttribute="leading" secondItem="gqr-7a-l5C" secondAttribute="trailing" constant="8" id="320-p7-Jkk"/>
+                    <constraint firstItem="0Zh-4s-cOX" firstAttribute="centerY" secondItem="gHr-7p-aQV" secondAttribute="centerY" id="FJf-qw-VIa"/>
+                    <constraint firstItem="gqr-7a-l5C" firstAttribute="leading" secondItem="wl5-af-aRf" secondAttribute="trailing" constant="8" id="GmI-We-7C8"/>
+                    <constraint firstItem="gHr-7p-aQV" firstAttribute="centerY" secondItem="uuw-ey-Fqf" secondAttribute="centerY" id="HNe-bc-qMD"/>
+                    <constraint firstItem="wl5-af-aRf" firstAttribute="centerY" secondItem="gHr-7p-aQV" secondAttribute="centerY" id="bFo-z7-sel"/>
+                    <constraint firstItem="i4z-Wd-gkx" firstAttribute="centerY" secondItem="gHr-7p-aQV" secondAttribute="centerY" id="hvJ-4y-ymr"/>
+                    <constraint firstItem="i4z-Wd-gkx" firstAttribute="leading" secondItem="0Zh-4s-cOX" secondAttribute="trailing" constant="8" id="jCN-gw-yW5"/>
+                    <constraint firstItem="gqr-7a-l5C" firstAttribute="centerY" secondItem="gHr-7p-aQV" secondAttribute="centerY" id="kp7-s5-QUl"/>
+                    <constraint firstItem="wl5-af-aRf" firstAttribute="leading" secondItem="gHr-7p-aQV" secondAttribute="trailing" constant="8" id="nMD-vV-5sT"/>
+                    <constraint firstItem="gHr-7p-aQV" firstAttribute="leading" secondItem="uuw-ey-Fqf" secondAttribute="leading" constant="8" id="udg-7a-9cE"/>
+                    <constraint firstAttribute="trailing" secondItem="i4z-Wd-gkx" secondAttribute="trailing" constant="8" id="wMw-Yd-CLs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="defaultButton" destination="wl5-af-aRf" id="uva-SJ-HNB"/>
+                <outlet property="nameLabel" destination="gHr-7p-aQV" id="MQC-B2-ddK"/>
+                <outlet property="slider" destination="gqr-7a-l5C" id="6o3-yf-Pai"/>
+                <outlet property="switch" destination="i4z-Wd-gkx" id="vW9-5G-XKs"/>
+                <outlet property="valueLabel" destination="0Zh-4s-cOX" id="OgV-Hr-Cj6"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

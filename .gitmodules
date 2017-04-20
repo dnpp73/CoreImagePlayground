@@ -1,0 +1,12 @@
+[submodule "Carthage/Checkouts/CIFilterExtension"]
+	path = Carthage/Checkouts/CIFilterExtension
+	url = https://github.com/dnpp73/CIFilterExtension.git
+[submodule "Carthage/Checkouts/GPUCIImageView"]
+	path = Carthage/Checkouts/GPUCIImageView
+	url = https://github.com/dnpp73/GPUCIImageView.git
+[submodule "Carthage/Checkouts/SimpleAVPlayer"]
+	path = Carthage/Checkouts/SimpleAVPlayer
+	url = https://github.com/dnpp73/SimpleAVPlayer.git
+[submodule "Carthage/Checkouts/SimpleCamera"]
+	path = Carthage/Checkouts/SimpleCamera
+	url = https://github.com/dnpp73/SimpleCamera.git
