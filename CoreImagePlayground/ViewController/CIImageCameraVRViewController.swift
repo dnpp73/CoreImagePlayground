@@ -228,7 +228,7 @@ final class CIImageCameraVRViewController: UIViewController {
 extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
     
     // @objc private を付けてもダメで、 internal func にしないといけない。
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard CMSampleBufferIsValid(sampleBuffer) else {
             return
         }
@@ -245,7 +245,7 @@ extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
         default : preferredCGImagePropertyOrientation = 1
         }
          */
-        let image = CIImage(cvPixelBuffer: imageBuffer).applyingOrientation(8)
+        let image = CIImage(cvPixelBuffer: imageBuffer).oriented(forExifOrientation: 8)
         
         let screenScale: CGFloat = imageView.window?.screen.scale ?? 1.0
         let size = imageView.bounds.size.applying(CGAffineTransform(scaleX: screenScale, y: screenScale))
@@ -263,7 +263,7 @@ extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
         let scaleHeight = limitHeight / imageHeight
         let scale = min(scaleWidth, scaleHeight)
         let imageScale = min(1.0, scale)
-        let scaledImage = image.applying(CGAffineTransform(scaleX: imageScale, y: imageScale))
+        let scaledImage = image.transformed(by: CGAffineTransform(scaleX: imageScale, y: imageScale))
 //        print("scaledImage.extent", scaledImage.extent)
         
         // scaledImage を左右に分けて中心に表示する。
@@ -275,8 +275,8 @@ extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
         let dxRight: CGFloat = rightRect.midX - scaledImage.extent.midX
         let dyRight: CGFloat = rightRect.midY - scaledImage.extent.midY
         
-        let leftImage  = scaledImage.applying(CGAffineTransform.identity.translatedBy(x:  dxLeft, y:  dyLeft)).cropping(to: leftRect)
-        let rightImage = scaledImage.applying(CGAffineTransform.identity.translatedBy(x: dxRight, y: dyRight)).cropping(to: rightRect)
+        let leftImage  = scaledImage.transformed(by: CGAffineTransform.identity.translatedBy(x:  dxLeft, y:  dyLeft)).cropped(to: leftRect)
+        let rightImage = scaledImage.transformed(by: CGAffineTransform.identity.translatedBy(x: dxRight, y: dyRight)).cropped(to: rightRect)
 //        print("leftImage.extent", leftImage.extent)
 //        print("rightImage.extent", rightImage.extent)
         
@@ -289,15 +289,15 @@ extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
         
         // 左右別々に面白いフィルタを掛ける。当初は先に filter を掛けたものを左右に分けていたんだけど、どう頑張っても表示がおかしい。
         let leftFilter = generateFilter(extent: leftImage.extent)
-        guard let leftFiltered = leftFilter(leftImage)?.cropping(to: leftImage.extent),
+        guard let leftFiltered = leftFilter(leftImage)?.cropped(to: leftImage.extent),
               let left = SourceOverCompositing.filter(inputBackgroundImage: constantColor)(leftFiltered) else {
             imageView.image = nil
             return
         }
         
         let rightFilter = generateFilter(extent: rightImage.extent)
-        guard let rightFiltered = rightFilter(rightImage)?.cropping(to: rightImage.extent),
-              let final = SourceOverCompositing.filter(inputBackgroundImage: left)(rightFiltered)?.cropping(to: finalRect) else {
+        guard let rightFiltered = rightFilter(rightImage)?.cropped(to: rightImage.extent),
+              let final = SourceOverCompositing.filter(inputBackgroundImage: left)(rightFiltered)?.cropped(to: finalRect) else {
             imageView.image = nil
             return
         }

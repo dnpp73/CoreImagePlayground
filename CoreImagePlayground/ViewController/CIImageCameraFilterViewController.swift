@@ -56,7 +56,7 @@ final class CIImageCameraFilterViewController: UIViewController {
 extension CIImageCameraFilterViewController: SimpleCameraVideoOutputObservable {
     
     // @objc private を付けてもダメで、 internal func にしないといけない。
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard CMSampleBufferIsValid(sampleBuffer) else {
             return
         }
@@ -76,7 +76,7 @@ extension CIImageCameraFilterViewController: SimpleCameraVideoOutputObservable {
         let scaleHeight = limitHeight / imageHeight
         let scale = min(scaleWidth, scaleHeight)
         let imageScale = min(1.0, scale)
-        let scaledCIImage = image.applying(CGAffineTransform(scaleX: imageScale, y: imageScale))
+        let scaledCIImage = image.transformed(by: CGAffineTransform(scaleX: imageScale, y: imageScale))
         
         DispatchQueue.main.sync {
             self.imageView.image = self.tableView.filter(scaledCIImage)

@@ -24,9 +24,9 @@ final class CIFilterGeneratorViewController: UIViewController, CIGeneratorListTa
         if let image = generatorListTableView.image {
             // print(image.extent)
             if let filter = filterListTableView?.filter {
-                imageView.image = filter(image)?.cropping(to: rect)
+                imageView.image = filter(image)?.cropped(to: rect)
             } else {
-                imageView.image = image.cropping(to: rect)
+                imageView.image = image.cropped(to: rect)
             }
             // print(imageView.image!.extent) // QR コードなどの画像は (0.0, 0.0, 27.0, 27.0) とかで生成されるんだけど、Crop しても変わらなかった。サイズがそもそも小さければ何もされないっぽい。
         } else {

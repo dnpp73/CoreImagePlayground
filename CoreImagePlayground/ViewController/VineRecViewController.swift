@@ -108,7 +108,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
             let dateString = type(of: self).dateFormatter.string(from: Date())
             let filePath = (((documentsDirectory as NSString).appendingPathComponent("vine") as NSString).appendingPathComponent(dateString) as NSString).appendingPathExtension("mp4")
             let fileURL = URL(fileURLWithPath: filePath!)
-            fileWriter = try AVAssetWriter(url: fileURL, fileType: AVFileTypeQuickTimeMovie)
+            fileWriter = try AVAssetWriter(url: fileURL, fileType: AVFileType.mov)
         } catch let error /* as NSError */ {
             print(error)
             return
@@ -119,7 +119,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
             AVVideoWidthKey: widthForVideoInput,
             AVVideoHeightKey: heightForVideoInput
         ];
-        videoInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoOutputSettings)
+        videoInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: videoOutputSettings)
         videoInput.expectsMediaDataInRealTime = true
         if fileWriter.canAdd(videoInput) {
             fileWriter.add(videoInput)
@@ -131,7 +131,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
             AVSampleRateKey: sampleRateForAudioInput,
             AVEncoderBitRateKey: 128000
         ]
-        audioInput = AVAssetWriterInput(mediaType: AVMediaTypeAudio, outputSettings: audioOutputSettings)
+        audioInput = AVAssetWriterInput(mediaType: AVMediaType.audio, outputSettings: audioOutputSettings)
         audioInput.expectsMediaDataInRealTime = true
         if fileWriter.canAdd(audioInput) {
             fileWriter.add(audioInput)
@@ -158,7 +158,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         }
     }
     
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if !isRecording {
             if let fmt = CMSampleBufferGetFormatDescription(sampleBuffer) {
                 let d = CMVideoFormatDescriptionGetDimensions(fmt)
@@ -196,7 +196,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         }
     }
     
-    func simpleCameraAudioOutputObserve(captureOutput: AVCaptureOutput, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraAudioOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if !isRecording {
             if let fmt = CMSampleBufferGetFormatDescription(sampleBuffer), let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(fmt) {
                 numberOfChannelsForAudioInput = Int(asbd.pointee.mChannelsPerFrame)

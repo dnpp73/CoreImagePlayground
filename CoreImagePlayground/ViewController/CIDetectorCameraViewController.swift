@@ -61,7 +61,7 @@ final class CIDetectorCameraViewController: UIViewController {
 extension CIDetectorCameraViewController: SimpleCameraVideoOutputObservable {
     
     // @objc private を付けてもダメで、 internal func にしないといけない。
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard CMSampleBufferIsValid(sampleBuffer) else {
             return
         }
@@ -81,14 +81,14 @@ extension CIDetectorCameraViewController: SimpleCameraVideoOutputObservable {
         let scaleHeight = limitHeight / imageHeight
         let scale = min(scaleWidth, scaleHeight)
         let imageScale = min(1.0, scale)
-        let scaledCIImage = image.applying(CGAffineTransform(scaleX: imageScale, y: imageScale))
+        let scaledCIImage = image.transformed(by: CGAffineTransform(scaleX: imageScale, y: imageScale))
         
         var maskedImage = scaledCIImage
         detector?.features(in: scaledCIImage).forEach { feature in
             // print(feature.type, feature.bounds)
             if let mask = ConstantColorGenerator.image(inputColor: CIColor(red: 0.9, green: 0.2, blue: 0.1, alpha: 0.5)) {
-                if let m = SourceOverCompositing.filter(inputBackgroundImage: maskedImage)(mask.cropping(to: feature.bounds)) {
-                    maskedImage = m.cropping(to: scaledCIImage.extent)
+                if let m = SourceOverCompositing.filter(inputBackgroundImage: maskedImage)(mask.cropped(to: feature.bounds)) {
+                    maskedImage = m.cropped(to: scaledCIImage.extent)
                 }
             }
         }

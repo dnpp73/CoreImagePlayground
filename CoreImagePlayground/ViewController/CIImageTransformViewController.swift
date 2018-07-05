@@ -46,7 +46,7 @@ final class CIImageTransformViewController: UIViewController {
     }
     
     private func updateImageTransform() {
-        imageView.image = image.applying(transform)
+        imageView.image = image.transformed(by: transform)
     }
     
     @IBAction private func touchUpInsideResetAllButton(_ sender: UIButton) {
