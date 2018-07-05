@@ -108,11 +108,11 @@ final class CIImageCameraVRViewController: UIViewController {
         controlsView.isHidden = !controlsView.isHidden
     }
     
-    // MARK:- NSNotification
+    // MARK:- Notification
     
     @objc private func handle(notification: Notification) {
         print(notification)
-        if notification.name == NSNotification.Name.GCControllerDidConnect {
+        if notification.name == .GCControllerDidConnect {
             if let gamepad = (notification.object as? GCController)?.gamepad {
                 register(gamepad: gamepad)
             }

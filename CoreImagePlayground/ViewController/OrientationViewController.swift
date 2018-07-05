@@ -28,16 +28,10 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
         SimpleCamera.shared.captureLimitSize = CGSize(width: 120.0, height: 120.0)
         SimpleCamera.shared.setPhotoMode()
         SimpleCamera.shared.startRunning()
-        
-        // NotificationCenter.default.addObserver(self, selector: #selector(handle(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        // UIDevice.current.beginGeneratingDeviceOrientationNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // UIDevice.current.endGeneratingDeviceOrientationNotifications()
-        // NotificationCenter.default.removeObserver(self)
         
         SimpleCamera.shared.stopRunning()
     }
@@ -67,7 +61,7 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     }
     
     @objc private func handle(notification: Notification) {
-        if notification.name == NSNotification.Name.UIDeviceOrientationDidChange {
+        if notification.name == .UIDeviceOrientationDidChange {
             switch UIDevice.current.orientation {
             case .landscapeLeft:
                 print("UIDevice.landscapeLeft")
