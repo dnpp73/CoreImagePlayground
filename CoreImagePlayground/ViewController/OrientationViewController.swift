@@ -165,7 +165,6 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     
     private var dropCount: UInt64 = 0
     
-    // @objc private を付けてもダメで、 internal func にしないといけない。
     func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         var limitSize = sub3ImageView.bounds.size
         let scale = UIScreen.main.scale // iPhone 7 Plus において UIScreen.main.scale は 3.0 で UIScreen.main.nativeScale は 2.60869565217391

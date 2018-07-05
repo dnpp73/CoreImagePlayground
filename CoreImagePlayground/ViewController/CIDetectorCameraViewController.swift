@@ -60,7 +60,6 @@ final class CIDetectorCameraViewController: UIViewController {
 
 extension CIDetectorCameraViewController: SimpleCameraVideoOutputObservable {
     
-    // @objc private を付けてもダメで、 internal func にしないといけない。
     func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard CMSampleBufferIsValid(sampleBuffer) else {
             return

@@ -227,7 +227,6 @@ final class CIImageCameraVRViewController: UIViewController {
 
 extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
     
-    // @objc private を付けてもダメで、 internal func にしないといけない。
     func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard CMSampleBufferIsValid(sampleBuffer) else {
             return
