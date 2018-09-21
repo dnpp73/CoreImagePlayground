@@ -2,22 +2,22 @@ import UIKit
 import CIFilterExtension
 import GPUCIImageView
 
-private let ciContext = CIContext(options: [kCIContextUseSoftwareRenderer: false])
+private let ciContext = CIContext(options: [.useSoftwareRenderer: false])
 
 final class CIImageFilterViewController: UIViewController, CIFilterListTableViewDelegate {
-    
+
     private var ciImage: CIImage? {
         didSet {
             filteredCIImage = ciImage
         }
     }
-    
+
     private var filteredCIImage: CIImage? {
         didSet {
             guard isViewLoaded else {
                 return
             }
-            
+
             if let filteredCIImage = filteredCIImage {
                 if uikitSwitch.isOn {
                     if let cgImage = ciContext.createCGImage(filteredCIImage, from: filteredCIImage.extent) {
@@ -50,37 +50,37 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
             }
         }
     }
-    
+
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var glciImageView: GLCIImageView!
     @IBOutlet private weak var mtciView: UIView!
-    
+
     @IBOutlet private weak var uikitSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var glciSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var mtciSegmentedControl: UISegmentedControl!
-    
+
     @IBOutlet private weak var uikitSwitch: UISwitch!
     @IBOutlet private weak var glciSwitch: UISwitch!
     @IBOutlet private weak var mtciSwitch: UISwitch!
-    
+
     @IBOutlet private weak var tableView: CIFilterListTableView!
-    
+
     // MARK:- UIViewController
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.filterListTableViewDelegate = self
-        
+
         if #available(iOS 9.0, *) {
             let mtciImageView = MTCIImageView(frame: mtciView.bounds)
             mtciImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             mtciImageView.contentMode = mtciView.contentMode
             mtciView.addSubview(mtciImageView)
         }
-        
+
         reloadImage()
     }
-    
+
     private func reloadImage() {
         let image = UIImage.nextSampleImage
         if let i = image.ciImage {
@@ -102,9 +102,9 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
             }
         }
     }
-    
+
     // MARK:- IBActions
-    
+
     @IBAction func valueChangedOpenGLSegmentedControl(_ sender: UISegmentedControl) {
         let targetView = glciImageView!
         switch sender.selectedSegmentIndex {
@@ -118,7 +118,7 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
             break
         }
     }
-    
+
     @IBAction func valueChangedUIKitSegmentedControl(_ sender: UISegmentedControl) {
         let targetView = imageView!
         switch sender.selectedSegmentIndex {
@@ -132,7 +132,7 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
             break
         }
     }
-    
+
     @IBAction func valueChangedMetalSegmentedControl(_ sender: UISegmentedControl) {
         if #available(iOS 9.0, *) {
             if let mtciImageView = mtciView.subviews.first as? MTCIImageView {
@@ -150,24 +150,24 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
             }
         }
     }
-    
+
     @IBAction func valueChangedOpenGLSwitch(_ sender: UISwitch) {
-        
+
     }
-    
+
     @IBAction func valueChangedUIKitSwitch(_ sender: UISwitch) {
-        
+
     }
-    
+
     @IBAction func valueChangedMetalSwitch(_ sender: UISwitch) {
-        
+
     }
-    
+
     func filterDidUpdate(tableView: CIFilterListTableView) {
         guard let ciImage = ciImage else {
             return
         }
         filteredCIImage = tableView.filter(ciImage)
     }
-    
+
 }

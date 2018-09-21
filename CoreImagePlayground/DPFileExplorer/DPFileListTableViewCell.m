@@ -22,11 +22,11 @@ NSString* const DPFileListTableViewCellIdentifier = @"DPFileListTableViewCellIde
 {
     if (_fileWrapper != fileWrapper) {
         _fileWrapper = fileWrapper;
-        
+
         self.nameLabel.text = fileWrapper.filename;
         self.kindLabel.text = fileWrapper.isDirectory ? @"📁" : @"📄";
-        
-        /* 
+
+        /*
          fileWrapper.fileAttributes
          {
          NSFileCreationDate = "2015-03-06 04:27:35 +0000";
@@ -50,7 +50,7 @@ NSString* const DPFileListTableViewCellIdentifier = @"DPFileListTableViewCellIde
         self.ownerLabel.text     = [NSString stringWithFormat:@"%@:%@", attr[NSFileOwnerAccountName], attr[NSFileGroupOwnerAccountName]];
         self.createdAtLabel.text = [[[self class] dateFormatter] stringFromDate:attr[NSFileCreationDate]];
         self.updateAtLabel.text  = [[[self class] dateFormatter] stringFromDate:attr[NSFileModificationDate]];
-        
+
         self.accessoryType = (fileWrapper.isDirectory) ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
         self.editingAccessoryType = UITableViewCellAccessoryNone;
     }

@@ -6,14 +6,14 @@ protocol CIFilterListTableViewDelegate: class {
 }
 
 final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableViewDataSource, CIFilterCellDelegate {
-    
+
     private var data: [FilterCellData] = [
         (name: "", key: "", defaultValue: 0.0, value: 0.0, min: 0.0, max: 0.0, isOn: false),
-        
+
         (name: "TiltShiftLine", key: "blurRadius", defaultValue: 20.0, value: 20.0, min: -10.0, max: 100.0, isOn: false),
         (name: "TiltShiftLine", key: "centerX", defaultValue: 150.0, value: 150.0, min: -10.0, max: 500.0, isOn: false),
         (name: "TiltShiftLine", key: "centerY", defaultValue: 150.0, value: 150.0, min: -10.0, max: 500.0, isOn: false),
-        
+
         (name: "TiltShiftCircle", key: "gaussian", defaultValue: 0.0, value: 0.0, min: 0.0, max: 0.0, isOn: false),
         (name: "TiltShiftCircle", key: "box", defaultValue: 0.0, value: 0.0, min: 0.0, max: 0.0, isOn: false),
         (name: "TiltShiftCircle", key: "disc", defaultValue: 0.0, value: 0.0, min: 0.0, max: 0.0, isOn: false),
@@ -24,7 +24,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "TiltShiftCircle", key: "centerY", defaultValue: 150.0, value: 150.0, min: -10.0, max: 500.0, isOn: false),
         (name: "TiltShiftCircle", key: "radius0", defaultValue: 5.0, value: 5.0, min: 0.0, max: 300.0, isOn: false),
         (name: "TiltShiftCircle", key: "radius1", defaultValue: 100.0, value: 100.0, min: 0.0, max: 300.0, isOn: false),
-        
+
         (name: "Crystallize", key: "radius", defaultValue: 20.0, value: 20.0, min: -10.0, max: 100.0, isOn: false),
         (name: "Crystallize", key: "centerX", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
         (name: "Crystallize", key: "centerY", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
@@ -41,7 +41,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "Pointillize", key: "centerY", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
         (name: "Edges", key: "intensity", defaultValue: 1.0, value: 1.0, min: -1.0, max: 3.0, isOn: false),
         (name: "EdgeWork", key: "radius", defaultValue: 3.0, value: 3.0, min: -1.0, max: 10.0, isOn: false),
-        
+
         // 1. Blur
         (name: "BoxBlur",        key: "inputRadius",     defaultValue: 10.0,  value: 10.0,  min: 0.0, max: 100.0, isOn: false),
         (name: "DiscBlur",       key: "inputRadius",     defaultValue: 10.0,  value: 10.0,  min: 0.0, max: 100.0, isOn: false),
@@ -54,7 +54,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "ZoomBlur",       key: "inputCenterX",    defaultValue: 150.0, value: 150.0, min: 0.0, max: 300.0, isOn: false),
         (name: "ZoomBlur",       key: "inputCenterY",    defaultValue: 150.0, value: 150.0, min: 0.0, max: 300.0, isOn: false),
         (name: "ZoomBlur",       key: "inputRadius",     defaultValue: 20.0,  value: 20.0,  min: 0.0, max: 100.0, isOn: false),
-        
+
         // 2. ColorAdjustment
         /*
          (name: "ColorClamp", key: "minR", defaultValue: 0.0, value: 0.0, min: 0.0, max: 1.0, isOn: false),
@@ -130,7 +130,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "ToneCurve", key: "inputPoint4Y", defaultValue: 1.00, value: 1.00, min: 0.0, max: 1.0, isOn: false),
         (name: "Vibrance", key: "inputAmount", defaultValue: 0.0, value: 0.0, min: -4.0, max: 4.0, isOn: false),
         (name: "WhitePointAdjust", key: "inputColor", defaultValue: 0.0, value: 0.0, min: 0.0, max: 0.0, isOn: false),
-        
+
         // 3-1. ColorEffect
         /*
          (name: "ColorCrossPolynomial", key: "rA0", defaultValue: 1.0, value: 1.0, min: -1.0, max: 1.0, isOn: false),
@@ -198,7 +198,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "VignetteEffect", key: "centerY", defaultValue: 150.0, value: 150.0, min: -1000.0, max: 1000.0, isOn: false),
         (name: "VignetteEffect", key: "intensity", defaultValue: 1.0, value: 1.0, min: -2.0, max: 2.0, isOn: false),
         (name: "VignetteEffect", key: "falloff", defaultValue: 0.0, value: 0.0, min: -1.0, max: 2.0, isOn: false),
-        
+
         // 3-2. Photo Effect
         (name: "Chrome",   key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
         (name: "Fade",     key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
@@ -208,9 +208,9 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "Process",  key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
         (name: "Tonal",    key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
         (name: "Transfer", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
-        
+
         // 4. CompositeOperation
-        
+
         // 5. DistortionEffect
         (name: "BumpDistortion", key: "centerX", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
         (name: "BumpDistortion", key: "centerY", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
@@ -240,13 +240,13 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "VortexDistortion", key: "centerY", defaultValue: 150.0, value: 150.0, min: -100.0, max: 500.0, isOn: false),
         (name: "VortexDistortion", key: "radius", defaultValue: 300.0, value: 300.0, min: -100.0, max: 600.0, isOn: false),
         (name: "VortexDistortion", key: "angle", defaultValue: Float.pi * 18.0, value: Float.pi * 18.0, min: -50.0, max: 100.0, isOn: false),
-        
+
         // 6. Generator
-        
+
         // 7. GeometryAdjustment
-        
+
         // 8. Gradient
-        
+
         // 9. HalftoneEffect
         (name: "CircularScreen", key: "centerX", defaultValue: 150.0, value: 150.0, min: -300.0, max: 300.0, isOn: false),
         (name: "CircularScreen", key: "centerY", defaultValue: 150.0, value: 150.0, min: -300.0, max: 300.0, isOn: false),
@@ -274,29 +274,29 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "LineScreen", key: "angle", defaultValue: 0.0, value: 0.0, min: -6.0, max: 6.0, isOn: false),
         (name: "LineScreen", key: "width", defaultValue: 6.0, value: 6.0, min: -1.0, max: 10.0, isOn: false),
         (name: "LineScreen", key: "sharpness", defaultValue: 0.7, value: 0.7, min: -1.0, max: 2.0, isOn: false),
-        
+
         // 10. Reduction
-        
+
         // 11. Sharpen
         (name: "SharpenLuminance", key: "sharpness", defaultValue: 0.4, value: 0.4, min: -1.0, max: 1.0, isOn: false),
         (name: "UnsharpMask", key: "radius", defaultValue: 2.5, value: 2.5, min: -1.0, max: 10.0, isOn: false),
         (name: "UnsharpMask", key: "intensity", defaultValue: 0.5, value: 0.5, min: -1.0, max: 2.0, isOn: false),
-        
+
         // 12. Stylize
         (name: "Bloom", key: "radius", defaultValue: 10.0, value: 10.0, min: -10.0, max: 30.0, isOn: false),
         (name: "Bloom", key: "intensity", defaultValue: 0.5, value: 0.5, min: -1.0, max: 2.0, isOn: false),
         (name: "Gloom", key: "radius", defaultValue: 10.0, value: 10.0, min: -10.0, max: 30.0, isOn: false),
         (name: "Gloom", key: "intensity", defaultValue: 0.5, value: 0.5, min: -1.0, max: 2.0, isOn: false),
         (name: "ComicEffect", key: "", defaultValue: 0.0, value: 0.0, min: 0.0, max: 0.0, isOn: false),
-        
+
         // 13. TileEffect
-        
+
         // 14. Transition
-        
+
         // 余白
         (name: "???", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false)
     ]
-    
+
     var filter: Filter {
         var formatted: [(name: String, option: [String: CGFloat])] = []
         data.filter { d in d.isOn }.forEach { d in
@@ -308,7 +308,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                 formatted.append(f)
             }
         }
-        
+
         var filter: Filter = { image in return image }
         formatted.forEach { d in
             switch d.name {
@@ -355,7 +355,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                     // filter = filter |>> ZoomBlur.filter(inputCenter: inputCenter, inputRadius: inputRadius)
                     filter = filter |>> ZoomBlur.filterWithClampAndCrop(inputCenter: inputCenter, inputRadius: inputRadius)
                 }
-                
+
             // ColorAdjustment
             case "ColorClamp":
                 let minR: CGFloat = d.option["minR"] ?? ColorClamp.defaultInputMinComponents.r
@@ -468,7 +468,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                 // TODO
                 let inputColor: CIColor? = nil
                 filter = filter |>> WhitePointAdjust.filter(inputColor: inputColor)
-                
+
             // ColorEffect
             case "ColorCrossPolynomial":
                 let rA0: CGFloat = d.option["rA0"] ?? ColorCrossPolynomial.defaultInputRedCoefficients.a0
@@ -552,7 +552,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                 let radius: CGFloat = d.option["radius"] ?? Vignette.defaultInputRadius
                 let intensity: CGFloat = d.option["intensity"] ?? Vignette.defaultInputIntensity
                 filter = filter |>> Vignette.filter(inputRadius: radius, inputIntensity: intensity)
-                
+
             case "VignetteEffect":
                 let centerX: CGFloat = d.option["centerX"] ?? VignetteEffect.defaultInputCenter.x
                 let centerY: CGFloat = d.option["centerY"] ?? VignetteEffect.defaultInputCenter.y
@@ -560,7 +560,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                 let falloff: CGFloat = d.option["falloff"] ?? VignetteEffect.defaultInputFalloff
                 let center = XYPosition(x: centerX, y: centerY)
                 filter = filter |>> VignetteEffect.filter(inputCenter: center, inputIntensity: intensity, inputFalloff: falloff)
-                
+
             // Photo Effect
             case "Chrome":
                 let alpha = d.option["alpha"]!
@@ -586,7 +586,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
             case "Transfer":
                 let alpha = d.option["alpha"]!
                 filter = filter |>> PhotoEffect.transfer(alpha: alpha)
-                
+
             // HalftoneEffect
             case "CircularScreen":
                 let centerX: CGFloat = d.option["centerX"] ?? CircularScreen.defaultInputCenter.x
@@ -631,7 +631,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                 let width: CGFloat = d.option["width"] ?? LineScreen.defaultInputWidth
                 let sharpness: CGFloat = d.option["sharpness"] ?? LineScreen.defaultInputSharpness
                 filter = filter |>> LineScreen.filter(inputCenter: center, inputAngle: angle, inputWidth: width, inputSharpness: sharpness)
-                
+
             // Sharpen
             case "SharpenLuminance":
                 let sharpness: CGFloat = d.option["sharpness"] ?? SharpenLuminance.defaultInputSharpness
@@ -640,7 +640,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                 let radius: CGFloat = d.option["radius"] ?? UnsharpMask.defaultInputRadius
                 let intensity: CGFloat = d.option["intensity"] ?? UnsharpMask.defaultInputIntensity
                 filter = filter |>> UnsharpMask.filter(inputRadius: radius, inputIntensity: intensity)
-                
+
             // Stylize
             case "Bloom":
                 let radius: CGFloat = d.option["radius"] ?? Bloom.defaultInputRadius
@@ -804,26 +804,26 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         }
         return filter
     }
-        
+
     weak var filterListTableViewDelegate: CIFilterListTableViewDelegate?
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
-    override init(frame: CGRect, style: UITableViewStyle) {
+
+    override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         commonInit()
     }
-    
+
     private func commonInit() {
         register(CIFilterCell.nibForRegisterTableView(), forCellReuseIdentifier: CIFilterCell.defaultReuseIdentifier)
         delegate = self
         dataSource = self
         isEditing = true
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -845,7 +845,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         return true
     }
 
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
     }
 
@@ -870,30 +870,30 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         filterListTableViewDelegate?.filterDidUpdate(tableView: self)
         return proposedDestinationIndexPath
     }
-    
+
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         // これが実装されていないと並び換えの右側の 三 みたいなやつが出てこない。
         movingData = nil
         tableView.reloadData()
     }
-    
+
     // MARK:- CIFilterCellDelegate
-    
+
     func touchUpInsideDefaultButton(cell: CIFilterCell) {
         guard let index = indexPath(for: cell)?.row else { return }
         print(index)
     }
-    
+
     func valueChangedSlider(cell: CIFilterCell, value: Float) {
         guard let index = indexPath(for: cell)?.row else { return }
         data[index].value = value
         filterListTableViewDelegate?.filterDidUpdate(tableView: self)
     }
-    
+
     func valueChangedSwitch(cell: CIFilterCell, isOn: Bool) {
         guard let index = indexPath(for: cell)?.row else { return }
         data[index].isOn = isOn
         filterListTableViewDelegate?.filterDidUpdate(tableView: self)
     }
-    
+
 }

@@ -5,12 +5,12 @@
 @interface DPFileListViewController () <UIDocumentInteractionControllerDelegate>
 {
     UIRefreshControl* _refreshControl;
-    
+
     NSMutableArray<NSURL*>* _fileURLs;
     NSMutableDictionary<NSURL*, NSFileWrapper*>* _fileWrappers;
-    
+
     UIDocumentInteractionController* _documentInteractionController;
-    
+
     UIBarButtonItem* _mkdirButton;
 }
 @property (nonatomic, copy) NSArray<NSURL*>* fileURLs;
@@ -36,18 +36,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // Editing
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+
     // RefreshControl
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(valueChangedRefreshControl:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = _refreshControl;
-    
+
     // Custom TableViewCell
     [self.tableView registerNib:[DPFileListTableViewCell nibForRegisterTableView] forCellReuseIdentifier:DPFileListTableViewCellIdentifier];
-    
+
     // for mkdir
     _mkdirButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(actionForMkdirBarButtonItem:)];
 }
@@ -55,7 +55,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     for (NSIndexPath* indexPath in self.tableView.indexPathsForSelectedRows) {
         [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
     }
@@ -76,9 +76,9 @@
                 [NSException raise:@"TypeException" format:@"each fileURL object must be NSFileURL instance. and must be isFileURL==YES"];
             }
         }
-        
+
         _fileURLs = fileURLs.mutableCopy;
-        
+
         [_fileWrappers removeAllObjects];
         for (NSURL* url in fileURLs) {
             NSError* error;
@@ -90,7 +90,7 @@
                 _fileWrappers[url] = fw;
             }
         }
-        
+
         if (self.isViewLoaded) {
             [self.tableView reloadData];
         }
@@ -105,7 +105,7 @@
         [refreshControl endRefreshing];
         return;
     }
-    
+
     NSArray<NSURL*>* fileURLs;
     if (self.parentFileURL) {
         NSError* error;
@@ -407,7 +407,7 @@
 /*
 - (void)documentInteractionControllerWillPresentOptionsMenu:(UIDocumentInteractionController*)controller
 {
-    
+
 }
  */
 
@@ -423,7 +423,7 @@
 /*
 - (void)documentInteractionControllerWillPresentOpenInMenu:(UIDocumentInteractionController*)controller
 {
-    
+
 }
  */
 
@@ -484,7 +484,7 @@
     };
     uint16_t directoriesCount = 25;
      */
-    
+
     NSMutableArray<NSURL*>* fileURLs = [NSMutableArray<NSURL*> array];
     {
         NSSearchPathDirectory directories[] = {

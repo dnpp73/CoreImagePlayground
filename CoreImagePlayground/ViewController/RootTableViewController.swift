@@ -1,7 +1,7 @@
 import UIKit
 
 final class RootTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 2):
@@ -20,14 +20,14 @@ final class RootTableViewController: UITableViewController, UINavigationControll
             break
         }
     }
-    
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print(info)
         picker.dismiss(animated: true, completion: nil)
     }
-    
+
 }

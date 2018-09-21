@@ -3,7 +3,7 @@ import CIFilterExtension
 import GPUCIImageView
 
 final class CIFilterGeneratorViewController: UIViewController, CIGeneratorListTableViewDelegate, CIFilterListTableViewDelegate {
-    
+
     @IBOutlet private weak var imageView: GLCIImageView!
     @IBOutlet private weak var generatorListTableView: CIGeneratorListTableView! {
         didSet {
@@ -15,7 +15,7 @@ final class CIFilterGeneratorViewController: UIViewController, CIGeneratorListTa
             filterListTableView.filterListTableViewDelegate = self
         }
     }
-    
+
     private func updateImageView() {
         guard let imageView = imageView, let scale = imageView.window?.screen.scale else {
             return
@@ -33,13 +33,13 @@ final class CIFilterGeneratorViewController: UIViewController, CIGeneratorListTa
             imageView.image = nil
         }
     }
-        
+
     func imageDidUpdate(tableView: CIGeneratorListTableView) {
         updateImageView()
     }
-    
+
     func filterDidUpdate(tableView: CIFilterListTableView) {
         updateImageView()
     }
-    
+
 }

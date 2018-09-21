@@ -5,29 +5,29 @@ protocol VideoListTableViewDelegate: class {
 }
 
 final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
-    
+
     weak var videoListTableViewDelegate: VideoListTableViewDelegate?
-    
+
     private(set) var fileURLs: [URL] = []
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
-    override init(frame: CGRect, style: UITableViewStyle) {
+
+    override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         commonInit()
     }
-    
+
     private func commonInit() {
         register(VideoListCell.nibForRegisterTableView(), forCellReuseIdentifier: VideoListCell.defaultReuseIdentifier)
         delegate = self
         dataSource = self
-        
+
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         guard let documentsDirectoryPath = paths.first else { return }
-        
+
         let videoDirPath = (documentsDirectoryPath as NSString).appendingPathComponent("video")
         let videoDirURL = URL(fileURLWithPath: videoDirPath, isDirectory: true)
         do {
@@ -36,7 +36,7 @@ final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDat
         } catch let error {
             print(error)
         }
-        
+
         let vineDirPath = (documentsDirectoryPath as NSString).appendingPathComponent("vine")
         let vineDirURL = URL(fileURLWithPath: vineDirPath, isDirectory: true)
         do {
@@ -45,13 +45,13 @@ final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDat
         } catch let error {
             print(error)
         }
-        
+
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -62,7 +62,7 @@ final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDat
             return 0
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoListCell.defaultReuseIdentifier) as? VideoListCell else {
             fatalError()
@@ -75,7 +75,7 @@ final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDat
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             videoListTableViewDelegate?.didSelect(tableView: self, fileURL: fileURLs[indexPath.row])
@@ -88,22 +88,22 @@ final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDat
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
+
 }
 
 extension VideoListTableView: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        if let url = info[UIImagePickerControllerReferenceURL] as? URL {
+        if let url = info[.referenceURL] as? URL {
             videoListTableViewDelegate?.didSelect(tableView: self, fileURL: url)
         }
     }
-    
+
 }
 
 final class VideoListCell: UITableViewCell {

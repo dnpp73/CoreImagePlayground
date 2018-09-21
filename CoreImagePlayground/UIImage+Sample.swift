@@ -1,9 +1,9 @@
 import UIKit
 
 extension UIImage {
-    
+
     private static var index: Int = 0
-    
+
     private static let names: [String] = [
         "1fac882e",
         "2deb65de",
@@ -11,7 +11,7 @@ extension UIImage {
         "4fa89ef1",
         "6c49e676"
     ]
-    
+
     static var nextSampleImage: UIImage {
         get {
             let i = UIImage(named: names[index])!
@@ -22,5 +22,5 @@ extension UIImage {
             return i
         }
     }
-    
+
 }

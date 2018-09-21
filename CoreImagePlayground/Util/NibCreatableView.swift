@@ -1,21 +1,21 @@
 import UIKit
 
 class NibCreatableView: UIView {
-    
+
     // MARK:- Initializer
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupSubviewsFromXib()
         configureForSubclassing()
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviewsFromXib()
         configureForSubclassing()
     }
-    
+
     private func setupSubviewsFromXib() {
         let klass = type(of: self)
         guard let klassName = NSStringFromClass(klass).components(separatedBy: ".").last else {
@@ -28,9 +28,9 @@ class NibCreatableView: UIView {
         subviewContainer.frame = bounds
         addSubview(subviewContainer)
     }
-    
+
     func configureForSubclassing() {
         // for override
     }
-    
+
 }
