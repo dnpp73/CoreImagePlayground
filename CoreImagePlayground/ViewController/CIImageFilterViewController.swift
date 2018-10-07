@@ -38,8 +38,7 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
                         }
                     }
                 }
-            }
-            else {
+            } else {
                 imageView.image = nil
                 glciImageView.image = nil
                 if #available(iOS 9.0, *) {
@@ -65,7 +64,7 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
 
     @IBOutlet private weak var tableView: CIFilterListTableView!
 
-    // MARK:- UIViewController
+    // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,37 +102,39 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
         }
     }
 
-    // MARK:- IBActions
+    // MARK: - IBActions
 
-    @IBAction func valueChangedOpenGLSegmentedControl(_ sender: UISegmentedControl) {
-        let targetView = glciImageView!
+    @IBAction private func valueChangedOpenGLSegmentedControl(_ sender: UISegmentedControl) {
+        let contentMode: UIView.ContentMode
         switch sender.selectedSegmentIndex {
         case 0:
-            targetView.contentMode = .scaleToFill
+            contentMode = .scaleToFill
         case 1:
-            targetView.contentMode = .scaleAspectFill
+            contentMode = .scaleAspectFill
         case 2:
-            targetView.contentMode = .scaleAspectFit
+            contentMode = .scaleAspectFit
         default:
-            break
+            return
         }
+        glciImageView.contentMode = contentMode
     }
 
-    @IBAction func valueChangedUIKitSegmentedControl(_ sender: UISegmentedControl) {
-        let targetView = imageView!
+    @IBAction private func valueChangedUIKitSegmentedControl(_ sender: UISegmentedControl) {
+        let contentMode: UIView.ContentMode
         switch sender.selectedSegmentIndex {
         case 0:
-            targetView.contentMode = .scaleToFill
+            contentMode = .scaleToFill
         case 1:
-            targetView.contentMode = .scaleAspectFill
+            contentMode = .scaleAspectFill
         case 2:
-            targetView.contentMode = .scaleAspectFit
+            contentMode = .scaleAspectFit
         default:
-            break
+            return
         }
+        imageView.contentMode = contentMode
     }
 
-    @IBAction func valueChangedMetalSegmentedControl(_ sender: UISegmentedControl) {
+    @IBAction private func valueChangedMetalSegmentedControl(_ sender: UISegmentedControl) {
         if #available(iOS 9.0, *) {
             if let mtciImageView = mtciView.subviews.first as? MTCIImageView {
                 let targetView = mtciImageView
@@ -151,15 +152,15 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
         }
     }
 
-    @IBAction func valueChangedOpenGLSwitch(_ sender: UISwitch) {
+    @IBAction private func valueChangedOpenGLSwitch(_ sender: UISwitch) {
 
     }
 
-    @IBAction func valueChangedUIKitSwitch(_ sender: UISwitch) {
+    @IBAction private func valueChangedUIKitSwitch(_ sender: UISwitch) {
 
     }
 
-    @IBAction func valueChangedMetalSwitch(_ sender: UISwitch) {
+    @IBAction private func valueChangedMetalSwitch(_ sender: UISwitch) {
 
     }
 

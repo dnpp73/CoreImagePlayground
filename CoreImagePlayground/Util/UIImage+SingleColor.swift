@@ -9,7 +9,7 @@ extension UIImage {
         }
 
         UIGraphicsBeginImageContext(size)
-        defer{
+        defer {
             UIGraphicsEndImageContext()
         }
         let rect = CGRect(origin: CGPoint.zero, size: size)

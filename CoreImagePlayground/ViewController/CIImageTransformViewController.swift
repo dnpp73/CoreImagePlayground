@@ -3,7 +3,7 @@ import GPUCIImageView
 
 final class CIImageTransformViewController: UIViewController {
 
-    private var image: CIImage = CIImage(image: UIImage.nextSampleImage)!
+    private var image: CIImage = CIImage(image: UIImage.nextSampleImage)! // swiftlint:disable:this force_unwrapping
 
     @IBOutlet private weak var imageView: GLCIImageView!
 
@@ -36,13 +36,11 @@ final class CIImageTransformViewController: UIViewController {
     }
 
     private var transform: CGAffineTransform {
-        get {
-            let angle = CGFloat(tuningAngleSlider.value) * CGFloat.pi / 2.0
-            let scale = CGFloat(scaleSlider.value)
-            let dx = CGFloat(xSlider.value) * 0.0
-            let dy = CGFloat(ySlider.value) * 0.0
-            return CGAffineTransform.identity.translatedBy(x: dx, y: dy).rotated(by: angle).scaledBy(x: scale, y: scale)
-        }
+        let angle = CGFloat(tuningAngleSlider.value) * CGFloat.pi / 2.0
+        let scale = CGFloat(scaleSlider.value)
+        let dx = CGFloat(xSlider.value) * 0.0
+        let dy = CGFloat(ySlider.value) * 0.0
+        return CGAffineTransform.identity.translatedBy(x: dx, y: dy).rotated(by: angle).scaledBy(x: scale, y: scale)
     }
 
     private func updateImageTransform() {

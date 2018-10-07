@@ -17,14 +17,12 @@ final class PlayerControlView: NibCreatableView, PlayerControlDelegate {
     }
 
     private var player: PlayerControllable {
-        get {
-            if let playerView = playerView {
-                return playerView
-            } else if let filterablePlayerView = filterablePlayerView {
-                return filterablePlayerView
-            } else {
-                fatalError()
-            }
+        if let playerView = playerView {
+            return playerView
+        } else if let filterablePlayerView = filterablePlayerView {
+            return filterablePlayerView
+        } else {
+            fatalError() // swiftlint:disable:this fatal_error_message
         }
     }
 
@@ -122,7 +120,7 @@ final class PlayerControlView: NibCreatableView, PlayerControlDelegate {
         filterablePlayerView?.contentMode = contentMode
     }
 
-    // MARK:- PlayerControlDelegate
+    // MARK: - PlayerControlDelegate
 
     func playerItemDidChangeStatus(_ player: PlayerControllable, playerItem: AVPlayerItem) {
         print(#function, playerItem.status.rawValue)

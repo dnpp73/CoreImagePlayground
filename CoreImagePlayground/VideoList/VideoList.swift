@@ -26,7 +26,9 @@ final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDat
         dataSource = self
 
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        guard let documentsDirectoryPath = paths.first else { return }
+        guard let documentsDirectoryPath = paths.first else {
+            return
+        }
 
         let videoDirPath = (documentsDirectoryPath as NSString).appendingPathComponent("video")
         let videoDirURL = URL(fileURLWithPath: videoDirPath, isDirectory: true)
@@ -65,7 +67,7 @@ final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDat
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoListCell.defaultReuseIdentifier) as? VideoListCell else {
-            fatalError()
+            fatalError("must not here")
         }
         if indexPath.section == 0 {
             let pathComponents = fileURLs[indexPath.row].pathComponents
@@ -97,7 +99,7 @@ extension VideoListTableView: UIImagePickerControllerDelegate, UINavigationContr
         picker.dismiss(animated: true, completion: nil)
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let url = info[.referenceURL] as? URL {
             videoListTableViewDelegate?.didSelect(tableView: self, fileURL: url)
@@ -107,5 +109,5 @@ extension VideoListTableView: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 final class VideoListCell: UITableViewCell {
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet fileprivate weak var label: UILabel!
 }

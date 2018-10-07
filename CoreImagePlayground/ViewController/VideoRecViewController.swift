@@ -55,11 +55,15 @@ final class VideoRecViewController: UIViewController {
     @IBAction private func touchUpInsideRecButton(_ sender: UIButton) {
         if !SimpleCamera.shared.isRecordingMovie {
             let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-            guard let documentsDirectory = paths.first else { return }
+            guard let documentsDirectory = paths.first else {
+                return
+            }
             // let filePath = (documentsDirectory as NSString).appendingPathComponent("video/tmp.mp4")
             let dateString = type(of: self).dateFormatter.string(from: Date())
-            let filePath = (((documentsDirectory as NSString).appendingPathComponent("video") as NSString).appendingPathComponent(dateString) as NSString).appendingPathExtension("mp4")
-            let fileURL = URL(fileURLWithPath: filePath!)
+            let fileDir = (documentsDirectory as NSString).appendingPathComponent("video")
+            let filePath = ((fileDir as NSString).appendingPathComponent(dateString) as NSString).appendingPathExtension("mp4")
+            let fileURL = URL(fileURLWithPath: filePath!) // swiftlint:disable:this force_unwrapping
+            try? FileManager.default.createDirectory(atPath: fileDir, withIntermediateDirectories: false, attributes: nil)
             if SimpleCamera.shared.startRecordMovie(to: fileURL) {
                 sender.setTitle("Recording...", for: .normal)
             } else {
@@ -86,8 +90,7 @@ final class VideoRecViewController: UIViewController {
         case .equalDistance(let vertical, let horizontal):
             if vertical > 2 || horizontal > 2 {
                 cameraFinderView.gridType = .none
-            }
-            else {
+            } else {
                 cameraFinderView.gridType = .equalDistance(vertical: 8, horizontal: 8)
             }
         }

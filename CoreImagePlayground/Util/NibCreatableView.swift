@@ -2,7 +2,7 @@ import UIKit
 
 class NibCreatableView: UIView {
 
-    // MARK:- Initializer
+    // MARK: - Initializer
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

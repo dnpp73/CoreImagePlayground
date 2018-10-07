@@ -19,7 +19,7 @@ final class CIImageCameraVRViewController: UIViewController {
 
     fileprivate var detector: CIDetector?
 
-    // MARK:- UIViewController
+    // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +86,7 @@ final class CIImageCameraVRViewController: UIViewController {
         return .slide
     }
 
-    // MARK:- IBActions
+    // MARK: - IBActions
 
     @IBAction private func touchUpInsideXButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -108,7 +108,7 @@ final class CIImageCameraVRViewController: UIViewController {
         controlsView.isHidden = !controlsView.isHidden
     }
 
-    // MARK:- Notification
+    // MARK: - Notification
 
     @objc private func handle(notification: Notification) {
         print(notification)
@@ -119,7 +119,7 @@ final class CIImageCameraVRViewController: UIViewController {
         }
     }
 
-    // MARK:- Gamepad
+    // MARK: - Gamepad
 
     private func register(gamepad: Any) {
         guard let gamepad = gamepad as? GCExtendedGamepad else {
@@ -129,32 +129,42 @@ final class CIImageCameraVRViewController: UIViewController {
             self?.handle(gamepad: gamepad, element: element)
         }
         gamepad.buttonA.pressedChangedHandler = { [weak self] (button: GCControllerButtonInput, value: Float, isPressed: Bool) -> Void in
-            guard let `self` = self else { return }
+            guard let self = self else {
+                return
+            }
             if isPressed {
                 self.controlsView.isHidden = !self.controlsView.isHidden
             }
         }
         gamepad.leftShoulder.pressedChangedHandler = { [weak self] (button: GCControllerButtonInput, value: Float, isPressed: Bool) -> Void in
-            guard let `self` = self else { return }
+            guard let self = self else {
+                return
+            }
             if isPressed {
                 self.segmentedControl.selectedSegmentIndex -= 1
             }
         }
         gamepad.rightShoulder.pressedChangedHandler = { [weak self] (button: GCControllerButtonInput, value: Float, isPressed: Bool) -> Void in
-            guard let `self` = self else { return }
+            guard let self = self else {
+                return
+            }
             if isPressed {
                 self.segmentedControl.selectedSegmentIndex += 1
             }
         }
         gamepad.leftTrigger.pressedChangedHandler = { [weak self] (button: GCControllerButtonInput, value: Float, isPressed: Bool) -> Void in
-            guard let `self` = self else { return }
+            guard let self = self else {
+                return
+            }
             if isPressed {
                 self.levelSlider.value -= max(min(value, 0.3), 0.01)
                 self.valueChangedLevelSlider(self.levelSlider)
             }
         }
         gamepad.rightTrigger.pressedChangedHandler = { [weak self] (button: GCControllerButtonInput, value: Float, isPressed: Bool) -> Void in
-            guard let `self` = self else { return }
+            guard let self = self else {
+                return
+            }
             if isPressed {
                 self.levelSlider.value += max(min(value, 0.3), 0.01)
                 self.valueChangedLevelSlider(self.levelSlider)
@@ -182,7 +192,7 @@ final class CIImageCameraVRViewController: UIViewController {
         }
     }
 
-    // MARK:- CIFilter
+    // MARK: - CIFilter
 
     private let date = Date()
     private var centerOffset: CGPoint = CGPoint(x: 0.0, y: 0.0)
@@ -266,15 +276,15 @@ extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
 //        print("scaledImage.extent", scaledImage.extent)
 
         // scaledImage を左右に分けて中心に表示する。
-        let leftRect  = CGRect(origin: CGPoint(x: margin * 0.5,                  y: margin * 0.5), size: halfSize)
+        let leftRect  = CGRect(origin: CGPoint(x: margin * 0.5, y: margin * 0.5), size: halfSize)
         let rightRect = CGRect(origin: CGPoint(x: margin * 1.5 + halfSize.width, y: margin * 0.5), size: halfSize)
 
-        let dxLeft:  CGFloat = leftRect.midX  - scaledImage.extent.midX
-        let dyLeft:  CGFloat = leftRect.midY  - scaledImage.extent.midY
+        let dxLeft: CGFloat = leftRect.midX  - scaledImage.extent.midX
+        let dyLeft: CGFloat = leftRect.midY  - scaledImage.extent.midY
         let dxRight: CGFloat = rightRect.midX - scaledImage.extent.midX
         let dyRight: CGFloat = rightRect.midY - scaledImage.extent.midY
 
-        let leftImage  = scaledImage.transformed(by: CGAffineTransform.identity.translatedBy(x:  dxLeft, y:  dyLeft)).cropped(to: leftRect)
+        let leftImage  = scaledImage.transformed(by: CGAffineTransform.identity.translatedBy(x: dxLeft, y: dyLeft)).cropped(to: leftRect)
         let rightImage = scaledImage.transformed(by: CGAffineTransform.identity.translatedBy(x: dxRight, y: dyRight)).cropped(to: rightRect)
 //        print("leftImage.extent", leftImage.extent)
 //        print("rightImage.extent", rightImage.extent)

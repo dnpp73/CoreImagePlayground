@@ -68,8 +68,7 @@ final class CameraUIViewController: UIViewController {
         case .equalDistance(let vertical, let horizontal):
             if vertical > 2 || horizontal > 2 {
                 cameraFinderView.gridType = .none
-            }
-            else {
+            } else {
                 cameraFinderView.gridType = .equalDistance(vertical: 8, horizontal: 8)
             }
         }

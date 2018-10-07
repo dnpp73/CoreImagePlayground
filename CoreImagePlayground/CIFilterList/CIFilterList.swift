@@ -43,17 +43,17 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "EdgeWork", key: "radius", defaultValue: 3.0, value: 3.0, min: -1.0, max: 10.0, isOn: false),
 
         // 1. Blur
-        (name: "BoxBlur",        key: "inputRadius",     defaultValue: 10.0,  value: 10.0,  min: 0.0, max: 100.0, isOn: false),
-        (name: "DiscBlur",       key: "inputRadius",     defaultValue: 10.0,  value: 10.0,  min: 0.0, max: 100.0, isOn: false),
-        (name: "GaussianBlur",   key: "inputRadius",     defaultValue: 10.0,  value: 10.0,  min: 0.0, max: 100.0, isOn: false),
-        (name: "MedianFilter",   key: "noParams",        defaultValue: 0.0,   value: 0.0,   min: 0.0, max: 0.0,   isOn: false),
-        (name: "MotionBlur",     key: "inputRadius",     defaultValue: 20.0,  value: 20.0,  min: 0.0, max: 100.0, isOn: false),
-        (name: "MotionBlur",     key: "inputAngle",      defaultValue: 0.0,   value: 0.0,   min: 0.0, max: 10.0,  isOn: false),
-        (name: "NoiseReduction", key: "inputNoiseLevel", defaultValue: 0.02,  value: 0.02,  min: 0.0, max: 10.0,  isOn: false),
-        (name: "NoiseReduction", key: "inputSharpness",  defaultValue: 0.4,   value: 0.4,   min: 0.0, max: 10.0,  isOn: false),
-        (name: "ZoomBlur",       key: "inputCenterX",    defaultValue: 150.0, value: 150.0, min: 0.0, max: 300.0, isOn: false),
-        (name: "ZoomBlur",       key: "inputCenterY",    defaultValue: 150.0, value: 150.0, min: 0.0, max: 300.0, isOn: false),
-        (name: "ZoomBlur",       key: "inputRadius",     defaultValue: 20.0,  value: 20.0,  min: 0.0, max: 100.0, isOn: false),
+        (name: "BoxBlur", key: "inputRadius", defaultValue: 10.0, value: 10.0, min: 0.0, max: 100.0, isOn: false),
+        (name: "DiscBlur", key: "inputRadius", defaultValue: 10.0, value: 10.0, min: 0.0, max: 100.0, isOn: false),
+        (name: "GaussianBlur", key: "inputRadius", defaultValue: 10.0, value: 10.0, min: 0.0, max: 100.0, isOn: false),
+        (name: "MedianFilter", key: "noParams", defaultValue: 0.0, value: 0.0, min: 0.0, max: 0.0, isOn: false),
+        (name: "MotionBlur", key: "inputRadius", defaultValue: 20.0, value: 20.0, min: 0.0, max: 100.0, isOn: false),
+        (name: "MotionBlur", key: "inputAngle", defaultValue: 0.0, value: 0.0, min: 0.0, max: 10.0, isOn: false),
+        (name: "NoiseReduction", key: "inputNoiseLevel", defaultValue: 0.02, value: 0.02, min: 0.0, max: 10.0, isOn: false),
+        (name: "NoiseReduction", key: "inputSharpness", defaultValue: 0.4, value: 0.4, min: 0.0, max: 10.0, isOn: false),
+        (name: "ZoomBlur", key: "inputCenterX", defaultValue: 150.0, value: 150.0, min: 0.0, max: 300.0, isOn: false),
+        (name: "ZoomBlur", key: "inputCenterY", defaultValue: 150.0, value: 150.0, min: 0.0, max: 300.0, isOn: false),
+        (name: "ZoomBlur", key: "inputRadius", defaultValue: 20.0, value: 20.0, min: 0.0, max: 100.0, isOn: false),
 
         // 2. ColorAdjustment
         /*
@@ -68,7 +68,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
          */
         (name: "ColorControls", key: "saturation", defaultValue: 1.0, value: 1.0, min: -4.0, max: 4.0, isOn: false),
         (name: "ColorControls", key: "brightness", defaultValue: 0.0, value: 0.0, min: -2.0, max: 2.0, isOn: false),
-        (name: "ColorControls", key: "contrast",   defaultValue: 1.0, value: 1.0, min: -4.0, max: 4.0, isOn: false),
+        (name: "ColorControls", key: "contrast", defaultValue: 1.0, value: 1.0, min: -4.0, max: 4.0, isOn: false),
         /*
          (name: "ColorMatrix", key: "rVectorR", defaultValue: 1.0, value: 1.0, min: -2.0, max: 2.0, isOn: false),
          (name: "ColorMatrix", key: "rVectorG", defaultValue: 0.0, value: 0.0, min: -2.0, max: 2.0, isOn: false),
@@ -200,13 +200,13 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "VignetteEffect", key: "falloff", defaultValue: 0.0, value: 0.0, min: -1.0, max: 2.0, isOn: false),
 
         // 3-2. Photo Effect
-        (name: "Chrome",   key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
-        (name: "Fade",     key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
-        (name: "Instant",  key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
-        (name: "Mono",     key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
-        (name: "Noir",     key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
-        (name: "Process",  key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
-        (name: "Tonal",    key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
+        (name: "Chrome", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
+        (name: "Fade", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
+        (name: "Instant", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
+        (name: "Mono", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
+        (name: "Noir", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
+        (name: "Process", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
+        (name: "Tonal", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
         (name: "Transfer", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false),
 
         // 4. CompositeOperation
@@ -372,7 +372,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
             case "ColorControls":
                 let inputSaturation: CGFloat = d.option["saturation"] ?? ColorControls.defaultInputSaturation
                 let inputBrightness: CGFloat = d.option["brightness"] ?? ColorControls.defaultInputBrightness
-                let inputContrast:   CGFloat = d.option["contrast"] ?? ColorControls.defaultInputContrast
+                let inputContrast: CGFloat = d.option["contrast"] ?? ColorControls.defaultInputContrast
                 filter = filter |>> ColorControls.filter(inputSaturation: inputSaturation, inputBrightness: inputBrightness, inputContrast: inputContrast)
             case "ColorMatrix":
                 let rVectorR: CGFloat = d.option["rVectorR"] ?? 1.0
@@ -563,28 +563,28 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
 
             // Photo Effect
             case "Chrome":
-                let alpha = d.option["alpha"]!
+                let alpha = d.option["alpha"] ?? 1.0
                 filter = filter |>> PhotoEffect.chrome(alpha: alpha)
             case "Fade":
-                let alpha = d.option["alpha"]!
+                let alpha = d.option["alpha"] ?? 1.0
                 filter = filter |>> PhotoEffect.fade(alpha: alpha)
             case "Instant":
-                let alpha = d.option["alpha"]!
+                let alpha = d.option["alpha"] ?? 1.0
                 filter = filter |>> PhotoEffect.instant(alpha: alpha)
             case "Mono":
-                let alpha = d.option["alpha"]!
+                let alpha = d.option["alpha"] ?? 1.0
                 filter = filter |>> PhotoEffect.mono(alpha: alpha)
             case "Noir":
-                let alpha = d.option["alpha"]!
+                let alpha = d.option["alpha"] ?? 1.0
                 filter = filter |>> PhotoEffect.noir(alpha: alpha)
             case "Process":
-                let alpha = d.option["alpha"]!
+                let alpha = d.option["alpha"] ?? 1.0
                 filter = filter |>> PhotoEffect.process(alpha: alpha)
             case "Tonal":
-                let alpha = d.option["alpha"]!
+                let alpha = d.option["alpha"] ?? 1.0
                 filter = filter |>> PhotoEffect.tonal(alpha: alpha)
             case "Transfer":
-                let alpha = d.option["alpha"]!
+                let alpha = d.option["alpha"] ?? 1.0
                 filter = filter |>> PhotoEffect.transfer(alpha: alpha)
 
             // HalftoneEffect
@@ -834,7 +834,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CIFilterCell.defaultReuseIdentifier) as? CIFilterCell else {
-            fatalError()
+            fatalError() // swiftlint:disable:this fatal_error_message
         }
         cell.delegate = self
         cell.set(data: data[indexPath.row])
@@ -859,7 +859,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         let si = sourceIndexPath.row
         let di = proposedDestinationIndexPath.row
         let at: Int
-        if let movingData = movingData, let a = data.index(where: { d in return d.name == movingData.name }) {
+        if let movingData = movingData, let a = data.index(where: { $0.name == movingData.name }) {
             at = a
         } else {
             at = si
@@ -877,21 +877,27 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         tableView.reloadData()
     }
 
-    // MARK:- CIFilterCellDelegate
+    // MARK: - CIFilterCellDelegate
 
     func touchUpInsideDefaultButton(cell: CIFilterCell) {
-        guard let index = indexPath(for: cell)?.row else { return }
+        guard let index = indexPath(for: cell)?.row else {
+            return
+        }
         print(index)
     }
 
     func valueChangedSlider(cell: CIFilterCell, value: Float) {
-        guard let index = indexPath(for: cell)?.row else { return }
+        guard let index = indexPath(for: cell)?.row else {
+            return
+        }
         data[index].value = value
         filterListTableViewDelegate?.filterDidUpdate(tableView: self)
     }
 
     func valueChangedSwitch(cell: CIFilterCell, isOn: Bool) {
-        guard let index = indexPath(for: cell)?.row else { return }
+        guard let index = indexPath(for: cell)?.row else {
+            return
+        }
         data[index].isOn = isOn
         filterListTableViewDelegate?.filterDidUpdate(tableView: self)
     }

@@ -13,14 +13,12 @@ extension UIImage {
     ]
 
     static var nextSampleImage: UIImage {
-        get {
-            let i = UIImage(named: names[index])!
-            index += 1
-            if index == names.count {
-                index = 0
-            }
-            return i
+        let i = UIImage(named: names[index])! // swiftlint:disable:this force_unwrapping
+        index += 1
+        if index == names.count {
+            index = 0
         }
+        return i
     }
 
 }

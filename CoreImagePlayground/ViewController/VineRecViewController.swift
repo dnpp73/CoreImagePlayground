@@ -7,7 +7,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
     @IBOutlet private weak var cameraFinderView: CameraFinderView!
     @IBOutlet private weak var recButton: UIButton!
 
-    // MARK:- UIViewController
+    // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         SimpleCamera.shared.stopRunning()
     }
 
-    // MARK:- IBActions
+    // MARK: - IBActions
 
     @IBAction private func touchUpInsideScaleToFillButton(_ sender: UIButton) {
         cameraFinderView.contentMode = .scaleToFill
@@ -78,8 +78,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         case .equalDistance(let vertical, let horizontal):
             if vertical > 2 || horizontal > 2 {
                 cameraFinderView.gridType = .none
-            }
-            else {
+            } else {
                 cameraFinderView.gridType = .equalDistance(vertical: 8, horizontal: 8)
             }
         }
@@ -103,11 +102,15 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
     private func createAndConfigureAVAssetWriter() {
         do {
             let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-            guard let documentsDirectory = paths.first else { fatalError() }
+            guard let documentsDirectory = paths.first else {
+                return
+            }
             // let filePath = (documentsDirectory as NSString).appendingPathComponent("vine/tmp.mp4")
             let dateString = type(of: self).dateFormatter.string(from: Date())
-            let filePath = (((documentsDirectory as NSString).appendingPathComponent("vine") as NSString).appendingPathComponent(dateString) as NSString).appendingPathExtension("mp4")
-            let fileURL = URL(fileURLWithPath: filePath!)
+            let fileDir = (documentsDirectory as NSString).appendingPathComponent("vine")
+            let filePath = ((fileDir as NSString).appendingPathComponent(dateString) as NSString).appendingPathExtension("mp4")
+            let fileURL = URL(fileURLWithPath: filePath!) // swiftlint:disable:this force_unwrapping
+            try FileManager.default.createDirectory(atPath: fileDir, withIntermediateDirectories: false, attributes: nil)
             fileWriter = try AVAssetWriter(url: fileURL, fileType: AVFileType.mov)
         } catch let error /* as NSError */ {
             print(error)
@@ -118,7 +121,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
             AVVideoCodecKey: AVVideoCodecH264,
             AVVideoWidthKey: widthForVideoInput,
             AVVideoHeightKey: heightForVideoInput
-        ];
+        ]
         videoInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: videoOutputSettings)
         videoInput.expectsMediaDataInRealTime = true
         if fileWriter.canAdd(videoInput) {
@@ -138,7 +141,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         }
     }
 
-    // MARK:- SimpleCameraVideoOutputObservable
+    // MARK: - SimpleCameraVideoOutputObservable
 
     // (2160/3840)/(720/1280) == 1
 
@@ -165,8 +168,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
                 widthForVideoInput = d.width
                 heightForVideoInput = d.height
             }
-        }
-        else {
+        } else {
             write(sampleBuffer: sampleBuffer, isVideo: true)
         }
     }
@@ -178,7 +180,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         print(dropCount)
     }
 
-    // MARK:- SimpleCameraAudioOutputObservable
+    // MARK: - SimpleCameraAudioOutputObservable
 
     private var numberOfChannelsForAudioInput: Int = 1 {
         willSet {
@@ -202,13 +204,12 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
                 numberOfChannelsForAudioInput = Int(asbd.pointee.mChannelsPerFrame)
                 sampleRateForAudioInput = asbd.pointee.mSampleRate
             }
-        }
-        else {
+        } else {
             write(sampleBuffer: sampleBuffer, isVideo: false)
         }
     }
 
-    // MARK:-
+    // MARK: -
 
     private func write(sampleBuffer: CMSampleBuffer, isVideo: Bool) {
         if fileWriter.status == .failed {

@@ -13,7 +13,7 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     @IBOutlet private weak var sub2ImageView: UIImageView!
     @IBOutlet private weak var sub3ImageView: UIImageView!
 
-    @IBOutlet private weak var zoomLabel:  UILabel!
+    @IBOutlet private weak var zoomLabel: UILabel!
     @IBOutlet private weak var zoomSlider: UISlider!
 
     override func viewDidLoad() {
@@ -90,7 +90,7 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     }
 
     @IBAction private func touchUpInsideShotButton(_ sender: UIButton) {
-        SimpleCamera.shared.captureStillImageAsynchronously { (image: UIImage?, metadata: [String : Any]?) -> Void in
+        SimpleCamera.shared.captureStillImageAsynchronously { (image: UIImage?, metadata: [String: Any]?) -> Void in
             if let image = image, let metadata = metadata {
                 print(metadata)
                 print("\(image), scale: \(image.scale), imageOrientation: \(image.imageOrientation.rawValue)")
@@ -100,7 +100,7 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     }
 
     @IBAction private func touchUpInsideSilentButton(_ sender: UIButton) {
-        SimpleCamera.shared.captureSilentImageAsynchronously { (image: UIImage?, metadata: [String : Any]?) -> Void in
+        SimpleCamera.shared.captureSilentImageAsynchronously { (image: UIImage?, metadata: [String: Any]?) -> Void in
             if let image = image, let metadata = metadata {
                 print(metadata)
                 print("\(image), scale: \(image.scale), imageOrientation: \(image.imageOrientation.rawValue)")
@@ -155,7 +155,7 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
         sub3ImageView.image  = nil
     }
 
-    @IBAction func handleCaptureVideoPreviewViewTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
+    @IBAction private func handleCaptureVideoPreviewViewTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         // print(#function)
     }
 
@@ -166,12 +166,12 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     private var dropCount: UInt64 = 0
 
     func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        var limitSize = sub3ImageView.bounds.size
-        let scale = UIScreen.main.scale // iPhone 7 Plus において UIScreen.main.scale は 3.0 で UIScreen.main.nativeScale は 2.60869565217391
-        limitSize.width  *= scale
-        limitSize.height *= scale
-        let image = createUIImage(from: sampleBuffer, limitSize: limitSize, imageOrientation: SimpleCamera.shared.preferredUIImageOrientationForVideoOutput)
         onMainThread {
+            var limitSize = self.sub3ImageView.bounds.size
+            let scale = UIScreen.main.scale // iPhone 7 Plus において UIScreen.main.scale は 3.0 で UIScreen.main.nativeScale は 2.60869565217391
+            limitSize.width  *= scale
+            limitSize.height *= scale
+            let image = createUIImage(from: sampleBuffer, limitSize: limitSize, imageOrientation: SimpleCamera.shared.preferredUIImageOrientationForVideoOutput)
             self.sub3ImageView.image = image
         }
     }

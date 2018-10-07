@@ -116,9 +116,9 @@ final class CIGeneratorListTableView: UITableView, UITableViewDelegate, UITableV
             }
         }
 
-        let barcodeData: Data = "Sample Text Data".data(using: .ascii)!
+        let barcodeData: Data = "Sample Text Data".data(using: .ascii)! // swiftlint:disable:this force_unwrapping
 
-        var image: CIImage? = nil
+        var image: CIImage?
         formatted.forEach { d in
             switch d.name {
             case "Checkerboard":
@@ -297,28 +297,34 @@ final class CIGeneratorListTableView: UITableView, UITableViewDelegate, UITableV
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CIFilterCell.defaultReuseIdentifier) as? CIFilterCell else {
-            fatalError()
+            fatalError() // swiftlint:disable:this fatal_error_message
         }
         cell.delegate = self
         cell.set(data: data[indexPath.row])
         return cell
     }
 
-    // MARK:- CIFilterCellDelegate
+    // MARK: - CIFilterCellDelegate
 
     func touchUpInsideDefaultButton(cell: CIFilterCell) {
-        guard let index = indexPath(for: cell)?.row else { return }
+        guard let index = indexPath(for: cell)?.row else {
+            return
+        }
         print(index)
     }
 
     func valueChangedSlider(cell: CIFilterCell, value: Float) {
-        guard let index = indexPath(for: cell)?.row else { return }
+        guard let index = indexPath(for: cell)?.row else {
+            return
+        }
         data[index].value = value
         generatorListTableViewDelegate?.imageDidUpdate(tableView: self)
     }
 
     func valueChangedSwitch(cell: CIFilterCell, isOn: Bool) {
-        guard let index = indexPath(for: cell)?.row else { return }
+        guard let index = indexPath(for: cell)?.row else {
+            return
+        }
         data[index].isOn = isOn
         generatorListTableViewDelegate?.imageDidUpdate(tableView: self)
     }

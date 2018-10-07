@@ -12,12 +12,16 @@ extension UIView {
         }
     }
 
-    @IBInspectable dynamic var borderColor: UIColor {
+    @IBInspectable dynamic var borderColor: UIColor? {
         get {
-            return UIColor(cgColor:layer.borderColor!)
+            if let cgColor = layer.borderColor {
+                return UIColor(cgColor: cgColor)
+            } else {
+                return nil
+            }
         }
         set {
-            layer.borderColor = newValue.cgColor
+            layer.borderColor = newValue?.cgColor
         }
     }
 
