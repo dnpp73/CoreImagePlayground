@@ -465,7 +465,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                 let inputAmount: CGFloat? = d.option["inputAmount"]
                 filter = filter |>> Vibrance.filter(inputAmount: inputAmount)
             case "WhitePointAdjust":
-                // TODO
+                #warning("TODO")
                 let inputColor: CIColor? = nil
                 filter = filter |>> WhitePointAdjust.filter(inputColor: inputColor)
 
