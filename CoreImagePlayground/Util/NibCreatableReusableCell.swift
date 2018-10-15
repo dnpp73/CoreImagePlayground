@@ -16,7 +16,7 @@ extension NibCreatableReusableCell where Self: UIView {
     }
 
     static private var className: String {
-        return NSStringFromClass(self).components(separatedBy: ".").last!
+        return NSStringFromClass(self).components(separatedBy: ".").last! // swiftlint:disable:this force_unwrapping
     }
 
 }

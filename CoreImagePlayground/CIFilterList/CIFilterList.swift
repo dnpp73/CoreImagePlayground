@@ -506,15 +506,15 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                 let b = CrossPolynomialCoefficients(a0: bA0, a1: bA1, a2: bA2, a3: bA3, a4: bA4, a5: bA5, a6: bA6, a7: bA7, a8: bA8, a9: bA9)
                 filter = filter |>> ColorCrossPolynomial.filter(inputRedCoefficients: r, inputGreenCoefficients: g, inputBlueCoefficients: b)
             case "ColorCube":
-                // TODO
+                #warning("TODO")
                 break
             case "ColorCubeWithColorSpace":
-                // TODO
+                #warning("TODO")
                 break
             case "CIColorInvert":
                 filter = filter |>> ColorInvert.filter
             case "ColorMap":
-                // TODO
+                #warning("TODO")
                 break
             case "ColorMonochrome":
                 let colorR: CGFloat = d.option["colorR"] ?? 0.6
