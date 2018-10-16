@@ -10,17 +10,19 @@ final class PlayerControlView: NibCreatableView, PlayerControlDelegate {
         }
     }
 
-    weak var filterablePlayerView: FilterablePlayerView? {
+    weak var imageRenderer: AVPlayerBasedCIImageRenderer? {
         didSet {
-            filterablePlayerView?.delegate = self
+            imageRenderer?.delegate = self
         }
     }
+
+    weak var gpuImageView: UIView?
 
     private var player: PlayerControllable {
         if let playerView = playerView {
             return playerView
-        } else if let filterablePlayerView = filterablePlayerView {
-            return filterablePlayerView
+        } else if let imageRenderer = imageRenderer {
+            return imageRenderer
         } else {
             fatalError() // swiftlint:disable:this fatal_error_message
         }
@@ -117,7 +119,7 @@ final class PlayerControlView: NibCreatableView, PlayerControlDelegate {
             contentMode = .scaleToFill
         }
         playerView?.contentMode = contentMode
-        filterablePlayerView?.contentMode = contentMode
+        gpuImageView?.contentMode = contentMode
     }
 
     // MARK: - PlayerControlDelegate
