@@ -59,7 +59,7 @@ final class PlayerControlView: NibCreatableView, PlayerControlDelegate {
             player.rate = 1.0
 
         case prevButton:
-            player.seek(to: .zero, toleranceBefore: .zero, toleranceAfter: .zero)
+            player.seek(to: .zero, toleranceBefore: .zero, toleranceAfter: .zero, force: false, completionHandler: nil)
         case pauseButton:
             player.pause()
         case playButton:
@@ -88,7 +88,7 @@ final class PlayerControlView: NibCreatableView, PlayerControlDelegate {
 
         case timeSlider:
             let time = CMTime(seconds: (player.duration.seconds * Double(sender.value)), preferredTimescale: player.duration.timescale)
-            player.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero)
+            player.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero, force: false, completionHandler: nil)
             setCurrentTimeForLabel(time: time.seconds)
 
         case volumeSlider:
@@ -142,7 +142,7 @@ final class PlayerControlView: NibCreatableView, PlayerControlDelegate {
         // print(#function)
         // ここに来るときには rate は 0 になってる。
         // とりあえずデバッグに便利なので簡単にループ再生させとくけど、ここに来る前の rate がマイナスだったら…とか考えて保持しておいた方が良いのかもしれない。
-        player.seek(to: .zero, toleranceBefore: .zero, toleranceAfter: .zero) { success in
+        player.seek(to: .zero, toleranceBefore: .zero, toleranceAfter: .zero, force: false) { success in
             player.play()
         }
     }
