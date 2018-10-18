@@ -26,7 +26,7 @@ final class FilterablePlayerViewController: UIViewController, CIFilterListTableV
         if let fileURL = videoListTableView.fileURLs.first {
             let playerItem = AVPlayerItem(url: fileURL)
             imageRenderer.playerItem = playerItem
-            imageRenderer.play()
+            // imageRenderer.play()
         }
     }
 
