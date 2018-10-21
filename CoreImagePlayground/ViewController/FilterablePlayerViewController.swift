@@ -8,7 +8,7 @@ final class FilterablePlayerViewController: UIViewController, CIFilterListTableV
 
     private var imageRenderer: AVPlayerBasedCIImageRenderer!
 
-    @IBOutlet private weak var playerImageView: GPUCIImageView!
+    @IBOutlet private weak var playerImageView: GLCIImageView!
     @IBOutlet private weak var playerControlView: PlayerControlView!
 
     @IBOutlet private weak var videoListTableView: VideoListTableView!
