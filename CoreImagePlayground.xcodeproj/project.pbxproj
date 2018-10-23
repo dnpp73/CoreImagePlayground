@@ -49,6 +49,7 @@
 		EAC2109C1EA8BDB600D554D8 /* NibCreatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B27001EA8B24900E3F7E0 /* NibCreatableView.swift */; };
 		EAC2109D1EA8BDCA00D554D8 /* NibCreatableReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B26FF1EA8B24900E3F7E0 /* NibCreatableReusableCell.swift */; };
 		EAC2109E1EA8BDDF00D554D8 /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B26FE1EA8B24900E3F7E0 /* Dispatch.swift */; };
+		EAD90F8B217F4B640098F99F /* GPUCIImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD90F8A217F4B640098F99F /* GPUCIImageCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,7 @@
 		EA6B27231EA8B29600E3F7E0 /* DPFileListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPFileListViewController.m; sourceTree = "<group>"; };
 		EA6B27241EA8B29600E3F7E0 /* DPFileListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPFileListViewController.xib; sourceTree = "<group>"; };
 		EA6B272A1EA8B2EF00E3F7E0 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		EAD90F8A217F4B640098F99F /* GPUCIImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUCIImageCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 				EA6B26EB1EA8B09A00E3F7E0 /* FilterablePlayerViewController.swift */,
 				EA6B26E81EA8B09A00E3F7E0 /* CIImageCameraVRViewController.swift */,
 				EA6B26E51EA8B09A00E3F7E0 /* CIDetectorCameraViewController.swift */,
+				EAD90F8A217F4B640098F99F /* GPUCIImageCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				EA6B26DC1EA8AF1E00E3F7E0 /* CIGeneratorList.swift in Sources */,
 				EA6B26851EA89D4700E3F7E0 /* AppDelegate.swift in Sources */,
 				EA6B26F91EA8B09A00E3F7E0 /* OrientationViewController.swift in Sources */,
+				EAD90F8B217F4B640098F99F /* GPUCIImageCollectionViewController.swift in Sources */,
 				EA6B26F71EA8B09A00E3F7E0 /* CIImageTransformViewController.swift in Sources */,
 				EA6B26F61EA8B09A00E3F7E0 /* CIImageFilterViewController.swift in Sources */,
 				EA6B27281EA8B29600E3F7E0 /* DPFileListViewController.m in Sources */,

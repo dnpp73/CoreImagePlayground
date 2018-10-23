@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JQx-6o-h7j">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,7 +14,7 @@
             <objects>
                 <tableViewController id="L7P-zo-UlH" customClass="RootTableViewController" customModule="CoreImagePlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Vej-1i-O4J">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -278,11 +278,11 @@
                                         <rect key="frame" x="0.0" y="743" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L21-Oq-2B0" id="if6-hD-aMw">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CIDetector Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QFV-WY-cBO">
-                                                    <rect key="frame" x="15" y="0.0" width="364" height="43.666666666666664"/>
+                                                    <rect key="frame" x="20" y="0.0" width="356" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -302,11 +302,11 @@
                                         <rect key="frame" x="0.0" y="823" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Lc-WP-lRW" id="IYB-0W-Ily">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CIImage Camera VR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6q5-ZT-ea7">
-                                                    <rect key="frame" x="15" y="0.0" width="364" height="43.666666666666664"/>
+                                                    <rect key="frame" x="20" y="0.0" width="356" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -316,6 +316,30 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="f4k-Dr-LIW" kind="presentation" id="ksp-hM-p7z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Xoe-H6-ICk">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="7Bj-th-XjI" style="IBUITableViewCellStyleDefault" id="d5v-X7-NNg">
+                                        <rect key="frame" x="0.0" y="903" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d5v-X7-NNg" id="n3L-gb-NMb">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="GPUCIImageView in CollectionViewCell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Bj-th-XjI">
+                                                    <rect key="frame" x="20" y="0.0" width="356" height="43.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="GaO-b1-tFR" kind="show" id="9vl-xb-oV3"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -337,7 +361,7 @@
             <objects>
                 <navigationController id="JQx-6o-h7j" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Ni9-Su-QDF">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -357,7 +381,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UZ7-sF-ib6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="v45-rz-K3o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dex-hl-FP2" customClass="AVCaptureVideoPreviewView" customModule="SimpleCamera">
@@ -381,7 +405,7 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ie1-5o-M6T" userLabel="Sub 1 Image View">
-                                <rect key="frame" x="20" y="376" width="90" height="160"/>
+                                <rect key="frame" x="20" y="478" width="90" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="QvZ-iZ-ETK"/>
@@ -389,7 +413,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TkA-bB-n6B" userLabel="Sub 2 Image View">
-                                <rect key="frame" x="130" y="376" width="90" height="160"/>
+                                <rect key="frame" x="130" y="478" width="90" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="Jc2-g9-iGQ"/>
@@ -397,7 +421,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aur-iF-hTc" userLabel="Sub 3 Image View">
-                                <rect key="frame" x="240" y="376" width="90" height="160"/>
+                                <rect key="frame" x="240" y="478" width="90" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="NEp-MG-ohP"/>
@@ -405,7 +429,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBj-fA-NRt" userLabel="Buttons View">
-                                <rect key="frame" x="0.0" y="544" width="414" height="128"/>
+                                <rect key="frame" x="0.0" y="646" width="414" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vW-RV-pm8">
                                         <rect key="frame" x="10" y="10" width="77" height="30"/>
@@ -592,7 +616,7 @@
                         <viewControllerLayoutGuide type="bottom" id="KQ0-Mg-eYw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xRT-hM-3DP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VR6-RW-7ms" customClass="CameraFinderView" customModule="SimpleCamera">
@@ -603,7 +627,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZJ-Vf-ooj">
-                                <rect key="frame" x="0.0" y="542" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="644" width="414" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4h-QU-wua">
                                         <rect key="frame" x="8" y="8" width="84" height="30"/>
@@ -765,7 +789,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lA5-Ya-UfO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MJu-Ik-0ce">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Yhn-mR-pQq" customClass="CameraFinderView" customModule="SimpleCamera">
@@ -776,7 +800,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOG-pm-W9x">
-                                <rect key="frame" x="0.0" y="542" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="644" width="414" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDb-8m-4TV">
                                         <rect key="frame" x="8" y="8" width="84" height="30"/>
@@ -939,7 +963,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Xkx-PE-Dng"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aA3-hG-YPF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3pO-zU-Wm7" customClass="CameraFinderView" customModule="SimpleCamera">
@@ -950,7 +974,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsJ-c3-ZiE">
-                                <rect key="frame" x="0.0" y="542" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="644" width="414" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBo-5J-Akb">
                                         <rect key="frame" x="8" y="8" width="84" height="30"/>
@@ -1114,11 +1138,11 @@
                         <viewControllerLayoutGuide type="bottom" id="nRd-VE-vCq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UMJ-Ge-EGW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWh-YG-dQw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="482"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Wrt-XB-aHy" customClass="GLCIImageView" customModule="GPUCIImageView">
                                         <rect key="frame" x="87" y="20" width="240" height="240"/>
@@ -1136,7 +1160,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dW7-po-I0e" userLabel="Buttons View">
-                                <rect key="frame" x="0.0" y="380" width="414" height="128"/>
+                                <rect key="frame" x="0.0" y="482" width="414" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8D-bq-jFG">
                                         <rect key="frame" x="8" y="8" width="50" height="32"/>
@@ -1353,7 +1377,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRY-aW-aMN" userLabel="Bottom Sliders View">
-                                <rect key="frame" x="0.0" y="516" width="414" height="156"/>
+                                <rect key="frame" x="0.0" y="618" width="414" height="156"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TvO-5X-1TR" userLabel="Tuning Sliders View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
@@ -1582,14 +1606,14 @@
                         <viewControllerLayoutGuide type="bottom" id="Vdc-mK-1Jn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZfJ-f0-J6p">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBL-Dp-HQ0" userLabel="Images View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="352"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="454"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEI-Sa-kzH" userLabel="OpenGL Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="352"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="454"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OpenGL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDJ-qy-bdZ">
                                                 <rect key="frame" x="8" y="8" width="122" height="15"/>
@@ -1601,11 +1625,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="lBD-h8-Gr4" customClass="GLCIImageView" customModule="GPUCIImageView">
-                                                <rect key="frame" x="0.0" y="31" width="138" height="238"/>
+                                                <rect key="frame" x="0.0" y="31" width="138" height="340"/>
                                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="XoE-dm-j4B">
-                                                <rect key="frame" x="8" y="277" width="122" height="29"/>
+                                                <rect key="frame" x="8" y="379" width="122" height="29"/>
                                                 <segments>
                                                     <segment>
                                                         <string key="title" base64-UTF8="YES">
@@ -1620,7 +1644,7 @@ EFNGaWxsA
                                                 </connections>
                                             </segmentedControl>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saQ-J9-VXr">
-                                                <rect key="frame" x="44.666666666666657" y="313" width="51" height="31"/>
+                                                <rect key="frame" x="44.666666666666657" y="415" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="valueChangedOpenGLSwitch:" destination="X1b-sk-ZME" eventType="valueChanged" id="aBm-eo-1Ys"/>
                                                 </connections>
@@ -1644,7 +1668,7 @@ EFNGaWxsA
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALt-3A-7AT" userLabel="UIKit Container View">
-                                        <rect key="frame" x="138" y="0.0" width="138" height="352"/>
+                                        <rect key="frame" x="138" y="0.0" width="138" height="454"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIImageView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Iu-Py-Eys">
                                                 <rect key="frame" x="8" y="8" width="122" height="15"/>
@@ -1656,11 +1680,11 @@ EFNGaWxsA
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="cNW-nz-Z7s">
-                                                <rect key="frame" x="0.0" y="31" width="138" height="238"/>
+                                                <rect key="frame" x="0.0" y="31" width="138" height="340"/>
                                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </imageView>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="11j-zb-9AG">
-                                                <rect key="frame" x="8" y="277" width="122" height="29"/>
+                                                <rect key="frame" x="8" y="379" width="122" height="29"/>
                                                 <segments>
                                                     <segment>
                                                         <string key="title" base64-UTF8="YES">
@@ -1675,7 +1699,7 @@ EFNGaWxsA
                                                 </connections>
                                             </segmentedControl>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mhH-Iv-a9j">
-                                                <rect key="frame" x="44.666666666666657" y="313" width="51" height="31"/>
+                                                <rect key="frame" x="44.666666666666657" y="415" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="valueChangedUIKitSwitch:" destination="X1b-sk-ZME" eventType="valueChanged" id="bli-TL-WCZ"/>
                                                 </connections>
@@ -1699,7 +1723,7 @@ EFNGaWxsA
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECW-ir-EYq" userLabel="Metal Container View">
-                                        <rect key="frame" x="276" y="0.0" width="138" height="352"/>
+                                        <rect key="frame" x="276" y="0.0" width="138" height="454"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6w-Bk-x1K">
                                                 <rect key="frame" x="8" y="8" width="122" height="15"/>
@@ -1711,11 +1735,11 @@ EFNGaWxsA
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8AW-dV-xbI">
-                                                <rect key="frame" x="0.0" y="31" width="138" height="238"/>
+                                                <rect key="frame" x="0.0" y="31" width="138" height="340"/>
                                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="VtH-sl-JPx">
-                                                <rect key="frame" x="8" y="277" width="122" height="29"/>
+                                                <rect key="frame" x="8" y="379" width="122" height="29"/>
                                                 <segments>
                                                     <segment>
                                                         <string key="title" base64-UTF8="YES">
@@ -1730,7 +1754,7 @@ EFNGaWxsA
                                                 </connections>
                                             </segmentedControl>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-GC-0pc">
-                                                <rect key="frame" x="44.666666666666686" y="313" width="51" height="31"/>
+                                                <rect key="frame" x="44.666666666666686" y="415" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="valueChangedMetalSwitch:" destination="X1b-sk-ZME" eventType="valueChanged" id="Vay-z1-ZYv"/>
                                                 </connections>
@@ -1772,7 +1796,7 @@ EFNGaWxsA
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yry-2M-RTK" customClass="CIFilterListTableView" customModule="CoreImagePlayground" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="352" width="414" height="320"/>
+                                <rect key="frame" x="0.0" y="454" width="414" height="320"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="750" constant="320" id="wHS-dL-APo"/>
@@ -1817,7 +1841,7 @@ EFNGaWxsA
                         <viewControllerLayoutGuide type="bottom" id="eVS-NG-vqM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="C5v-6x-AUt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="245-2A-AZj">
@@ -1870,7 +1894,7 @@ EFNGaWxsA
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mLQ-He-IUN" customClass="VideoListTableView" customModule="CoreImagePlayground" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="414" width="414" height="258"/>
+                                <rect key="frame" x="0.0" y="414" width="414" height="360"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -1915,7 +1939,7 @@ EFNGaWxsA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8j1-hr-YAr" customClass="GLCIImageView" customModule="GPUCIImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="341"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -1923,7 +1947,7 @@ EFNGaWxsA
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-ZV-Sqi">
-                                <rect key="frame" x="0.0" y="285" width="667" height="90"/>
+                                <rect key="frame" x="0.0" y="251" width="667" height="90"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="jdx-xB-FLG">
                                         <rect key="frame" x="8" y="8" width="651" height="29"/>
@@ -2030,7 +2054,7 @@ EFNGaWxsA
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXi-7x-1ZI">
-                                <rect key="frame" x="10" y="10" width="30" height="28"/>
+                                <rect key="frame" x="10" y="54" width="30" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="X"/>
                                 <connections>
@@ -2084,7 +2108,7 @@ EFNGaWxsA
                         <viewControllerLayoutGuide type="bottom" id="PP9-U1-WaO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5wc-hM-awU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="AWd-Lc-BoZ" customClass="GLCIImageView" customModule="GPUCIImageView">
@@ -2119,15 +2143,15 @@ EFNGaWxsA
                         <viewControllerLayoutGuide type="bottom" id="VBm-ea-oBK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fDf-Sa-Jx6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsA-lH-gGg" customClass="GLCIImageView" customModule="GPUCIImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="412"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZKq-QL-rYW" customClass="CIFilterListTableView" customModule="CoreImagePlayground" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="412" width="414" height="260"/>
+                                <rect key="frame" x="0.0" y="514" width="414" height="260"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="KSN-wN-vWP"/>
@@ -2163,7 +2187,7 @@ EFNGaWxsA
                         <viewControllerLayoutGuide type="bottom" id="g8y-og-ykT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="krU-gk-b76">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghb-3k-lRI" customClass="GLCIImageView" customModule="GPUCIImageView">
@@ -2174,14 +2198,14 @@ EFNGaWxsA
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V9-jM-D19">
-                                <rect key="frame" x="0.0" y="414" width="414" height="258"/>
+                                <rect key="frame" x="0.0" y="414" width="414" height="360"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="UDx-Ve-y9P" customClass="CIGeneratorListTableView" customModule="CoreImagePlayground" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="M2h-Wo-buT" customClass="CIFilterListTableView" customModule="CoreImagePlayground" customModuleProvider="target">
-                                        <rect key="frame" x="414" y="0.0" width="414" height="258"/>
+                                        <rect key="frame" x="414" y="0.0" width="414" height="360"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -2222,6 +2246,58 @@ EFNGaWxsA
             </objects>
             <point key="canvasLocation" x="1549.5999999999999" y="5104.4977511244379"/>
         </scene>
+        <!--GPUCIImageCell-->
+        <scene sceneID="rjr-1k-vCv">
+            <objects>
+                <collectionViewController title="GPUCIImageCell" id="GaO-b1-tFR" customClass="GPUCIImageCollectionViewController" customModule="CoreImagePlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" id="2Wu-pR-hUU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cy1-jb-TZA">
+                            <size key="itemSize" width="90" height="180"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" misplaced="YES" reuseIdentifier="GPUCIImageCell" id="SSb-DC-3Fi" customClass="GPUCIImageCell" customModule="CoreImagePlayground" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-Mf-Ftd">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="180"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zjf-Td-ahv" customClass="GPUCIImageView" customModule="GPUCIImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="180"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="imageView" destination="Zjf-Td-ahv" id="4Bb-Ke-Tmo"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="GaO-b1-tFR" id="skj-0Q-hqB"/>
+                            <outlet property="delegate" destination="GaO-b1-tFR" id="W3v-8o-WD9"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="86M-be-OEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2569.5652173913045" y="5102.6785714285716"/>
+        </scene>
         <!--Filterable Video Player-->
         <scene sceneID="oYE-i5-1N0">
             <objects>
@@ -2231,7 +2307,7 @@ EFNGaWxsA
                         <viewControllerLayoutGuide type="bottom" id="MIn-h3-sFq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fng-A6-XHJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zUH-hD-Z6f">
@@ -2266,14 +2342,14 @@ EFNGaWxsA
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWO-qo-SVJ">
-                                <rect key="frame" x="0.0" y="414" width="414" height="258"/>
+                                <rect key="frame" x="0.0" y="414" width="414" height="394"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="UU5-Ud-LlY" customClass="VideoListTableView" customModule="CoreImagePlayground" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="394"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Fqi-Hn-6Rb" customClass="CIFilterListTableView" customModule="CoreImagePlayground" customModuleProvider="target">
-                                        <rect key="frame" x="414" y="0.0" width="414" height="258"/>
+                                        <rect key="frame" x="414" y="0.0" width="414" height="394"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableView>
                                 </subviews>
