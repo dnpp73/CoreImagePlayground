@@ -859,7 +859,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         let si = sourceIndexPath.row
         let di = proposedDestinationIndexPath.row
         let at: Int
-        if let movingData = movingData, let a = data.index(where: { $0.name == movingData.name }) {
+        if let movingData = movingData, let a = data.firstIndex(where: { $0.name == movingData.name }) {
             at = a
         } else {
             at = si
