@@ -13,12 +13,15 @@ Sample App of
 
 ## Build
 
-```sh
-brew install swiftlint
+make repositories below
 
-brew install carthage
-
-carthage bootstrap --no-use-binaries --no-build --use-submodules --platform iOS
+```
+.
+├── CoreImagePlayground
+├── CIFilterExtension
+├── GPUCIImageView
+├── SimpleAVPlayer
+└── SimpleCamera
 ```
 
 
