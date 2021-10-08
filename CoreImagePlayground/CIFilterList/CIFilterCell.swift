@@ -2,7 +2,7 @@ import UIKit
 
 typealias FilterCellData = (name: String, key: String, defaultValue: Float, value: Float, min: Float, max: Float, isOn: Bool)
 
-protocol CIFilterCellDelegate: class {
+protocol CIFilterCellDelegate: AnyObject {
     func touchUpInsideDefaultButton(cell: CIFilterCell)
     func valueChangedSlider(cell: CIFilterCell, value: Float)
     func valueChangedSwitch(cell: CIFilterCell, isOn: Bool)

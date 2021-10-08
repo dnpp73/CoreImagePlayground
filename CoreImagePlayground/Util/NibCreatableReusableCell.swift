@@ -1,6 +1,6 @@
 import UIKit
 
-protocol NibCreatableReusableCell: class {
+protocol NibCreatableReusableCell: AnyObject {
     static func nibForRegisterTableView() -> UINib
     static var  defaultReuseIdentifier: String { get }
 }

@@ -1,7 +1,7 @@
 import UIKit
 import CIFilterExtension
 
-protocol CIFilterListTableViewDelegate: class {
+protocol CIFilterListTableViewDelegate: AnyObject {
     func filterDidUpdate(tableView: CIFilterListTableView)
 }
 

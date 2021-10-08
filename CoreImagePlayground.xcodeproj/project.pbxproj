@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19F80C4E27104CA000CE22F8 /* CIFilterExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C3427104B9C00CE22F8 /* CIFilterExtension.framework */; };
+		19F80C4F27104CA000CE22F8 /* CIFilterExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C3427104B9C00CE22F8 /* CIFilterExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		19F80C5027104CA000CE22F8 /* GPUCIImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C4027104BC800CE22F8 /* GPUCIImageView.framework */; };
+		19F80C5127104CA000CE22F8 /* GPUCIImageView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C4027104BC800CE22F8 /* GPUCIImageView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		19F80C5227104CA000CE22F8 /* SimpleAVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C4627104BCE00CE22F8 /* SimpleAVPlayer.framework */; };
+		19F80C5327104CA000CE22F8 /* SimpleAVPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C4627104BCE00CE22F8 /* SimpleAVPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		19F80C5427104CA000CE22F8 /* SimpleCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C4C27104BD600CE22F8 /* SimpleCamera.framework */; };
+		19F80C5527104CA000CE22F8 /* SimpleCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C4C27104BD600CE22F8 /* SimpleCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA6B26851EA89D4700E3F7E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B26841EA89D4700E3F7E0 /* AppDelegate.swift */; };
 		EA6B268C1EA89D4700E3F7E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA6B268B1EA89D4700E3F7E0 /* Assets.xcassets */; };
 		EA6B268F1EA89D4700E3F7E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6B268D1EA89D4700E3F7E0 /* LaunchScreen.storyboard */; };
-		EA6B26B91EA8A23200E3F7E0 /* SimpleCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B26A51EA8A1EF00E3F7E0 /* SimpleCamera.framework */; };
-		EA6B26BA1EA8A23200E3F7E0 /* SimpleCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B26A51EA8A1EF00E3F7E0 /* SimpleCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EA6B26BD1EA8A23200E3F7E0 /* GPUCIImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B26AC1EA8A20C00E3F7E0 /* GPUCIImageView.framework */; };
-		EA6B26BE1EA8A23200E3F7E0 /* GPUCIImageView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B26AC1EA8A20C00E3F7E0 /* GPUCIImageView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EA6B26C11EA8A23200E3F7E0 /* CIFilterExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B26B21EA8A21000E3F7E0 /* CIFilterExtension.framework */; };
-		EA6B26C21EA8A23200E3F7E0 /* CIFilterExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B26B21EA8A21000E3F7E0 /* CIFilterExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EA6B26C51EA8A23200E3F7E0 /* SimpleAVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B26B81EA8A21400E3F7E0 /* SimpleAVPlayer.framework */; };
-		EA6B26C61EA8A23200E3F7E0 /* SimpleAVPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B26B81EA8A21400E3F7E0 /* SimpleAVPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA6B26CB1EA8AD4800E3F7E0 /* UIImage+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B26CA1EA8AD4800E3F7E0 /* UIImage+Sample.swift */; };
 		EA6B26CE1EA8ADD100E3F7E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6B26CD1EA8ADD100E3F7E0 /* Main.storyboard */; };
 		EA6B26D21EA8AE4D00E3F7E0 /* VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B26D01EA8AE4D00E3F7E0 /* VideoList.swift */; };
@@ -53,61 +53,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EA6B26A41EA8A1EF00E3F7E0 /* PBXContainerItemProxy */ = {
+		19F80C3327104B9C00CE22F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EA6B26A01EA8A1EF00E3F7E0 /* SimpleCamera.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EA5C8B6C1EA7357E00E5E016;
-			remoteInfo = SimpleCamera;
-		};
-		EA6B26AB1EA8A20C00E3F7E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA6B26A71EA8A20B00E3F7E0 /* GPUCIImageView.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 194C9EA31EA7B4C5007603B8;
-			remoteInfo = GPUCIImageView;
-		};
-		EA6B26B11EA8A21000E3F7E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA6B26AD1EA8A21000E3F7E0 /* CIFilterExtension.xcodeproj */;
+			containerPortal = 19F80C2F27104B9C00CE22F8 /* CIFilterExtension.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 194C9ED41EA7CC86007603B8;
 			remoteInfo = CIFilterExtension;
 		};
-		EA6B26B71EA8A21400E3F7E0 /* PBXContainerItemProxy */ = {
+		19F80C3F27104BC800CE22F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EA6B26B31EA8A21400E3F7E0 /* SimpleAVPlayer.xcodeproj */;
+			containerPortal = 19F80C3B27104BC800CE22F8 /* GPUCIImageView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 194C9EA31EA7B4C5007603B8;
+			remoteInfo = GPUCIImageView;
+		};
+		19F80C4527104BCE00CE22F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19F80C4127104BCE00CE22F8 /* SimpleAVPlayer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EA61FF2F1EA8962100CD2CC9;
 			remoteInfo = SimpleAVPlayer;
 		};
-		EA6B26BB1EA8A23200E3F7E0 /* PBXContainerItemProxy */ = {
+		19F80C4B27104BD600CE22F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EA6B26A01EA8A1EF00E3F7E0 /* SimpleCamera.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EA5C8B6B1EA7357E00E5E016;
+			containerPortal = 19F80C4727104BD600CE22F8 /* SimpleCamera.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EA5C8B6C1EA7357E00E5E016;
 			remoteInfo = SimpleCamera;
-		};
-		EA6B26BF1EA8A23200E3F7E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA6B26A71EA8A20B00E3F7E0 /* GPUCIImageView.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 194C9EA21EA7B4C4007603B8;
-			remoteInfo = GPUCIImageView;
-		};
-		EA6B26C31EA8A23200E3F7E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA6B26AD1EA8A21000E3F7E0 /* CIFilterExtension.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 194C9ED31EA7CC86007603B8;
-			remoteInfo = CIFilterExtension;
-		};
-		EA6B26C71EA8A23200E3F7E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA6B26B31EA8A21400E3F7E0 /* SimpleAVPlayer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EA61FF2E1EA8962100CD2CC9;
-			remoteInfo = SimpleAVPlayer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -118,10 +90,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EA6B26C21EA8A23200E3F7E0 /* CIFilterExtension.framework in Embed Frameworks */,
-				EA6B26BE1EA8A23200E3F7E0 /* GPUCIImageView.framework in Embed Frameworks */,
-				EA6B26C61EA8A23200E3F7E0 /* SimpleAVPlayer.framework in Embed Frameworks */,
-				EA6B26BA1EA8A23200E3F7E0 /* SimpleCamera.framework in Embed Frameworks */,
+				19F80C5127104CA000CE22F8 /* GPUCIImageView.framework in Embed Frameworks */,
+				19F80C5527104CA000CE22F8 /* SimpleCamera.framework in Embed Frameworks */,
+				19F80C5327104CA000CE22F8 /* SimpleAVPlayer.framework in Embed Frameworks */,
+				19F80C4F27104CA000CE22F8 /* CIFilterExtension.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +101,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		19F80C2F27104B9C00CE22F8 /* CIFilterExtension.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CIFilterExtension.xcodeproj; path = ../CIFilterExtension/CIFilterExtension.xcodeproj; sourceTree = "<group>"; };
+		19F80C3B27104BC800CE22F8 /* GPUCIImageView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUCIImageView.xcodeproj; path = ../GPUCIImageView/GPUCIImageView.xcodeproj; sourceTree = "<group>"; };
+		19F80C4127104BCE00CE22F8 /* SimpleAVPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimpleAVPlayer.xcodeproj; path = ../SimpleAVPlayer/SimpleAVPlayer.xcodeproj; sourceTree = "<group>"; };
+		19F80C4727104BD600CE22F8 /* SimpleCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimpleCamera.xcodeproj; path = ../SimpleCamera/SimpleCamera.xcodeproj; sourceTree = "<group>"; };
 		EA6B26811EA89D4700E3F7E0 /* CoreImagePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreImagePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6B26841EA89D4700E3F7E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA6B268B1EA89D4700E3F7E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,14 +112,8 @@
 		EA6B26901EA89D4700E3F7E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6B26991EA89DCD00E3F7E0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EA6B269A1EA89DCD00E3F7E0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		EA6B269B1EA89DDC00E3F7E0 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		EA6B269C1EA89DED00E3F7E0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		EA6B269D1EA89DED00E3F7E0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		EA6B269E1EA8A18500E3F7E0 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
-		EA6B26A01EA8A1EF00E3F7E0 /* SimpleCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimpleCamera.xcodeproj; path = Carthage/Checkouts/SimpleCamera/SimpleCamera.xcodeproj; sourceTree = "<group>"; };
-		EA6B26A71EA8A20B00E3F7E0 /* GPUCIImageView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUCIImageView.xcodeproj; path = Carthage/Checkouts/GPUCIImageView/GPUCIImageView.xcodeproj; sourceTree = "<group>"; };
-		EA6B26AD1EA8A21000E3F7E0 /* CIFilterExtension.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CIFilterExtension.xcodeproj; path = Carthage/Checkouts/CIFilterExtension/CIFilterExtension.xcodeproj; sourceTree = "<group>"; };
-		EA6B26B31EA8A21400E3F7E0 /* SimpleAVPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimpleAVPlayer.xcodeproj; path = Carthage/Checkouts/SimpleAVPlayer/SimpleAVPlayer.xcodeproj; sourceTree = "<group>"; };
 		EA6B26CA1EA8AD4800E3F7E0 /* UIImage+Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Sample.swift"; sourceTree = "<group>"; };
 		EA6B26CD1EA8ADD100E3F7E0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EA6B26D01EA8AE4D00E3F7E0 /* VideoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoList.swift; sourceTree = "<group>"; };
@@ -194,25 +164,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA6B26C11EA8A23200E3F7E0 /* CIFilterExtension.framework in Frameworks */,
-				EA6B26BD1EA8A23200E3F7E0 /* GPUCIImageView.framework in Frameworks */,
-				EA6B26C51EA8A23200E3F7E0 /* SimpleAVPlayer.framework in Frameworks */,
-				EA6B26B91EA8A23200E3F7E0 /* SimpleCamera.framework in Frameworks */,
+				19F80C5027104CA000CE22F8 /* GPUCIImageView.framework in Frameworks */,
+				19F80C5427104CA000CE22F8 /* SimpleCamera.framework in Frameworks */,
+				19F80C5227104CA000CE22F8 /* SimpleAVPlayer.framework in Frameworks */,
+				19F80C4E27104CA000CE22F8 /* CIFilterExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19F80C3027104B9C00CE22F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19F80C3427104B9C00CE22F8 /* CIFilterExtension.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19F80C3C27104BC800CE22F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19F80C4027104BC800CE22F8 /* GPUCIImageView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19F80C4227104BCE00CE22F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19F80C4627104BCE00CE22F8 /* SimpleAVPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19F80C4827104BD600CE22F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19F80C4C27104BD600CE22F8 /* SimpleCamera.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19F80C4D27104CA000CE22F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA6B26781EA89D4700E3F7E0 = {
 			isa = PBXGroup;
 			children = (
-				EA6B26A61EA8A1FA00E3F7E0 /* submodules */,
 				EA6B26981EA89DB700E3F7E0 /* dotfiles */,
 				EA6B26971EA89DAB00E3F7E0 /* Dependency */,
 				EA6B26961EA89D9D00E3F7E0 /* Documentation */,
 				EA6B26831EA89D4700E3F7E0 /* CoreImagePlayground */,
 				EA6B26821EA89D4700E3F7E0 /* Products */,
+				19F80C4D27104CA000CE22F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,8 +266,10 @@
 		EA6B26971EA89DAB00E3F7E0 /* Dependency */ = {
 			isa = PBXGroup;
 			children = (
-				EA6B269B1EA89DDC00E3F7E0 /* Cartfile */,
-				EA6B269E1EA8A18500E3F7E0 /* Cartfile.resolved */,
+				19F80C2F27104B9C00CE22F8 /* CIFilterExtension.xcodeproj */,
+				19F80C3B27104BC800CE22F8 /* GPUCIImageView.xcodeproj */,
+				19F80C4127104BCE00CE22F8 /* SimpleAVPlayer.xcodeproj */,
+				19F80C4727104BD600CE22F8 /* SimpleCamera.xcodeproj */,
 			);
 			name = Dependency;
 			sourceTree = "<group>";
@@ -270,49 +281,6 @@
 				EA6B269A1EA89DCD00E3F7E0 /* .swiftlint.yml */,
 			);
 			name = dotfiles;
-			sourceTree = "<group>";
-		};
-		EA6B26A11EA8A1EF00E3F7E0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EA6B26A51EA8A1EF00E3F7E0 /* SimpleCamera.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EA6B26A61EA8A1FA00E3F7E0 /* submodules */ = {
-			isa = PBXGroup;
-			children = (
-				EA6B26A01EA8A1EF00E3F7E0 /* SimpleCamera.xcodeproj */,
-				EA6B26A71EA8A20B00E3F7E0 /* GPUCIImageView.xcodeproj */,
-				EA6B26AD1EA8A21000E3F7E0 /* CIFilterExtension.xcodeproj */,
-				EA6B26B31EA8A21400E3F7E0 /* SimpleAVPlayer.xcodeproj */,
-			);
-			name = submodules;
-			sourceTree = "<group>";
-		};
-		EA6B26A81EA8A20B00E3F7E0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EA6B26AC1EA8A20C00E3F7E0 /* GPUCIImageView.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EA6B26AE1EA8A21000E3F7E0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EA6B26B21EA8A21000E3F7E0 /* CIFilterExtension.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EA6B26B41EA8A21400E3F7E0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EA6B26B81EA8A21400E3F7E0 /* SimpleAVPlayer.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		EA6B26CF1EA8AE4D00E3F7E0 /* VideoList */ = {
@@ -420,10 +388,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				EA6B26BC1EA8A23200E3F7E0 /* PBXTargetDependency */,
-				EA6B26C01EA8A23200E3F7E0 /* PBXTargetDependency */,
-				EA6B26C41EA8A23200E3F7E0 /* PBXTargetDependency */,
-				EA6B26C81EA8A23200E3F7E0 /* PBXTargetDependency */,
 			);
 			name = CoreImagePlayground;
 			productName = CoreImagePlayground;
@@ -437,7 +401,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = dnpp.org;
 				TargetAttributes = {
 					EA6B26801EA89D4700E3F7E0 = {
@@ -460,20 +424,20 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = EA6B26AE1EA8A21000E3F7E0 /* Products */;
-					ProjectRef = EA6B26AD1EA8A21000E3F7E0 /* CIFilterExtension.xcodeproj */;
+					ProductGroup = 19F80C3027104B9C00CE22F8 /* Products */;
+					ProjectRef = 19F80C2F27104B9C00CE22F8 /* CIFilterExtension.xcodeproj */;
 				},
 				{
-					ProductGroup = EA6B26A81EA8A20B00E3F7E0 /* Products */;
-					ProjectRef = EA6B26A71EA8A20B00E3F7E0 /* GPUCIImageView.xcodeproj */;
+					ProductGroup = 19F80C3C27104BC800CE22F8 /* Products */;
+					ProjectRef = 19F80C3B27104BC800CE22F8 /* GPUCIImageView.xcodeproj */;
 				},
 				{
-					ProductGroup = EA6B26B41EA8A21400E3F7E0 /* Products */;
-					ProjectRef = EA6B26B31EA8A21400E3F7E0 /* SimpleAVPlayer.xcodeproj */;
+					ProductGroup = 19F80C4227104BCE00CE22F8 /* Products */;
+					ProjectRef = 19F80C4127104BCE00CE22F8 /* SimpleAVPlayer.xcodeproj */;
 				},
 				{
-					ProductGroup = EA6B26A11EA8A1EF00E3F7E0 /* Products */;
-					ProjectRef = EA6B26A01EA8A1EF00E3F7E0 /* SimpleCamera.xcodeproj */;
+					ProductGroup = 19F80C4827104BD600CE22F8 /* Products */;
+					ProjectRef = 19F80C4727104BD600CE22F8 /* SimpleCamera.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -484,32 +448,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		EA6B26A51EA8A1EF00E3F7E0 /* SimpleCamera.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SimpleCamera.framework;
-			remoteRef = EA6B26A41EA8A1EF00E3F7E0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EA6B26AC1EA8A20C00E3F7E0 /* GPUCIImageView.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GPUCIImageView.framework;
-			remoteRef = EA6B26AB1EA8A20C00E3F7E0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EA6B26B21EA8A21000E3F7E0 /* CIFilterExtension.framework */ = {
+		19F80C3427104B9C00CE22F8 /* CIFilterExtension.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CIFilterExtension.framework;
-			remoteRef = EA6B26B11EA8A21000E3F7E0 /* PBXContainerItemProxy */;
+			remoteRef = 19F80C3327104B9C00CE22F8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EA6B26B81EA8A21400E3F7E0 /* SimpleAVPlayer.framework */ = {
+		19F80C4027104BC800CE22F8 /* GPUCIImageView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUCIImageView.framework;
+			remoteRef = 19F80C3F27104BC800CE22F8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		19F80C4627104BCE00CE22F8 /* SimpleAVPlayer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SimpleAVPlayer.framework;
-			remoteRef = EA6B26B71EA8A21400E3F7E0 /* PBXContainerItemProxy */;
+			remoteRef = 19F80C4527104BCE00CE22F8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		19F80C4C27104BD600CE22F8 /* SimpleCamera.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SimpleCamera.framework;
+			remoteRef = 19F80C4B27104BD600CE22F8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -586,29 +550,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		EA6B26BC1EA8A23200E3F7E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SimpleCamera;
-			targetProxy = EA6B26BB1EA8A23200E3F7E0 /* PBXContainerItemProxy */;
-		};
-		EA6B26C01EA8A23200E3F7E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GPUCIImageView;
-			targetProxy = EA6B26BF1EA8A23200E3F7E0 /* PBXContainerItemProxy */;
-		};
-		EA6B26C41EA8A23200E3F7E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CIFilterExtension;
-			targetProxy = EA6B26C31EA8A23200E3F7E0 /* PBXContainerItemProxy */;
-		};
-		EA6B26C81EA8A23200E3F7E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SimpleAVPlayer;
-			targetProxy = EA6B26C71EA8A23200E3F7E0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		EA6B268D1EA89D4700E3F7E0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -647,6 +588,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -670,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -706,6 +648,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -723,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

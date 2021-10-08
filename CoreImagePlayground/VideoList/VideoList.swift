@@ -1,6 +1,6 @@
 import UIKit
 
-protocol VideoListTableViewDelegate: class {
+protocol VideoListTableViewDelegate: AnyObject {
     func didSelect(tableView: VideoListTableView, fileURL: URL)
 }
 

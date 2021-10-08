@@ -1,7 +1,7 @@
 import UIKit
 import CIFilterExtension
 
-protocol CIGeneratorListTableViewDelegate: class {
+protocol CIGeneratorListTableViewDelegate: AnyObject {
     func imageDidUpdate(tableView: CIGeneratorListTableView)
 }
 
