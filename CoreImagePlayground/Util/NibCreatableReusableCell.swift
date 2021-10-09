@@ -8,15 +8,15 @@ protocol NibCreatableReusableCell: AnyObject {
 extension NibCreatableReusableCell where Self: UIView {
 
     static func nibForRegisterTableView() -> UINib {
-        return UINib(nibName: className, bundle: Bundle.main)
+        UINib(nibName: className, bundle: Bundle.main)
     }
 
     static var defaultReuseIdentifier: String {
-        return className
+        className
     }
 
-    static private var className: String {
-        return NSStringFromClass(self).components(separatedBy: ".").last! // swiftlint:disable:this force_unwrapping
+    private static var className: String {
+        NSStringFromClass(self).components(separatedBy: ".").last! // swiftlint:disable:this force_unwrapping
     }
 
 }

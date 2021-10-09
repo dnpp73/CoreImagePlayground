@@ -4,7 +4,7 @@ import AVFoundation
 
 final class CameraUIViewController: UIViewController {
 
-    @IBOutlet private weak var cameraFinderView: CameraFinderView!
+    @IBOutlet private var cameraFinderView: CameraFinderView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +34,15 @@ final class CameraUIViewController: UIViewController {
         cameraFinderView.contentMode = .scaleAspectFill
     }
 
-    @IBAction private func touchUpInsidePreset1Button(_ sender: UIButton) {
+    @IBAction private func touchUpInsidePresetPhotoButton(_ sender: UIButton) {
         SimpleCamera.shared.setPhotoMode()
     }
 
-    @IBAction private func touchUpInsidePreset2Button(_ sender: UIButton) {
+    @IBAction private func touchUpInsidePresetMovieButton(_ sender: UIButton) {
         SimpleCamera.shared.setMovieMode()
     }
 
-    @IBAction private func touchUpInsidePreset3Button(_ sender: UIButton) {
+    @IBAction private func touchUpInsideSilentImageButton(_ sender: UIButton) {
         SimpleCamera.shared.captureSilentImageAsynchronously { (image: UIImage?, metadata: [String: Any]?) -> Void in
             if let image = image {
                 print(image)

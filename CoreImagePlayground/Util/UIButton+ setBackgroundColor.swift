@@ -13,7 +13,7 @@ extension UIButton {
 
     @IBInspectable dynamic var normalBackgroundColor: UIColor? {
         get {
-            return nil // dummy
+            nil // dummy
         }
         set {
             setBackgroundColor(newValue, for: .normal)
@@ -22,7 +22,7 @@ extension UIButton {
 
     @IBInspectable dynamic var highlightedBackgroundColor: UIColor? {
         get {
-            return nil // dummy
+            nil // dummy
         }
         set {
             setBackgroundColor(newValue, for: .highlighted)
@@ -31,7 +31,7 @@ extension UIButton {
 
     @IBInspectable dynamic var disabledBackgroundColor: UIColor? {
         get {
-            return nil // dummy
+            nil // dummy
         }
         set {
             setBackgroundColor(newValue, for: .disabled)

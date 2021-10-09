@@ -7,7 +7,7 @@ import CIFilterExtension
 
 final class CIDetectorCameraViewController: UIViewController {
 
-    @IBOutlet fileprivate weak var imageView: GLCIImageView!
+    @IBOutlet fileprivate var imageView: MTCIImageView!
     fileprivate var detector: CIDetector?
 
     override func viewDidLoad() {
@@ -32,27 +32,27 @@ final class CIDetectorCameraViewController: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
+        .portrait
     }
 
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return .portrait
+        .portrait
     }
 
     override var shouldAutorotate: Bool {
-        return false
+        false
     }
 
     override var prefersStatusBarHidden: Bool {
-        return false
+        false
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        .default
     }
 
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
+        .slide
     }
 
     fileprivate var dropCount: UInt64 = 0

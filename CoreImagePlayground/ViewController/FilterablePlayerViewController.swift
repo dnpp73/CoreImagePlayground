@@ -6,13 +6,14 @@ import CIFilterExtension
 
 final class FilterablePlayerViewController: UIViewController, CIFilterListTableViewDelegate, VideoListTableViewDelegate, ImageRendererDelegate {
 
+    // swiftlint:disable:next implicitly_unwrapped_optional
     private var imageRenderer: AVPlayerBasedCIImageRenderer!
 
-    @IBOutlet private weak var playerImageView: GLCIImageView!
-    @IBOutlet private weak var playerControlView: PlayerControlView!
+    @IBOutlet private var playerImageView: MTCIImageView!
+    @IBOutlet private var playerControlView: PlayerControlView!
 
-    @IBOutlet private weak var videoListTableView: VideoListTableView!
-    @IBOutlet private weak var filterListTableView: CIFilterListTableView!
+    @IBOutlet private var videoListTableView: VideoListTableView!
+    @IBOutlet private var filterListTableView: CIFilterListTableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ final class FilterablePlayerViewController: UIViewController, CIFilterListTableV
     }
 
     @IBAction private func handlePlayerTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
-        playerControlView.isHidden = !playerControlView.isHidden
+        playerControlView.isHidden.toggle()
     }
 
     private func updateImage() {

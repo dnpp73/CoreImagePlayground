@@ -8,14 +8,14 @@ import GameController
 
 final class CIImageCameraVRViewController: UIViewController {
 
-    @IBOutlet fileprivate weak var imageView: GLCIImageView!
+    @IBOutlet fileprivate var imageView: MTCIImageView!
 
-    @IBOutlet private weak var controlsView: UIView!
-    @IBOutlet private weak var segmentedControl: UISegmentedControl!
-    @IBOutlet private weak var speedSlider: UISlider!
-    @IBOutlet private weak var speedLabel: UILabel!
-    @IBOutlet private weak var levelSlider: UISlider!
-    @IBOutlet private weak var levelLabel: UILabel!
+    @IBOutlet private var controlsView: UIView!
+    @IBOutlet private var segmentedControl: UISegmentedControl!
+    @IBOutlet private var speedSlider: UISlider!
+    @IBOutlet private var speedLabel: UILabel!
+    @IBOutlet private var levelSlider: UISlider!
+    @IBOutlet private var levelLabel: UILabel!
 
     fileprivate var detector: CIDetector?
 
@@ -63,27 +63,27 @@ final class CIImageCameraVRViewController: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeRight
+        .landscapeRight
     }
 
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return .landscapeRight
+        .landscapeRight
     }
 
     override var shouldAutorotate: Bool {
-        return false
+        false
     }
 
     override var prefersStatusBarHidden: Bool {
-        return true
+        true
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        .default
     }
 
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
+        .slide
     }
 
     // MARK: - IBActions
@@ -105,12 +105,13 @@ final class CIImageCameraVRViewController: UIViewController {
     }
 
     @IBAction private func handleTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
-        controlsView.isHidden = !controlsView.isHidden
+        controlsView.isHidden.toggle()
     }
 
     // MARK: - Notification
 
-    @objc private func handle(notification: Notification) {
+    @objc
+    private func handle(notification: Notification) {
         print(notification)
         if notification.name == .GCControllerDidConnect {
             if let gamepad = (notification.object as? GCController)?.gamepad {
@@ -133,7 +134,7 @@ final class CIImageCameraVRViewController: UIViewController {
                 return
             }
             if isPressed {
-                self.controlsView.isHidden = !self.controlsView.isHidden
+                self.controlsView.isHidden.toggle()
             }
         }
         gamepad.leftShoulder.pressedChangedHandler = { [weak self] (button: GCControllerButtonInput, value: Float, isPressed: Bool) -> Void in
@@ -200,7 +201,7 @@ final class CIImageCameraVRViewController: UIViewController {
     fileprivate func generateFilter(extent: CGRect) -> Filter {
         let factor = CGFloat(sin(date.timeIntervalSinceNow * Double(speedSlider.value)))
         let level = CGFloat(levelSlider.value)
-        let center = XYPosition(x: extent.midX + extent.width  * centerOffset.x,
+        let center = XYPosition(x: extent.midX + extent.width * centerOffset.x,
                                 y: extent.midY + extent.height * centerOffset.y)
 
         switch segmentedControl.selectedSegmentIndex {
@@ -228,7 +229,7 @@ final class CIImageCameraVRViewController: UIViewController {
         case 6:
             return GaussianBlur.filterWithClampAndCrop(inputRadius: 20.0 * level * (factor + 1.0) * 0.5)
         default:
-            return { image in return image }
+            return { image in image }
         }
     }
 
@@ -279,8 +280,8 @@ extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
         let leftRect  = CGRect(origin: CGPoint(x: margin * 0.5, y: margin * 0.5), size: halfSize)
         let rightRect = CGRect(origin: CGPoint(x: margin * 1.5 + halfSize.width, y: margin * 0.5), size: halfSize)
 
-        let dxLeft: CGFloat = leftRect.midX  - scaledImage.extent.midX
-        let dyLeft: CGFloat = leftRect.midY  - scaledImage.extent.midY
+        let dxLeft: CGFloat = leftRect.midX - scaledImage.extent.midX
+        let dyLeft: CGFloat = leftRect.midY - scaledImage.extent.midY
         let dxRight: CGFloat = rightRect.midX - scaledImage.extent.midX
         let dyRight: CGFloat = rightRect.midY - scaledImage.extent.midY
 

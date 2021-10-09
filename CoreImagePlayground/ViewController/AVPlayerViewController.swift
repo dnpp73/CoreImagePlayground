@@ -4,13 +4,13 @@ import AVFoundation
 
 final class AVPlayerViewController: UIViewController, VideoListTableViewDelegate {
 
-    @IBOutlet private weak var videoListTableView: VideoListTableView!
+    @IBOutlet private var videoListTableView: VideoListTableView!
 
-    @IBOutlet private weak var playerView: AVPlayerView!
-    @IBOutlet private weak var playerControlView: PlayerControlView!
+    @IBOutlet private var playerView: AVPlayerView!
+    @IBOutlet private var playerControlView: PlayerControlView!
 
-    @IBOutlet private weak var captureButton: UIButton!
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private var captureButton: UIButton!
+    @IBOutlet private var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

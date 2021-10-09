@@ -18,65 +18,42 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
                 return
             }
 
-            if let filteredCIImage = filteredCIImage {
-                if uikitSwitch.isOn {
-                    if let cgImage = ciContext.createCGImage(filteredCIImage, from: filteredCIImage.extent) {
-                        // let image = UIImage(cgImage: cgImage, scale: imageView.window!.screen.scale, orientation: image!.imageOrientation)
-                        let image = UIImage(cgImage: cgImage)
-                        imageView.image = image
-                    } else {
-                        print("cgImage is nil")
-                    }
-                }
-                if glciSwitch.isOn {
-                    glciImageView.image = filteredCIImage
-                }
-                if mtciSwitch.isOn {
-                    if #available(iOS 9.0, *) {
-                        if let mtciImageView = mtciView.subviews.first as? MTCIImageView {
-                            mtciImageView.image = filteredCIImage
-                        }
-                    }
-                }
-            } else {
+            guard let filteredCIImage = filteredCIImage else {
                 imageView.image = nil
-                glciImageView.image = nil
-                if #available(iOS 9.0, *) {
-                    if let mtciImageView = mtciView.subviews.first as? MTCIImageView {
-                        mtciImageView.image = nil
-                    }
+                mtciImageView.image = nil
+                return
+            }
+            if uikitSwitch.isOn {
+                if let cgImage = ciContext.createCGImage(filteredCIImage, from: filteredCIImage.extent) {
+                    // let image = UIImage(cgImage: cgImage, scale: imageView.window!.screen.scale, orientation: image!.imageOrientation)
+                    let image = UIImage(cgImage: cgImage)
+                    imageView.image = image
+                } else {
+                    print("cgImage is nil")
                 }
+            }
+            if mtciSwitch.isOn {
+                mtciImageView.image = filteredCIImage
             }
         }
     }
 
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var glciImageView: GLCIImageView!
-    @IBOutlet private weak var mtciView: UIView!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var mtciImageView: MTCIImageView!
 
-    @IBOutlet private weak var uikitSegmentedControl: UISegmentedControl!
-    @IBOutlet private weak var glciSegmentedControl: UISegmentedControl!
-    @IBOutlet private weak var mtciSegmentedControl: UISegmentedControl!
+    @IBOutlet private var uikitSegmentedControl: UISegmentedControl!
+    @IBOutlet private var mtciSegmentedControl: UISegmentedControl!
 
-    @IBOutlet private weak var uikitSwitch: UISwitch!
-    @IBOutlet private weak var glciSwitch: UISwitch!
-    @IBOutlet private weak var mtciSwitch: UISwitch!
+    @IBOutlet private var uikitSwitch: UISwitch!
+    @IBOutlet private var mtciSwitch: UISwitch!
 
-    @IBOutlet private weak var tableView: CIFilterListTableView!
+    @IBOutlet private var tableView: CIFilterListTableView!
 
     // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.filterListTableViewDelegate = self
-
-        if #available(iOS 9.0, *) {
-            let mtciImageView = MTCIImageView(frame: mtciView.bounds)
-            mtciImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            mtciImageView.contentMode = mtciView.contentMode
-            mtciView.addSubview(mtciImageView)
-        }
-
         reloadImage()
     }
 
@@ -90,34 +67,12 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
         if !uikitSwitch.isOn {
             imageView.image = image
         }
-        if !glciSwitch.isOn {
-            glciImageView.image = ciImage
-        }
         if !mtciSwitch.isOn {
-            if #available(iOS 9.0, *) {
-                if let mtciImageView = mtciView.subviews.first as? MTCIImageView {
-                    mtciImageView.image = ciImage
-                }
-            }
+            mtciImageView.image = ciImage
         }
     }
 
     // MARK: - IBActions
-
-    @IBAction private func valueChangedOpenGLSegmentedControl(_ sender: UISegmentedControl) {
-        let contentMode: UIView.ContentMode
-        switch sender.selectedSegmentIndex {
-        case 0:
-            contentMode = .scaleToFill
-        case 1:
-            contentMode = .scaleAspectFill
-        case 2:
-            contentMode = .scaleAspectFit
-        default:
-            return
-        }
-        glciImageView.contentMode = contentMode
-    }
 
     @IBAction private func valueChangedUIKitSegmentedControl(_ sender: UISegmentedControl) {
         let contentMode: UIView.ContentMode
@@ -135,25 +90,18 @@ final class CIImageFilterViewController: UIViewController, CIFilterListTableView
     }
 
     @IBAction private func valueChangedMetalSegmentedControl(_ sender: UISegmentedControl) {
-        if #available(iOS 9.0, *) {
-            if let mtciImageView = mtciView.subviews.first as? MTCIImageView {
-                let targetView = mtciImageView
-                switch sender.selectedSegmentIndex {
-                case 0:
-                    targetView.contentMode = .scaleToFill
-                case 1:
-                    targetView.contentMode = .scaleAspectFill
-                case 2:
-                    targetView.contentMode = .scaleAspectFit
-                default:
-                    break
-                }
-            }
+        let contentMode: UIView.ContentMode
+        switch sender.selectedSegmentIndex {
+        case 0:
+            contentMode = .scaleToFill
+        case 1:
+            contentMode = .scaleAspectFill
+        case 2:
+            contentMode = .scaleAspectFit
+        default:
+            return
         }
-    }
-
-    @IBAction private func valueChangedOpenGLSwitch(_ sender: UISwitch) {
-
+        mtciImageView.contentMode = contentMode
     }
 
     @IBAction private func valueChangedUIKitSwitch(_ sender: UISwitch) {

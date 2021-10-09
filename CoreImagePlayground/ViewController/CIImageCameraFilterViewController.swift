@@ -7,8 +7,8 @@ import GPUCIImageView
 
 final class CIImageCameraFilterViewController: UIViewController {
 
-    @IBOutlet fileprivate weak var imageView: GLCIImageView!
-    @IBOutlet fileprivate weak var tableView: CIFilterListTableView!
+    @IBOutlet fileprivate var imageView: MTCIImageView!
+    @IBOutlet fileprivate var tableView: CIFilterListTableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,27 +26,27 @@ final class CIImageCameraFilterViewController: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
+        .portrait
     }
 
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return .portrait
+        .portrait
     }
 
     override var shouldAutorotate: Bool {
-        return false
+        false
     }
 
     override var prefersStatusBarHidden: Bool {
-        return false
+        false
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        .default
     }
 
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
+        .slide
     }
 
     fileprivate var dropCount: UInt64 = 0

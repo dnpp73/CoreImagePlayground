@@ -309,7 +309,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
             }
         }
 
-        var filter: Filter = { image in return image }
+        var filter: Filter = { image in image }
         formatted.forEach { d in
             switch d.name {
             // Blur
@@ -507,15 +507,12 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
                 filter = filter |>> ColorCrossPolynomial.filter(inputRedCoefficients: r, inputGreenCoefficients: g, inputBlueCoefficients: b)
             case "ColorCube":
                 #warning("TODO")
-                break
             case "ColorCubeWithColorSpace":
                 #warning("TODO")
-                break
             case "CIColorInvert":
                 filter = filter |>> ColorInvert.filter
             case "ColorMap":
                 #warning("TODO")
-                break
             case "ColorMonochrome":
                 let colorR: CGFloat = d.option["colorR"] ?? 0.6
                 let colorG: CGFloat = d.option["colorG"] ?? 0.45
@@ -825,11 +822,11 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        data.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -842,15 +839,15 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
+        true
     }
 
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
+        .none
     }
 
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-        return false
+        false
     }
 
     private var movingData: FilterCellData?

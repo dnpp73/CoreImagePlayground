@@ -28,24 +28,24 @@ final class PlayerControlView: NibCreatableView, PlayerControlDelegate {
         }
     }
 
-    @IBOutlet private weak var timeLabelLeft: UILabel!
-    @IBOutlet private weak var timeLabelRight: UILabel!
-    @IBOutlet private weak var timeMinus10Button: UIButton!
-    @IBOutlet private weak var timePlus10Button: UIButton!
-    @IBOutlet private weak var timeSlider: UISlider!
+    @IBOutlet private var timeLabelLeft: UILabel!
+    @IBOutlet private var timeLabelRight: UILabel!
+    @IBOutlet private var timeMinus10Button: UIButton!
+    @IBOutlet private var timePlus10Button: UIButton!
+    @IBOutlet private var timeSlider: UISlider!
 
-    @IBOutlet private weak var volumeSlider: UISlider!
-    @IBOutlet private weak var volumeLabel: UILabel!
+    @IBOutlet private var volumeSlider: UISlider!
+    @IBOutlet private var volumeLabel: UILabel!
 
-    @IBOutlet private weak var rateSlider: UISlider!
-    @IBOutlet private weak var rateButton: UIButton!
+    @IBOutlet private var rateSlider: UISlider!
+    @IBOutlet private var rateButton: UIButton!
 
-    @IBOutlet private weak var prevButton: UIButton!
-    @IBOutlet private weak var pauseButton: UIButton!
-    @IBOutlet private weak var playButton: UIButton!
-    @IBOutlet private weak var nextButton: UIButton!
+    @IBOutlet private var prevButton: UIButton!
+    @IBOutlet private var pauseButton: UIButton!
+    @IBOutlet private var playButton: UIButton!
+    @IBOutlet private var nextButton: UIButton!
 
-    @IBOutlet private weak var contentModeSegmentedControl: UISegmentedControl!
+    @IBOutlet private var contentModeSegmentedControl: UISegmentedControl!
 
     @IBAction private func touchUpInsideButton(_ sender: UIButton) {
         switch sender {
@@ -169,7 +169,7 @@ final class PlayerControlView: NibCreatableView, PlayerControlDelegate {
     }
 
     private func updateTimeSliderValue() {
-        let progress = Float(player.currentTime.seconds/player.duration.seconds)
+        let progress = Float(player.currentTime.seconds / player.duration.seconds)
         timeSlider.value = min(max(progress, 0.0), 1.0)
     }
 

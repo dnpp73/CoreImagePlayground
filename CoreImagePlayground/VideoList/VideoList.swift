@@ -51,7 +51,7 @@ final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDat
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,7 +71,7 @@ final class VideoListTableView: UITableView, UITableViewDelegate, UITableViewDat
         }
         if indexPath.section == 0 {
             let pathComponents = fileURLs[indexPath.row].pathComponents
-            cell.label.text = "\(pathComponents[pathComponents.count-2])/\(pathComponents[pathComponents.count-1])"
+            cell.label.text = "\(pathComponents[pathComponents.count - 2])/\(pathComponents[pathComponents.count - 1])"
         } else if indexPath.section == 1 {
             cell.label.text = "Choose from Photo Library"
         }
@@ -109,5 +109,5 @@ extension VideoListTableView: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 final class VideoListCell: UITableViewCell {
-    @IBOutlet fileprivate weak var label: UILabel!
+    @IBOutlet fileprivate var label: UILabel!
 }

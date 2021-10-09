@@ -3,8 +3,8 @@ import SimpleCamera
 
 final class VideoRecViewController: UIViewController {
 
-    @IBOutlet private weak var cameraFinderView: CameraFinderView!
-    @IBOutlet private weak var recButton: UIButton!
+    @IBOutlet private var cameraFinderView: CameraFinderView!
+    @IBOutlet private var recButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

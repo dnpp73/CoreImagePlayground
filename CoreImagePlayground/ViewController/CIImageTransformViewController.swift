@@ -5,16 +5,16 @@ final class CIImageTransformViewController: UIViewController {
 
     private var image: CIImage = CIImage(image: UIImage.nextSampleImage)! // swiftlint:disable:this force_unwrapping
 
-    @IBOutlet private weak var imageView: GLCIImageView!
+    @IBOutlet private var imageView: MTCIImageView!
 
-    @IBOutlet private weak var tuningAngleSlider: UISlider!
-    @IBOutlet private weak var tuningAngleLabel: UILabel!
-    @IBOutlet private weak var scaleSlider: UISlider!
-    @IBOutlet private weak var scaleLabel: UILabel!
-    @IBOutlet private weak var xSlider: UISlider!
-    @IBOutlet private weak var xLabel: UILabel!
-    @IBOutlet private weak var ySlider: UISlider!
-    @IBOutlet private weak var yLabel: UILabel!
+    @IBOutlet private var tuningAngleSlider: UISlider!
+    @IBOutlet private var tuningAngleLabel: UILabel!
+    @IBOutlet private var scaleSlider: UISlider!
+    @IBOutlet private var scaleLabel: UILabel!
+    @IBOutlet private var xSlider: UISlider!
+    @IBOutlet private var xLabel: UILabel!
+    @IBOutlet private var ySlider: UISlider!
+    @IBOutlet private var yLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

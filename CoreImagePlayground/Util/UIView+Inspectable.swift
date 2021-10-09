@@ -4,7 +4,7 @@ extension UIView {
 
     @IBInspectable dynamic var cornerRadius: CGFloat {
         get {
-            return layer.cornerRadius
+            layer.cornerRadius
         }
         set {
             layer.cornerRadius = newValue
@@ -27,7 +27,7 @@ extension UIView {
 
     @IBInspectable dynamic var borderWidth: CGFloat {
         get {
-            return layer.borderWidth
+            layer.borderWidth
         }
         set {
             layer.borderWidth = newValue

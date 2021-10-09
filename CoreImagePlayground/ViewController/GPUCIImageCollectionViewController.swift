@@ -28,11 +28,11 @@ final class GPUCIImageCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 90
+        90
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -65,6 +65,7 @@ final class GPUCIImageCell: UICollectionViewCell, PlayerControlDelegate, ImageRe
 
     @IBOutlet private var imageView: GPUCIImageView!
 
+    // swiftlint:disable:next implicitly_unwrapped_optional
     fileprivate var imageRenderer: AVPlayerBasedCIImageRenderer!
 
     override func awakeFromNib() {

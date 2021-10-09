@@ -12,11 +12,11 @@ final class CIFilterCell: UITableViewCell {
 
     weak var delegate: CIFilterCellDelegate?
 
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var defaultButton: UIButton!
-    @IBOutlet private weak var slider: UISlider!
-    @IBOutlet private weak var valueLabel: UILabel!
-    @IBOutlet private weak var `switch`: UISwitch!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var defaultButton: UIButton!
+    @IBOutlet private var slider: UISlider!
+    @IBOutlet private var valueLabel: UILabel!
+    @IBOutlet private var `switch`: UISwitch!
     private var defaultValue: Float = 0.0
 
     @IBAction private func touchUpInsideDefaultButton(_ sender: UIButton) {

@@ -4,13 +4,13 @@ import GPUCIImageView
 
 final class CIFilterGeneratorViewController: UIViewController, CIGeneratorListTableViewDelegate, CIFilterListTableViewDelegate {
 
-    @IBOutlet private weak var imageView: GLCIImageView!
-    @IBOutlet private weak var generatorListTableView: CIGeneratorListTableView! {
+    @IBOutlet private var imageView: MTCIImageView!
+    @IBOutlet private var generatorListTableView: CIGeneratorListTableView! {
         didSet {
             generatorListTableView.generatorListTableViewDelegate = self
         }
     }
-    @IBOutlet private weak var filterListTableView: CIFilterListTableView! {
+    @IBOutlet private var filterListTableView: CIFilterListTableView! {
         didSet {
             filterListTableView.filterListTableViewDelegate = self
         }

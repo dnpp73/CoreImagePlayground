@@ -4,17 +4,14 @@ import AVFoundation
 
 final class OrientationViewController: UIViewController, SimpleCameraVideoOutputObservable {
 
-    @IBOutlet private weak var captureVideoPreviewView: AVCaptureVideoPreviewView!
+    @IBOutlet private var captureVideoPreviewView: AVCaptureVideoPreviewView!
 
-    @IBOutlet private weak var main1ImageView: UIImageView!
-    @IBOutlet private weak var main2ImageView: UIImageView!
+    @IBOutlet private var sub1ImageView: UIImageView!
+    @IBOutlet private var sub2ImageView: UIImageView!
+    @IBOutlet private var sub3ImageView: UIImageView!
 
-    @IBOutlet private weak var sub1ImageView: UIImageView!
-    @IBOutlet private weak var sub2ImageView: UIImageView!
-    @IBOutlet private weak var sub3ImageView: UIImageView!
-
-    @IBOutlet private weak var zoomLabel: UILabel!
-    @IBOutlet private weak var zoomSlider: UISlider!
+    @IBOutlet private var zoomLabel: UILabel!
+    @IBOutlet private var zoomSlider: UISlider!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,30 +34,31 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
+        .portrait
     }
 
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return .portrait
+        .portrait
     }
 
     override var shouldAutorotate: Bool {
-        return false
+        false
     }
 
     override var prefersStatusBarHidden: Bool {
-        return false
+        false
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        .default
     }
 
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
+        .slide
     }
 
-    @objc private func handle(notification: Notification) {
+    @objc
+    private func handle(notification: Notification) {
         if notification.name == UIDevice.orientationDidChangeNotification {
             switch UIDevice.current.orientation {
             case .landscapeLeft:
@@ -118,12 +116,12 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     }
 
     @IBAction private func touchUpInsideFollowToggleButton(_ sender: UIButton) {
-        SimpleCamera.shared.isFollowDeviceOrientationWhenCapture = !SimpleCamera.shared.isFollowDeviceOrientationWhenCapture
+        SimpleCamera.shared.isFollowDeviceOrientationWhenCapture.toggle()
         sender.setTitle("follow: \(SimpleCamera.shared.isFollowDeviceOrientationWhenCapture)", for: .normal)
     }
 
     @IBAction private func touchUpInsideMirroredToggleButton(_ sender: UIButton) {
-        SimpleCamera.shared.isMirroredImageIfFrontCamera = !SimpleCamera.shared.isMirroredImageIfFrontCamera
+        SimpleCamera.shared.isMirroredImageIfFrontCamera.toggle()
         sender.setTitle("mirrored: \(SimpleCamera.shared.isMirroredImageIfFrontCamera)", for: .normal)
     }
 
@@ -145,11 +143,6 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     }
 
     @IBAction private func touchUpInsideClearButton(_ sender: UIButton) {
-        main1ImageView.isHidden = true
-        main2ImageView.isHidden = true
-
-        main1ImageView.image = nil
-        main2ImageView.image = nil
         sub1ImageView.image  = nil
         sub2ImageView.image  = nil
         sub3ImageView.image  = nil
@@ -169,7 +162,7 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
         onMainThread {
             var limitSize = self.sub3ImageView.bounds.size
             let scale = UIScreen.main.scale // iPhone 7 Plus において UIScreen.main.scale は 3.0 で UIScreen.main.nativeScale は 2.60869565217391
-            limitSize.width  *= scale
+            limitSize.width *= scale
             limitSize.height *= scale
             let image = createUIImage(from: sampleBuffer, limitSize: limitSize, imageOrientation: SimpleCamera.shared.preferredUIImageOrientationForVideoOutput)
             self.sub3ImageView.image = image

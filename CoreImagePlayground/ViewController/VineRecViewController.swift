@@ -4,8 +4,8 @@ import AVFoundation
 
 final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObservable, SimpleCameraAudioOutputObservable {
 
-    @IBOutlet private weak var cameraFinderView: CameraFinderView!
-    @IBOutlet private weak var recButton: UIButton!
+    @IBOutlet private var cameraFinderView: CameraFinderView!
+    @IBOutlet private var recButton: UIButton!
 
     // MARK: - UIViewController
 
@@ -84,9 +84,11 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         }
     }
 
+    // swiftlint:disable implicitly_unwrapped_optional
     private var fileWriter: AVAssetWriter!
     private var videoInput: AVAssetWriterInput!
     private var audioInput: AVAssetWriterInput!
+    // swiftlint:enable implicitly_unwrapped_optional
 
     private var isRecording: Bool = false
 
