@@ -326,11 +326,11 @@
                                         <rect key="frame" x="0.0" y="886" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d5v-X7-NNg" id="n3L-gb-NMb">
-                                            <rect key="frame" x="0.0" y="0.0" width="357.33333333333331" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394.66666666666669" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="GPUCIImageView in CollectionViewCell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Bj-th-XjI">
-                                                    <rect key="frame" x="8" y="0.0" width="341.33333333333331" height="44"/>
+                                                    <rect key="frame" x="8" y="0.0" width="378.66666666666669" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -710,11 +710,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VR6-RW-7ms" customClass="CameraFinderView" customModule="SimpleCamera">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="VR6-RW-7ms" customClass="CameraFinderView" customModule="SimpleCamera">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="310.66666666666669"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VR6-RW-7ms" secondAttribute="height" multiplier="4:3" id="kw0-XV-0mT"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHw-bF-BnN">
+                                <rect key="frame" x="20" y="330.66666666666674" width="374" height="293.33333333333326"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eWr-Vx-3Yq">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="293.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u6G-xW-U8e">
+                                                <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="293.33333333333331"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcQ-Tr-9iz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="10.666666666666666"/>
+                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1RX-u9-egk">
+                                                        <rect key="frame" x="0.0" y="10.666666666666629" width="123.33333333333333" height="282.66666666666669"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pgS-EU-Zwl">
+                                                <rect key="frame" x="125.33333333333334" y="0.0" width="123.33333333333334" height="293.33333333333331"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Still" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DF-Ta-e1m">
+                                                        <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="10.666666666666666"/>
+                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mUJ-0q-A7v">
+                                                        <rect key="frame" x="0.0" y="10.666666666666629" width="123.33333333333333" height="282.66666666666669"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hCb-uy-iHq">
+                                                <rect key="frame" x="250.66666666666671" y="0.0" width="123.33333333333334" height="293.33333333333331"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFd-C0-wEm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="10.666666666666666"/>
+                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vdu-at-Utw">
+                                                        <rect key="frame" x="0.0" y="10.666666666666629" width="123.33333333333333" height="282.66666666666669"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstItem="eWr-Vx-3Yq" firstAttribute="leading" secondItem="UHw-bF-BnN" secondAttribute="leading" id="Egu-Ye-lQ1"/>
+                                    <constraint firstItem="eWr-Vx-3Yq" firstAttribute="top" secondItem="UHw-bF-BnN" secondAttribute="top" id="G8o-m9-fIl"/>
+                                    <constraint firstAttribute="bottom" secondItem="eWr-Vx-3Yq" secondAttribute="bottom" id="iDP-Re-9og"/>
+                                    <constraint firstAttribute="trailing" secondItem="eWr-Vx-3Yq" secondAttribute="trailing" id="wC7-yX-pHl"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZJ-Vf-ooj" userLabel="Buttons View">
@@ -771,14 +830,35 @@
                                                             <action selector="touchUpInsidePresetMovieButton:" destination="hh4-Ys-R18" eventType="touchUpInside" id="cpi-Z1-sUn"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-Zh-rXv">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qfs-AE-bUW">
                                                         <rect key="frame" x="0.0" y="92" width="119.33333333333333" height="38"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <state key="normal" title="Silent Image"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideSilentImageButton:" destination="hh4-Ys-R18" eventType="touchUpInside" id="reo-je-L5B"/>
-                                                        </connections>
-                                                    </button>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-Zh-rXv">
+                                                                <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="38"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <state key="normal" title="Photo"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsidePhotoImageButton:" destination="hh4-Ys-R18" eventType="touchUpInside" id="jCP-hi-ro7"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdH-Qa-GZJ">
+                                                                <rect key="frame" x="39.666666666666657" y="0.0" width="40" height="38"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <state key="normal" title="Still"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideStillImageButton:" destination="hh4-Ys-R18" eventType="touchUpInside" id="rVH-C4-nKw"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeK-Dt-Nz0">
+                                                                <rect key="frame" x="79.666666666666657" y="0.0" width="39.666666666666657" height="38"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <state key="normal" title="Silent"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideSilentImageButton:" destination="hh4-Ys-R18" eventType="touchUpInside" id="MMV-Hq-AoS"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZrQ-bu-b8k">
@@ -825,8 +905,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tZJ-Vf-ooj" firstAttribute="top" secondItem="UHw-bF-BnN" secondAttribute="bottom" constant="20" id="2Ca-tg-IuU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tZJ-Vf-ooj" secondAttribute="trailing" id="2QP-st-ZbM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UHw-bF-BnN" secondAttribute="trailing" id="372-xI-sVI"/>
+                            <constraint firstItem="UHw-bF-BnN" firstAttribute="leading" secondItem="xRT-hM-3DP" secondAttribute="leadingMargin" id="4CC-m6-7Va"/>
                             <constraint firstAttribute="trailing" secondItem="VR6-RW-7ms" secondAttribute="trailing" id="63s-lp-f8Z"/>
+                            <constraint firstItem="UHw-bF-BnN" firstAttribute="top" secondItem="VR6-RW-7ms" secondAttribute="bottom" constant="20" id="AgY-BP-VW7"/>
                             <constraint firstItem="KQ0-Mg-eYw" firstAttribute="top" secondItem="tZJ-Vf-ooj" secondAttribute="bottom" id="ZCz-Pl-2tP"/>
                             <constraint firstItem="VR6-RW-7ms" firstAttribute="leading" secondItem="xRT-hM-3DP" secondAttribute="leading" id="eLh-VL-WUa"/>
                             <constraint firstItem="tZJ-Vf-ooj" firstAttribute="leading" secondItem="xRT-hM-3DP" secondAttribute="leadingMargin" id="f0P-2d-gEc"/>
@@ -835,6 +919,9 @@
                     </view>
                     <connections>
                         <outlet property="cameraFinderView" destination="VR6-RW-7ms" id="Doh-fx-YUr"/>
+                        <outlet property="photoImageView" destination="1RX-u9-egk" id="Dmx-gT-JNJ"/>
+                        <outlet property="silentImageView" destination="vdu-at-Utw" id="8dy-R4-fTD"/>
+                        <outlet property="stillImageView" destination="mUJ-0q-A7v" id="MWL-DE-4rM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPX-GM-J7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
