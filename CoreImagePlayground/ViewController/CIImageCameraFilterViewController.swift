@@ -25,6 +25,16 @@ final class CIImageCameraFilterViewController: UIViewController {
         SimpleCamera.shared.stopRunning()
     }
 
+    fileprivate var limitSize: CGSize = .zero // メインスレッド外で UI 関連の部品に触られないように値を分離している
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        // メインスレッド外で UI 関連の部品に触られないように値を分離している
+        let screenScale: CGFloat = imageView.window?.screen.scale ?? 1.0
+        limitSize = imageView.bounds.size.applying(CGAffineTransform(scaleX: screenScale, y: screenScale))
+    }
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .portrait
     }
@@ -65,8 +75,6 @@ extension CIImageCameraFilterViewController: SimpleCameraVideoDataOutputObservab
         // let image = CIImage(cvImageBuffer: imageBuffer, options: nil)
         let image = CIImage(cvPixelBuffer: imageBuffer)
 
-        let screenScale: CGFloat = imageView.window?.screen.scale ?? 1.0
-        let limitSize = imageView.bounds.size.applying(CGAffineTransform(scaleX: screenScale, y: screenScale))
         let limitWidth  = limitSize.width
         let limitHeight = limitSize.height
         let imageWidth  = image.extent.width
