@@ -297,7 +297,13 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         (name: "???", key: "alpha", defaultValue: 1.0, value: 1.0, min: 0.0, max: 1.0, isOn: false)
     ]
 
-    var filter: Filter {
+    var filter: Filter = { $0 } {
+        didSet {
+            filterListTableViewDelegate?.filterDidUpdate(tableView: self)
+        }
+    }
+
+    private func calculateFilter() -> Filter {
         var formatted: [(name: String, option: [String: CGFloat])] = []
         data.filter { d in d.isOn }.forEach { d in
             var f: (name: String, option: [String: CGFloat]) = (name: d.name, option: [d.key: CGFloat(d.value)])
@@ -864,7 +870,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
         let d = data.remove(at: at)
         data.insert(d, at: di)
         movingData = d
-        filterListTableViewDelegate?.filterDidUpdate(tableView: self)
+        filter = calculateFilter()
         return proposedDestinationIndexPath
     }
 
@@ -888,7 +894,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
             return
         }
         data[index].value = value
-        filterListTableViewDelegate?.filterDidUpdate(tableView: self)
+        filter = calculateFilter()
     }
 
     func valueChangedSwitch(cell: CIFilterCell, isOn: Bool) {
@@ -896,7 +902,7 @@ final class CIFilterListTableView: UITableView, UITableViewDelegate, UITableView
             return
         }
         data[index].isOn = isOn
-        filterListTableViewDelegate?.filterDidUpdate(tableView: self)
+        filter = calculateFilter()
     }
 
 }

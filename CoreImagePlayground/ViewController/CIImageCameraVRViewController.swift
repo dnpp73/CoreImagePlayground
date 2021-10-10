@@ -207,8 +207,8 @@ final class CIImageCameraVRViewController: UIViewController {
 
     private let date = Date()
     private var centerOffset: CGPoint = CGPoint(x: 0.0, y: 0.0)
-    private var speed: CGFloat = 0.0
-    private var level: CGFloat = 0.0
+    private var speed: CGFloat = 2.0
+    private var level: CGFloat = 0.5
     private var selectedSegmentIndex: Int = 0 // メインスレッド外から触られる可能性あり
     fileprivate var size: CGSize = .zero
 
