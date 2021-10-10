@@ -12,7 +12,7 @@ final class CIImageCameraFilterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        SimpleCamera.shared.add(videoOutputObserver: self)
+        SimpleCamera.shared.add(videoDataOutputObserver: self)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -53,9 +53,9 @@ final class CIImageCameraFilterViewController: UIViewController {
 
 }
 
-extension CIImageCameraFilterViewController: SimpleCameraVideoOutputObservable {
+extension CIImageCameraFilterViewController: SimpleCameraVideoDataOutputObservable {
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard CMSampleBufferIsValid(sampleBuffer) else {
             return
         }
@@ -82,7 +82,7 @@ extension CIImageCameraFilterViewController: SimpleCameraVideoOutputObservable {
         }
     }
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         dropCount += 1
         print(dropCount)
     }

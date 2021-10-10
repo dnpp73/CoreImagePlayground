@@ -12,7 +12,7 @@ final class CIDetectorCameraViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        SimpleCamera.shared.add(videoOutputObserver: self)
+        SimpleCamera.shared.add(videoDataOutputObserver: self)
 
         let options: [String: Any] = [
             CIDetectorAccuracy: CIDetectorAccuracyHigh,
@@ -58,9 +58,9 @@ final class CIDetectorCameraViewController: UIViewController {
     fileprivate var dropCount: UInt64 = 0
 }
 
-extension CIDetectorCameraViewController: SimpleCameraVideoOutputObservable {
+extension CIDetectorCameraViewController: SimpleCameraVideoDataOutputObservable {
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard CMSampleBufferIsValid(sampleBuffer) else {
             return
         }
@@ -97,7 +97,7 @@ extension CIDetectorCameraViewController: SimpleCameraVideoOutputObservable {
         }
     }
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         dropCount += 1
         print(dropCount)
     }

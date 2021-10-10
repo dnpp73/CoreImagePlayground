@@ -2,7 +2,7 @@ import UIKit
 import SimpleCamera
 import AVFoundation
 
-final class OrientationViewController: UIViewController, SimpleCameraVideoOutputObservable {
+final class OrientationViewController: UIViewController, SimpleCameraVideoDataOutputObservable {
 
     @IBOutlet private var captureVideoPreviewView: AVCaptureVideoPreviewView!
 
@@ -135,11 +135,11 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
     }
 
     @IBAction private func touchUpInsideAddButton(_ sender: UIButton) {
-        SimpleCamera.shared.add(videoOutputObserver: self)
+        SimpleCamera.shared.add(videoDataOutputObserver: self)
     }
 
     @IBAction private func touchUpInsideRemoveButton(_ sender: UIButton) {
-        SimpleCamera.shared.remove(videoOutputObserver: self)
+        SimpleCamera.shared.remove(videoDataOutputObserver: self)
     }
 
     @IBAction private func touchUpInsideClearButton(_ sender: UIButton) {
@@ -158,18 +158,18 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoOutput
 
     private var dropCount: UInt64 = 0
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         onMainThread {
             var limitSize = self.sub3ImageView.bounds.size
             let scale = UIScreen.main.scale // iPhone 7 Plus において UIScreen.main.scale は 3.0 で UIScreen.main.nativeScale は 2.60869565217391
             limitSize.width *= scale
             limitSize.height *= scale
-            let image = createUIImage(from: sampleBuffer, limitSize: limitSize, imageOrientation: SimpleCamera.shared.preferredUIImageOrientationForVideoOutput)
+            let image = createUIImage(from: sampleBuffer, limitSize: limitSize, imageOrientation: SimpleCamera.shared.preferredUIImageOrientationForVideoDataOutput)
             self.sub3ImageView.image = image
         }
     }
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         dropCount += 1
         print(dropCount)
     }

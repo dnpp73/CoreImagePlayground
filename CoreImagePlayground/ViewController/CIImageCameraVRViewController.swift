@@ -27,7 +27,7 @@ final class CIImageCameraVRViewController: UIViewController {
         speedLabel.text = String(format: "%.2f", speedSlider.value)
         levelLabel.text = String(format: "%.2f", levelSlider.value)
 
-        SimpleCamera.shared.add(videoOutputObserver: self)
+        SimpleCamera.shared.add(videoDataOutputObserver: self)
 
         let options: [String: Any] = [
             CIDetectorAccuracy: CIDetectorAccuracyHigh,
@@ -251,9 +251,9 @@ final class CIImageCameraVRViewController: UIViewController {
     fileprivate var dropCount: UInt64 = 0
 }
 
-extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
+extension CIImageCameraVRViewController: SimpleCameraVideoDataOutputObservable {
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard CMSampleBufferIsValid(sampleBuffer) else {
             return
         }
@@ -327,7 +327,7 @@ extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
         imageView.image = final
     }
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         dropCount += 1
         print(dropCount)
     }

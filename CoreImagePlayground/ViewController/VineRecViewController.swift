@@ -2,7 +2,7 @@ import UIKit
 import SimpleCamera
 import AVFoundation
 
-final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObservable, SimpleCameraAudioOutputObservable {
+final class VineRecViewController: UIViewController, SimpleCameraVideoDataOutputObservable, SimpleCameraAudioDataOutputObservable {
 
     @IBOutlet private var cameraFinderView: CameraFinderView!
     @IBOutlet private var recButton: UIButton!
@@ -11,8 +11,8 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        SimpleCamera.shared.add(videoOutputObserver: self)
-        SimpleCamera.shared.add(audioOutputObserver: self)
+        SimpleCamera.shared.add(videoDataOutputObserver: self)
+        SimpleCamera.shared.add(audioDataOutputObserver: self)
         SimpleCamera.shared.isEnabledAudioRecording = true
     }
 
@@ -120,7 +120,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         }
 
         let videoOutputSettings: [String: Any] = [
-            AVVideoCodecKey: AVVideoCodecH264,
+            AVVideoCodecKey: AVVideoCodecType.h264,
             AVVideoWidthKey: widthForVideoInput,
             AVVideoHeightKey: heightForVideoInput
         ]
@@ -163,7 +163,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         }
     }
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if !isRecording {
             if let fmt = CMSampleBufferGetFormatDescription(sampleBuffer) {
                 let d = CMVideoFormatDescriptionGetDimensions(fmt)
@@ -177,7 +177,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
 
     private var dropCount: UInt64 = 0
 
-    func simpleCameraVideoOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         dropCount += 1
         print(dropCount)
     }
@@ -200,7 +200,7 @@ final class VineRecViewController: UIViewController, SimpleCameraVideoOutputObse
         }
     }
 
-    func simpleCameraAudioOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func simpleCameraAudioDataOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if !isRecording {
             if let fmt = CMSampleBufferGetFormatDescription(sampleBuffer), let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(fmt) {
                 numberOfChannelsForAudioInput = Int(asbd.pointee.mChannelsPerFrame)
