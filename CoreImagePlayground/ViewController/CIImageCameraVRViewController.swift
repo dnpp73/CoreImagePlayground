@@ -62,6 +62,14 @@ final class CIImageCameraVRViewController: UIViewController {
         SimpleCamera.shared.stopRunning()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        // メインスレッド外で UI 関連の部品に触られないように値を分離している
+        let screenScale: CGFloat = imageView.window?.screen.scale ?? 1.0
+        size = imageView.bounds.size.applying(CGAffineTransform(scaleX: screenScale, y: screenScale))
+    }
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .landscapeRight
     }
@@ -93,15 +101,17 @@ final class CIImageCameraVRViewController: UIViewController {
     }
 
     @IBAction private func valueChangedSegmentedControl(_ sender: UISegmentedControl) {
-
+        selectedSegmentIndex = sender.selectedSegmentIndex
     }
 
     @IBAction private func valueChangedSpeedSlider(_ sender: UISlider) {
         speedLabel.text = String(format: "%.2f", speedSlider.value)
+        speed = CGFloat(speedSlider.value) // メインスレッド外で UI 関連の部品に触られないように値を分離している
     }
 
     @IBAction private func valueChangedLevelSlider(_ sender: UISlider) {
         levelLabel.text = String(format: "%.2f", levelSlider.value)
+        level = CGFloat(levelSlider.value) // メインスレッド外で UI 関連の部品に触られないように値を分離している
     }
 
     @IBAction private func handleTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
@@ -197,14 +207,19 @@ final class CIImageCameraVRViewController: UIViewController {
 
     private let date = Date()
     private var centerOffset: CGPoint = CGPoint(x: 0.0, y: 0.0)
+    private var speed: CGFloat = 0.0
+    private var level: CGFloat = 0.0
+    private var selectedSegmentIndex: Int = 0 // メインスレッド外から触られる可能性あり
+    fileprivate var size: CGSize = .zero
 
+    // メインスレッド外から触られる可能性あり
     fileprivate func generateFilter(extent: CGRect) -> Filter {
-        let factor = CGFloat(sin(date.timeIntervalSinceNow * Double(speedSlider.value)))
-        let level = CGFloat(levelSlider.value)
+        let factor = sin(date.timeIntervalSinceNow * speed)
+
         let center = XYPosition(x: extent.midX + extent.width * centerOffset.x,
                                 y: extent.midY + extent.height * centerOffset.y)
 
-        switch segmentedControl.selectedSegmentIndex {
+        switch selectedSegmentIndex {
         case 0:
             return BumpDistortion.filter(inputCenter: center,
                                          inputRadius: min(extent.width, extent.height) * level,
@@ -257,8 +272,6 @@ extension CIImageCameraVRViewController: SimpleCameraVideoOutputObservable {
          */
         let image = CIImage(cvPixelBuffer: imageBuffer).oriented(forExifOrientation: 8)
 
-        let screenScale: CGFloat = imageView.window?.screen.scale ?? 1.0
-        let size = imageView.bounds.size.applying(CGAffineTransform(scaleX: screenScale, y: screenScale))
         let finalRect = CGRect(origin: .zero, size: size)
 
         let margin: CGFloat = 10.0
