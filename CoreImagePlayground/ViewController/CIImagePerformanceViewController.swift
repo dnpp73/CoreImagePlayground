@@ -36,9 +36,6 @@ final class CIImagePerformanceViewController: UIViewController {
 
 }
 
-extension CIImage {
-}
-
 extension CIImagePerformanceViewController: SimpleCameraVideoDataOutputObservable {
 
     func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
