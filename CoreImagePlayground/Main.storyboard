@@ -465,24 +465,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O0b-Ew-LP0">
-                                <rect key="frame" x="84" y="462.33333333333343" width="310" height="175.66666666666669"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="O0b-Ew-LP0">
+                                <rect key="frame" x="20" y="488" width="374" height="150"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fyk-KQ-02s">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="175.66666666666666"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5VD-Jm-BDk">
+                                        <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="150"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shot Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEk-Hr-S60">
-                                                <rect key="frame" x="15.000000000000004" y="0.0" width="60.333333333333343" height="11.666666666666666"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULx-pG-3Rv">
+                                                <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="11.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ie1-5o-M6T" userLabel="Sub 1 Image View">
-                                                <rect key="frame" x="0.0" y="15.666666666666629" width="90" height="160"/>
+                                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y8v-T9-3E0">
+                                                <rect key="frame" x="0.0" y="15.666666666666629" width="92.666666666666671" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="QvZ-iZ-ETK"/>
-                                                    <constraint firstAttribute="width" constant="90" id="lDT-Xg-T5T"/>
-                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" systemColor="systemRedColor"/>
@@ -497,21 +493,17 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ph0-RU-UKY">
-                                        <rect key="frame" x="110" y="0.0" width="90" height="175.66666666666666"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fyk-KQ-02s">
+                                        <rect key="frame" x="93.666666666666686" y="0.0" width="93" height="150"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silent Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LF5-em-jdU">
-                                                <rect key="frame" x="9" y="0.0" width="72.333333333333329" height="11.666666666666666"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Still Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEk-Hr-S60">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="11.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TkA-bB-n6B" userLabel="Sub 2 Image View">
-                                                <rect key="frame" x="0.0" y="15.666666666666629" width="90" height="160"/>
+                                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ie1-5o-M6T">
+                                                <rect key="frame" x="0.0" y="15.666666666666629" width="93" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="Jc2-g9-iGQ"/>
-                                                    <constraint firstAttribute="width" constant="90" id="Xfw-KA-LRA"/>
-                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" systemColor="systemRedColor"/>
@@ -526,21 +518,42 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-Oy-deH">
-                                        <rect key="frame" x="220" y="0.0" width="90" height="175.66666666666666"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ph0-RU-UKY">
+                                        <rect key="frame" x="187.66666666666666" y="0.0" width="92.666666666666657" height="150"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observe Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTy-iA-eAW">
-                                                <rect key="frame" x="6" y="0.0" width="78.333333333333329" height="11.666666666666666"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silent Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LF5-em-jdU">
+                                                <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="11.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aur-iF-hTc" userLabel="Sub 3 Image View">
-                                                <rect key="frame" x="0.0" y="15.666666666666629" width="90" height="160"/>
+                                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TkA-bB-n6B">
+                                                <rect key="frame" x="0.0" y="15.666666666666629" width="92.666666666666671" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="NEp-MG-ohP"/>
-                                                    <constraint firstAttribute="width" constant="90" id="vHV-SQ-kL4"/>
-                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemRedColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-Oy-deH">
+                                        <rect key="frame" x="281.33333333333331" y="0.0" width="92.666666666666686" height="150"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observe Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTy-iA-eAW">
+                                                <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="11.666666666666666"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aur-iF-hTc">
+                                                <rect key="frame" x="0.0" y="15.666666666666629" width="92.666666666666671" height="134.33333333333334"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" systemColor="systemRedColor"/>
@@ -556,6 +569,9 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="UCG-ja-1fm"/>
+                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBj-fA-NRt" userLabel="Buttons View">
                                 <rect key="frame" x="20" y="646" width="374" height="128"/>
@@ -564,119 +580,127 @@
                                         <rect key="frame" x="10" y="10" width="354" height="108"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zdF-jO-rBr">
-                                                <rect key="frame" x="0.0" y="0.0" width="77" height="108"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="108"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vW-RV-pm8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="follow: true"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideFollowToggleButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="5Hi-jI-KZv"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RP6-XX-7hl">
-                                                        <rect key="frame" x="0.0" y="41" width="77" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="mirrored: false"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideMirroredToggleButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="yme-rq-dmc"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7a-PQ-PBf">
-                                                        <rect key="frame" x="0.0" y="82" width="77" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="s7X-Ja-dWr"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NHL-Od-xIz">
-                                                <rect key="frame" x="99" y="0.0" width="67" height="108"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9b-d8-eWk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="Shot"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideShotButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="lrp-E3-Tfm"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p1-Mr-GzD">
-                                                        <rect key="frame" x="0.0" y="41" width="67" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="Cam Start"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideStartButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="jV8-0a-mBi"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55t-zk-qdz">
-                                                        <rect key="frame" x="0.0" y="82" width="67" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="add Observe"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideAddButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="MRk-3d-3WX"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mvR-L5-Tdk">
-                                                <rect key="frame" x="188" y="0.0" width="89" height="108"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qQ-Gu-09L">
-                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="Silent"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideSilentButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="H1Y-2O-FfQ"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfz-zD-TNW">
-                                                        <rect key="frame" x="0.0" y="41" width="89" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="Cam Stop"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideStopButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="rP9-xv-wX0"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGD-aX-n2w">
-                                                        <rect key="frame" x="0.0" y="82" width="89" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="remove  Observe"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideRemoveButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="OO7-yh-NKw"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="R42-Ib-rDs">
-                                                <rect key="frame" x="299" y="0.0" width="55" height="108"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-cQ-wTf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="Front Cam"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideFrontButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="pkg-BU-8VD"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJC-Fg-0R9">
-                                                        <rect key="frame" x="0.0" y="41" width="55" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="Back Cam"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideBackButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="6X8-9c-yGe"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-re-AOD">
-                                                        <rect key="frame" x="0.0" y="82" width="55" height="26"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="Clear"/>
-                                                        <connections>
-                                                            <action selector="touchUpInsideClearButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="2iz-bl-26J"/>
-                                                        </connections>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cY2-ha-i4t">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="26"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vW-RV-pm8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="59" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="follow: true"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideFollowToggleButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="5Hi-jI-KZv"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9b-d8-eWk">
+                                                                <rect key="frame" x="96.333333333333329" y="0.0" width="31" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="Photo"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsidePhotoButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="1Gb-k1-gEw"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btT-kk-7z8">
+                                                                <rect key="frame" x="164.66666666666666" y="0.0" width="30" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="Still"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideStillButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="CAB-tZ-zff"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qQ-Gu-09L">
+                                                                <rect key="frame" x="231.66666666666669" y="0.0" width="30" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="Silent"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideSilentButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="H1Y-2O-FfQ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-cQ-wTf">
+                                                                <rect key="frame" x="299" y="0.0" width="55" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="Front Cam"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideFrontButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="pkg-BU-8VD"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y8W-NH-e8w">
+                                                        <rect key="frame" x="0.0" y="41" width="354" height="26"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RP6-XX-7hl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="77" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="mirrored: false"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideMirroredToggleButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="yme-rq-dmc"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p1-Mr-GzD">
+                                                                <rect key="frame" x="116.66666666666666" y="0.0" width="53" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="Cam Start"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideStartButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="jV8-0a-mBi"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfz-zD-TNW">
+                                                                <rect key="frame" x="209.33333333333334" y="0.0" width="52.000000000000028" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="Cam Stop"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideStopButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="rP9-xv-wX0"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJC-Fg-0R9">
+                                                                <rect key="frame" x="301" y="0.0" width="53" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="Back Cam"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideBackButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="6X8-9c-yGe"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FHg-S6-aFI">
+                                                        <rect key="frame" x="0.0" y="82" width="354" height="26"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7a-PQ-PBf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="35" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="s7X-Ja-dWr"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55t-zk-qdz">
+                                                                <rect key="frame" x="79.333333333333329" y="0.0" width="66.999999999999986" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="add Observe"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideAddButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="MRk-3d-3WX"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGD-aX-n2w">
+                                                                <rect key="frame" x="190.66666666666666" y="0.0" width="88.999999999999972" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="remove  Observe"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideRemoveButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="OO7-yh-NKw"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-re-AOD">
+                                                                <rect key="frame" x="324" y="0.0" width="30" height="26"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <state key="normal" title="Clear"/>
+                                                                <connections>
+                                                                    <action selector="touchUpInsideClearButton:" destination="spB-kI-Dsg" eventType="touchUpInside" id="2iz-bl-26J"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -700,15 +724,17 @@
                             <constraint firstItem="WNk-B7-ugl" firstAttribute="top" secondItem="ICM-ha-cS5" secondAttribute="bottom" constant="20" id="Z8B-Rc-0Ux"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WNk-B7-ugl" secondAttribute="trailing" id="ajh-ld-Ko4"/>
                             <constraint firstItem="hBj-fA-NRt" firstAttribute="top" secondItem="O0b-Ew-LP0" secondAttribute="bottom" constant="8" id="eiO-Za-Ntu"/>
+                            <constraint firstItem="O0b-Ew-LP0" firstAttribute="leading" secondItem="v45-rz-K3o" secondAttribute="leadingMargin" id="gX9-7s-FoN"/>
                             <constraint firstItem="WNk-B7-ugl" firstAttribute="leading" secondItem="v45-rz-K3o" secondAttribute="leadingMargin" id="jdm-YF-cC9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O0b-Ew-LP0" secondAttribute="trailing" id="maa-aL-KOa"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="captureVideoPreviewView" destination="dex-hl-FP2" id="9fQ-xN-TY2"/>
-                        <outlet property="sub1ImageView" destination="ie1-5o-M6T" id="dx0-uZ-lWe"/>
-                        <outlet property="sub2ImageView" destination="TkA-bB-n6B" id="lPr-mx-bjm"/>
-                        <outlet property="sub3ImageView" destination="Aur-iF-hTc" id="fWg-pV-6h0"/>
+                        <outlet property="observeImageView" destination="Aur-iF-hTc" id="Wos-Gl-yC9"/>
+                        <outlet property="photoImageView" destination="y8v-T9-3E0" id="XVN-x7-xlO"/>
+                        <outlet property="silentImageView" destination="TkA-bB-n6B" id="Yys-xC-y2G"/>
+                        <outlet property="stillImageView" destination="ie1-5o-M6T" id="sL0-bh-hAf"/>
                         <outlet property="zoomLabel" destination="DFu-H7-vxw" id="AyJ-eA-wef"/>
                         <outlet property="zoomSlider" destination="8vJ-Wv-jQG" id="YbY-DV-FHu"/>
                     </connections>

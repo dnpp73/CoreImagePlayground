@@ -6,9 +6,10 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoDataOu
 
     @IBOutlet private var captureVideoPreviewView: AVCaptureVideoPreviewView!
 
-    @IBOutlet private var sub1ImageView: UIImageView!
-    @IBOutlet private var sub2ImageView: UIImageView!
-    @IBOutlet private var sub3ImageView: UIImageView!
+    @IBOutlet private var photoImageView: UIImageView!
+    @IBOutlet private var stillImageView: UIImageView!
+    @IBOutlet private var silentImageView: UIImageView!
+    @IBOutlet private var observeImageView: UIImageView!
 
     @IBOutlet private var zoomLabel: UILabel!
     @IBOutlet private var zoomSlider: UISlider!
@@ -87,12 +88,22 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoDataOu
         SimpleCamera.shared.stopRunning()
     }
 
-    @IBAction private func touchUpInsideShotButton(_ sender: UIButton) {
+    @IBAction private func touchUpInsidePhotoButton(_ sender: UIButton) {
+        SimpleCamera.shared.capturePhotoImageAsynchronously { (image: UIImage?, metadata: [String: Any]?) -> Void in
+            if let image = image, let metadata = metadata {
+                print(metadata)
+                print("\(image), scale: \(image.scale), imageOrientation: \(image.imageOrientation.rawValue)")
+                self.photoImageView.image = image
+            }
+        }
+    }
+
+    @IBAction private func touchUpInsideStillButton(_ sender: UIButton) {
         SimpleCamera.shared.captureStillImageAsynchronously { (image: UIImage?, metadata: [String: Any]?) -> Void in
             if let image = image, let metadata = metadata {
                 print(metadata)
                 print("\(image), scale: \(image.scale), imageOrientation: \(image.imageOrientation.rawValue)")
-                self.sub1ImageView.image = image
+                self.stillImageView.image = image
             }
         }
     }
@@ -102,7 +113,7 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoDataOu
             if let image = image, let metadata = metadata {
                 print(metadata)
                 print("\(image), scale: \(image.scale), imageOrientation: \(image.imageOrientation.rawValue)")
-                self.sub2ImageView.image = image
+                self.silentImageView.image = image
             }
         }
     }
@@ -143,9 +154,10 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoDataOu
     }
 
     @IBAction private func touchUpInsideClearButton(_ sender: UIButton) {
-        sub1ImageView.image  = nil
-        sub2ImageView.image  = nil
-        sub3ImageView.image  = nil
+        photoImageView.image = nil
+        stillImageView.image = nil
+        silentImageView.image = nil
+        observeImageView.image = nil
     }
 
     @IBAction private func handleCaptureVideoPreviewViewTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
@@ -160,12 +172,12 @@ final class OrientationViewController: UIViewController, SimpleCameraVideoDataOu
 
     func simpleCameraVideoDataOutputObserve(captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         onMainThread {
-            var limitSize = self.sub3ImageView.bounds.size
+            var limitSize = self.observeImageView.bounds.size
             let scale = UIScreen.main.scale // iPhone 7 Plus において UIScreen.main.scale は 3.0 で UIScreen.main.nativeScale は 2.60869565217391
             limitSize.width *= scale
             limitSize.height *= scale
             let image = createUIImage(from: sampleBuffer, limitSize: limitSize, imageOrientation: SimpleCamera.shared.preferredUIImageOrientationForVideoDataOutput)
-            self.sub3ImageView.image = image
+            self.observeImageView.image = image
         }
     }
 

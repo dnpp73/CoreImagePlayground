@@ -55,6 +55,15 @@ final class CameraUIViewController: UIViewController {
     }
 
     @IBAction private func touchUpInsidePhotoImageButton(_ sender: UIButton) {
+        SimpleCamera.shared.capturePhotoImageAsynchronously { (image: UIImage?, metadata: [String: Any]?) -> Void in
+            self.photoImageView.image = image
+            if let image = image {
+                print(image)
+            }
+            if let metadata = metadata {
+                print(metadata)
+            }
+        }
     }
 
     @IBAction private func touchUpInsideStillImageButton(_ sender: UIButton) {
