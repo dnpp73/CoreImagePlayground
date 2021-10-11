@@ -272,10 +272,34 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="zr0-fC-UUN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="WPg-sf-qhu" style="IBUITableViewCellStyleDefault" id="df1-a1-w8r">
+                                        <rect key="frame" x="0.0" y="726" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="df1-a1-w8r" id="v6K-K0-Uq7">
+                                            <rect key="frame" x="0.0" y="0.0" width="384.33333333333331" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CIImage Camera Performance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WPg-sf-qhu">
+                                                    <rect key="frame" x="20" y="0.0" width="356.33333333333331" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="XMG-sz-NXC" kind="show" id="NAI-Vt-VLv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection id="Rym-Zq-8NQ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="QFV-WY-cBO" style="IBUITableViewCellStyleDefault" id="L21-Oq-2B0">
-                                        <rect key="frame" x="0.0" y="726" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="806" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L21-Oq-2B0" id="if6-hD-aMw">
                                             <rect key="frame" x="0.0" y="0.0" width="384.33333333333331" height="44"/>
@@ -299,14 +323,14 @@
                             <tableViewSection id="5dR-p2-aIO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="6q5-ZT-ea7" style="IBUITableViewCellStyleDefault" id="2Lc-WP-lRW">
-                                        <rect key="frame" x="0.0" y="806" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="886" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Lc-WP-lRW" id="IYB-0W-Ily">
-                                            <rect key="frame" x="0.0" y="0.0" width="384.33333333333331" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394.66666666666669" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CIImage Camera VR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6q5-ZT-ea7">
-                                                    <rect key="frame" x="20" y="0.0" width="356.33333333333331" height="44"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="CIImage Camera VR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6q5-ZT-ea7">
+                                                    <rect key="frame" x="8" y="0.0" width="378.66666666666669" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -323,7 +347,7 @@
                             <tableViewSection id="Xoe-H6-ICk">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="7Bj-th-XjI" style="IBUITableViewCellStyleDefault" id="d5v-X7-NNg">
-                                        <rect key="frame" x="0.0" y="886" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="966" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d5v-X7-NNg" id="n3L-gb-NMb">
                                             <rect key="frame" x="0.0" y="0.0" width="394.66666666666669" height="44"/>
@@ -2064,6 +2088,42 @@ EFNGaWxsA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RN7-gP-wWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3606" y="2696"/>
+        </scene>
+        <!--Image Performance View Controller-->
+        <scene sceneID="wCG-5r-wmj">
+            <objects>
+                <viewController id="XMG-sz-NXC" customClass="CIImagePerformanceViewController" customModule="CoreImagePlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b8c-LJ-b24"/>
+                        <viewControllerLayoutGuide type="bottom" id="6FI-yw-YvX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j7F-su-evh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Vs-4a-kdU" customClass="MTCIImageView" customModule="GPUCIImageView">
+                                <rect key="frame" x="0.0" y="197" width="414" height="414"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Vs-4a-kdU" secondAttribute="height" multiplier="1:1" id="rg9-K6-zJI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1Vs-4a-kdU" secondAttribute="trailing" id="ezf-ln-Uyo"/>
+                            <constraint firstItem="1Vs-4a-kdU" firstAttribute="leading" secondItem="j7F-su-evh" secondAttribute="leading" id="gy9-bs-buh"/>
+                            <constraint firstItem="1Vs-4a-kdU" firstAttribute="centerY" secondItem="j7F-su-evh" secondAttribute="centerY" id="zyX-RZ-V0l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q4e-AB-E1Q"/>
+                    <connections>
+                        <outlet property="imageView" destination="1Vs-4a-kdU" id="Zls-p0-kYa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PuF-wX-HCy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="409" y="4237"/>
         </scene>
         <!--CIImage Camera Filter-->
         <scene sceneID="bua-M7-5sp">

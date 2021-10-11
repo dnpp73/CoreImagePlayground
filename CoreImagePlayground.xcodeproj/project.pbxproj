@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1992AB602714326500C4953F /* CIImagePerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992AB5F2714326500C4953F /* CIImagePerformanceViewController.swift */; };
 		19F80C4E27104CA000CE22F8 /* CIFilterExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C3427104B9C00CE22F8 /* CIFilterExtension.framework */; };
 		19F80C4F27104CA000CE22F8 /* CIFilterExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C3427104B9C00CE22F8 /* CIFilterExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		19F80C5027104CA000CE22F8 /* GPUCIImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F80C4027104BC800CE22F8 /* GPUCIImageView.framework */; };
@@ -101,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1992AB5F2714326500C4953F /* CIImagePerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImagePerformanceViewController.swift; sourceTree = "<group>"; };
 		19F80C2F27104B9C00CE22F8 /* CIFilterExtension.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CIFilterExtension.xcodeproj; path = ../CIFilterExtension/CIFilterExtension.xcodeproj; sourceTree = "<group>"; };
 		19F80C3B27104BC800CE22F8 /* GPUCIImageView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUCIImageView.xcodeproj; path = ../GPUCIImageView/GPUCIImageView.xcodeproj; sourceTree = "<group>"; };
 		19F80C4127104BCE00CE22F8 /* SimpleAVPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimpleAVPlayer.xcodeproj; path = ../SimpleAVPlayer/SimpleAVPlayer.xcodeproj; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				EA6B26E81EA8B09A00E3F7E0 /* CIImageCameraVRViewController.swift */,
 				EA6B26E51EA8B09A00E3F7E0 /* CIDetectorCameraViewController.swift */,
 				EAD90F8A217F4B640098F99F /* GPUCIImageCollectionViewController.swift */,
+				1992AB5F2714326500C4953F /* CIImagePerformanceViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1992AB602714326500C4953F /* CIImagePerformanceViewController.swift in Sources */,
 				EA6B26F31EA8B09A00E3F7E0 /* CIFilterGeneratorViewController.swift in Sources */,
 				EA6B26D91EA8AF1E00E3F7E0 /* CIFilterCell.swift in Sources */,
 				EA6B26FB1EA8B09A00E3F7E0 /* VideoRecViewController.swift in Sources */,
