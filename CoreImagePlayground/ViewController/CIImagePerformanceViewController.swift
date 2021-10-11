@@ -37,39 +37,6 @@ final class CIImagePerformanceViewController: UIViewController {
 }
 
 extension CIImage {
-    func move(translationX: CGFloat, translationY: CGFloat) -> CIImage {
-        transformed(by: CGAffineTransform(translationX: translationX, y: translationY))
-    }
-
-    func moveToOriginZero() -> CIImage {
-        move(translationX: -extent.origin.x, translationY: -extent.origin.y)
-    }
-
-    func squareCropped() -> CIImage {
-        let squareCroppedImage: CIImage
-        if extent.width > extent.height {
-            // 横長
-            let shortSide = extent.height
-            let diff = extent.width - extent.height
-            let croppedImage = cropped(to: CGRect(x: diff / 2.0, y: 0.0, width: shortSide, height: shortSide))
-            squareCroppedImage = croppedImage.moveToOriginZero()
-        } else if extent.width < extent.height {
-            // 縦長
-            let shortSide = extent.width
-            let diff = extent.height - extent.width
-            let croppedImage = cropped(to: CGRect(x: 0.0, y: diff / 2.0, width: shortSide, height: shortSide))
-            squareCroppedImage = croppedImage.moveToOriginZero()
-        } else {
-            // 既に正方形
-            squareCroppedImage = self
-        }
-        return squareCroppedImage
-    }
-
-    func resized(to size: CGSize) -> CIImage {
-        let t = CGAffineTransform(scaleX: size.width / extent.width, y: size.height / extent.height)
-        return transformed(by: t)
-    }
 }
 
 extension CIImagePerformanceViewController: SimpleCameraVideoDataOutputObservable {
@@ -85,7 +52,13 @@ extension CIImagePerformanceViewController: SimpleCameraVideoDataOutputObservabl
         let originalImage = CIImage(cvPixelBuffer: imageBuffer) // カメラからの生画像を
         let squaredImage = originalImage.squareCropped() // 正方形にクロップして
         let tileSize = imageCanvasSize.applying(CGAffineTransform(scaleX: 1.0 / CGFloat(imageTileCount), y: 1.0 / CGFloat(imageTileCount)))
-        let tileSourceImage = squaredImage.resized(to: tileSize) // タイルのサイズに縮小する
+        // タイルのサイズに縮小する。
+        // transform を当てるだけの resize もあるが、そちらでは実際に縮小処理をする訳ではないのでメモリ使用量が爆発してしまう。
+        // Lanczos は Bicubic より重い。
+        let tileSourceImage = squaredImage.resizedWithLanczos(to: tileSize) // この中では最も重い
+        // let tileSourceImage = squaredImage.resizedWithBicubic(to: tileSize) // 重い
+        // let tileSourceImage = squaredImage.resizedWithNearest(to: tileSize) // 最も軽量
+        // let tileSourceImage = squaredImage.resized(to: tileSize) // そもそも縮小処理自体をしていないので元画像のサイズによってはメモリが爆発する
 
         /*
          CoreImage は右下原点なので imageMatrix はこんな感じにする。
@@ -100,14 +73,54 @@ extension CIImagePerformanceViewController: SimpleCameraVideoDataOutputObservabl
             }
         }
 
-        if let blured = GaussianBlur.filterWithClampAndCrop(inputRadius: 20.0)(imageMatrix[2][1]) {
-            imageMatrix[2][1] = blured
+        if let image = Pixellate.filterWithClampAndCrop()(imageMatrix[0][0]) {
+            imageMatrix[0][0] = image
         }
-        if let cmyk = CMYKHalftone.filter()(imageMatrix[1][2]) {
-            imageMatrix[1][2] = cmyk
+        if let image = Crystallize.filterWithClampAndCrop()(imageMatrix[0][1]) {
+            imageMatrix[0][1] = image
         }
-        if let a = PhotoEffect.chrome(alpha: 1.0)(imageMatrix[3][3]) {
-            imageMatrix[3][3] = a
+        if let image = Pointillize.filterWithClampAndCrop()(imageMatrix[0][2]) {
+            imageMatrix[0][2] = image
+        }
+        if let image = EdgeWork.filterWithClampAndCrop()(imageMatrix[0][3]) {
+            imageMatrix[0][3] = image
+        }
+
+        if let image = DotScreen.filter()(imageMatrix[1][0]) {
+            imageMatrix[1][0] = image
+        }
+        if let image = CMYKHalftone.filter()(imageMatrix[1][1]) {
+            imageMatrix[1][1] = image
+        }
+        if let image = HatchedScreen.filter()(imageMatrix[1][2]) {
+            imageMatrix[1][2] = image
+        }
+        if let image = LineScreen.filter()(imageMatrix[1][3]) {
+            imageMatrix[1][3] = image
+        }
+
+        if let image = GaussianBlur.filterWithClampAndCrop(inputRadius: 20.0)(imageMatrix[2][1]) {
+            imageMatrix[2][1] = image
+        }
+        if let image = DiscBlur.filterWithClampAndCrop(inputRadius: 20.0)(imageMatrix[2][2]) {
+            imageMatrix[2][2] = image
+        }
+        if let image = ZoomBlur.filterWithClampAndCrop(inputRadius: 20.0)(imageMatrix[2][3]) {
+            imageMatrix[2][3] = image
+        }
+
+        let effectAlpha = 0.9
+        if let image = PhotoEffect.chrome(alpha: effectAlpha)(imageMatrix[3][0]) {
+            imageMatrix[3][0] = image
+        }
+        if let image = PhotoEffect.fade(alpha: effectAlpha)(imageMatrix[3][1]) {
+            imageMatrix[3][1] = image
+        }
+        if let image = PhotoEffect.instant(alpha: effectAlpha)(imageMatrix[3][2]) {
+            imageMatrix[3][2] = image
+        }
+        if let image = PhotoEffect.mono(alpha: effectAlpha)(imageMatrix[3][3]) {
+            imageMatrix[3][3] = image
         }
 
         // キャンバスとして想定している単色の背景画像を最下層のレイヤーとして、全ての画像を重ねて終わり。
