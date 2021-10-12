@@ -2198,7 +2198,7 @@ EFNGaWxsA
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oon-JI-nfT">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HelveticaNeue" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oon-JI-nfT">
                                                 <rect key="frame" x="39" y="0.0" width="312" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2216,14 +2216,14 @@ EFNGaWxsA
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Obg-XV-AkI">
                                         <rect key="frame" x="0.0" y="72" width="414" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FontSize: 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-cF-wqo">
-                                                <rect key="frame" x="0.0" y="0.0" width="87" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FontSize: 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-cF-wqo">
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="31"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="24" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="IVZ-hG-kIl">
-                                                <rect key="frame" x="95" y="0.0" width="259.66666666666663" height="32"/>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IVZ-hG-kIl">
+                                                <rect key="frame" x="101.99999999999999" y="0.0" width="252.66666666666663" height="32"/>
                                                 <connections>
                                                     <action selector="valueChangedFontSizeSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="9Hg-dw-pHZ"/>
                                                 </connections>
@@ -2241,13 +2241,13 @@ EFNGaWxsA
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4jM-VO-Gcg">
                                         <rect key="frame" x="0.0" y="105" width="414" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScaleFactor: 1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXe-cf-7No">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScaleFactor: 2.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXe-cf-7No">
                                                 <rect key="frame" x="0.0" y="0.0" width="123" height="31"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="xXB-fk-CXM">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xXB-fk-CXM">
                                                 <rect key="frame" x="131" y="0.0" width="215.66666666666663" height="32"/>
                                                 <connections>
                                                     <action selector="valueChangedScaleFactorSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="MKq-x8-H1X"/>
@@ -2266,13 +2266,13 @@ EFNGaWxsA
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eKh-yT-atO">
                                         <rect key="frame" x="0.0" y="138" width="414" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle: 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgP-Oa-oDh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle: 0.75" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgP-Oa-oDh">
                                                 <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="31"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-6" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="T9V-uB-xDH">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="-6" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="T9V-uB-xDH">
                                                 <rect key="frame" x="87.666666666666686" y="0.0" width="257.33333333333337" height="32"/>
                                                 <connections>
                                                     <action selector="valueChangedAngleSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="GSb-2k-Qf9"/>

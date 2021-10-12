@@ -8,6 +8,9 @@ final class CIImagePerformanceViewController: UIViewController {
 
     @IBOutlet private var imageView: MTCIImageView!
 
+    private static let fontSizeScale: CGFloat = 240.0
+    private static let scaleFactorScale: CGFloat = 4.0
+
     @IBOutlet private var textTextField: UITextField!
     @IBOutlet private var fontTextField: UITextField!
     @IBOutlet private var fontSizeLabel: UILabel!
@@ -22,6 +25,7 @@ final class CIImagePerformanceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateTextImage()
         SimpleCamera.shared.add(simpleCameraObserver: self)
         SimpleCamera.shared.add(videoDataOutputObserver: self)
     }
@@ -36,6 +40,17 @@ final class CIImagePerformanceViewController: UIViewController {
         SimpleCamera.shared.stopRunning()
     }
 
+    private func updateTextImage() {
+        let text = (textTextField.text ?? "CoreImage Performance\\n日本語").replacingOccurrences(of: "\\n", with: "\n")
+        let fontName = fontTextField.text ?? "HelveticaNeue"
+        let fontSize = CGFloat(roundf(fontSizeSlider.value * Float(Self.fontSizeScale)))
+        let scaleFactor = CGFloat(scaleFactorSlider.value) * Self.scaleFactorScale
+        let image = TextImageGenerator.image(inputText: text, inputFontName: fontName, inputFontSize: fontSize, inputScaleFactor: scaleFactor)
+
+        let angle = CGFloat(angleSlider.value)
+        textImage = image?.transformed(by: CGAffineTransform(rotationAngle: angle)).moveToOriginZero()
+    }
+
     // MARK: IBActions
 
     @IBAction private func valueChangedTextTextField(_ sender: UITextField) {
@@ -44,40 +59,47 @@ final class CIImagePerformanceViewController: UIViewController {
     @IBAction private func touchUpInsideTextButton(_ sender: UIButton) {
         textTextField.text = "CoreImage Performance\\n日本語"
         textTextField.resignFirstResponder()
+        updateTextImage()
     }
 
     @IBAction private func touchUpInsideFontButton(_ sender: UIButton) {
+        updateTextImage()
     }
 
     @IBAction private func valueChangedFontSizeSlider(_ sender: UISlider) {
-        let fontSize = Int(roundf(fontSizeSlider.value))
+        let fontSize = Int(roundf(fontSizeSlider.value * Float(Self.fontSizeScale)))
         fontSizeLabel.text = "FontSize: \(fontSize)"
+        updateTextImage()
     }
 
     @IBAction private func touchUpInsideFontSizeButton(_ sender: UIButton) {
-        let fontSize = 24
+        let fontSize = Int(round(Self.fontSizeScale * 0.5))
         fontSizeLabel.text = "FontSize: \(fontSize)"
         if fontSizeSlider.isTracking == false {
-            fontSizeSlider.value = Float(fontSize)
+            fontSizeSlider.value = 0.5
         }
+        updateTextImage()
     }
 
     @IBAction private func valueChangedScaleFactorSlider(_ sender: UISlider) {
-        let scaleFactor = Double(scaleFactorSlider.value)
+        let scaleFactor = CGFloat(scaleFactorSlider.value) * Self.scaleFactorScale
         scaleFactorLabel.text = String(format: "ScaleFactor: %.2f", scaleFactor)
+        updateTextImage()
     }
 
     @IBAction private func touchUpInsideScaleFactorButton(_ sender: UIButton) {
-        let scaleFactor = 1.0
+        let scaleFactor = 0.5 * Self.scaleFactorScale
         scaleFactorLabel.text = String(format: "ScaleFactor: %.2f", scaleFactor)
         if scaleFactorSlider.isTracking == false {
-            scaleFactorSlider.value = Float(scaleFactor)
+            scaleFactorSlider.value = 0.5
         }
+        updateTextImage()
     }
 
     @IBAction private func valueChangedAngleSlider(_ sender: UISlider) {
         let angle = Double(angleSlider.value)
         angleLabel.text = String(format: "Angle: %.2f", angle)
+        updateTextImage()
     }
 
     @IBAction private func touchUpInsideAngleButton(_ sender: UIButton) {
@@ -86,11 +108,12 @@ final class CIImagePerformanceViewController: UIViewController {
         if angleSlider.isTracking == false {
             angleSlider.value = Float(angle)
         }
+        updateTextImage()
     }
 
     @IBAction private func valueChangedZoomSlider(_ sender: UISlider) {
         SimpleCamera.shared.zoomFactor = CGFloat(sender.value)
-
+        updateTextImage()
     }
 
     @IBAction private func touchUpInsideZoomButton(_ sender: UIButton) {
@@ -116,6 +139,8 @@ final class CIImagePerformanceViewController: UIViewController {
         }
         return canvasImage
     }()
+
+    fileprivate var textImage: CIImage?
 
 }
 
@@ -210,6 +235,18 @@ extension CIImagePerformanceViewController: SimpleCameraVideoDataOutputObservabl
                 compositeImage = tileImage.composited(over: compositeImage)
             }
         }
+
+        // 文字の画像をマスクとして使って、全体をボカした画像が浮かび上がる感じにしてみる。
+        // ただ重ねるならこう
+        // compositeImage = textImage.composited(over: compositeImage)
+        if let textImage = textImage {
+            let bluredAllImage: CIImage = castOrFatalError(GaussianBlur.filterWithClampAndCrop(inputRadius: 1.0)(compositeImage))
+            let colorChanged: CIImage = castOrFatalError(ColorInvert.filter(bluredAllImage))
+            if let blendImage = BlendWithMask.image(image: colorChanged, inputBackgroundImage: compositeImage, inputMaskImage: textImage) {
+                compositeImage = blendImage
+            }
+        }
+
         imageView.image = compositeImage
     }
 
