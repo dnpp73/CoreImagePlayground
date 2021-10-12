@@ -326,11 +326,11 @@
                                         <rect key="frame" x="0.0" y="886" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Lc-WP-lRW" id="IYB-0W-Ily">
-                                            <rect key="frame" x="0.0" y="0.0" width="394.66666666666669" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="396.33333333333331" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="CIImage Camera VR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6q5-ZT-ea7">
-                                                    <rect key="frame" x="8" y="0.0" width="378.66666666666669" height="44"/>
+                                                    <rect key="frame" x="8" y="0.0" width="380.33333333333331" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -350,11 +350,11 @@
                                         <rect key="frame" x="0.0" y="966" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d5v-X7-NNg" id="n3L-gb-NMb">
-                                            <rect key="frame" x="0.0" y="0.0" width="394.66666666666669" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="396.33333333333331" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="GPUCIImageView in CollectionViewCell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Bj-th-XjI">
-                                                    <rect key="frame" x="8" y="0.0" width="378.66666666666669" height="44"/>
+                                                    <rect key="frame" x="8" y="0.0" width="380.33333333333331" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -2134,55 +2134,31 @@ EFNGaWxsA
                                     <constraint firstAttribute="width" secondItem="1Vs-4a-kdU" secondAttribute="height" multiplier="1:1" id="rg9-K6-zJI"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gzv-KN-EA9">
-                                <rect key="frame" x="20" y="631" width="374" height="31"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zoom: 1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKv-20-T5G">
-                                        <rect key="frame" x="0.0" y="0.0" width="72.333333333333329" height="31"/>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="jll-II-viV">
-                                        <rect key="frame" x="80.333333333333329" y="0.0" width="224.33333333333337" height="32"/>
-                                        <connections>
-                                            <action selector="valueChangedZoomSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="PdL-wo-okf"/>
-                                        </connections>
-                                    </slider>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JN0-Ck-pGT">
-                                        <rect key="frame" x="312.66666666666669" y="0.0" width="61.333333333333314" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Zoom"/>
-                                        <connections>
-                                            <action selector="touchUpInsideZoomButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="Q0C-1h-DKL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lYg-j9-NpM">
-                                <rect key="frame" x="0.0" y="4" width="414" height="169"/>
+                                <rect key="frame" x="20" y="4" width="374" height="166"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zfg-E1-p37">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-1p-xiw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-1p-xiw">
                                                 <rect key="frame" x="0.0" y="0.0" width="29" height="34"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CoreImage Performance\n日本語" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-2R-fBW">
-                                                <rect key="frame" x="39" y="0.0" width="313.66666666666669" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CoreImage\nPerformance\n日本語" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-2R-fBW">
+                                                <rect key="frame" x="39" y="0.0" width="295" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="valueChangedTextTextField:" destination="XMG-sz-NXC" eventType="valueChanged" id="0vN-Wo-thB"/>
+                                                    <action selector="editingDidEndTextTextField:" destination="XMG-sz-NXC" eventType="editingDidEnd" id="om9-kY-WWi"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toW-se-rPV">
-                                                <rect key="frame" x="362.66666666666669" y="0.0" width="51.333333333333314" height="34"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Text"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toW-se-rPV">
+                                                <rect key="frame" x="344" y="0.0" width="30" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Text"/>
                                                 <connections>
                                                     <action selector="touchUpInsideTextButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="cxs-nD-HGC"/>
                                                 </connections>
@@ -2190,23 +2166,24 @@ EFNGaWxsA
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p5H-kQ-D6g">
-                                        <rect key="frame" x="0.0" y="36" width="414" height="34"/>
+                                        <rect key="frame" x="0.0" y="36" width="374" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNc-Tg-5Jk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNc-Tg-5Jk">
                                                 <rect key="frame" x="0.0" y="0.0" width="29" height="34"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HelveticaNeue" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oon-JI-nfT">
-                                                <rect key="frame" x="39" y="0.0" width="312" height="34"/>
+                                                <rect key="frame" x="39" y="0.0" width="295" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5A-HH-NK9">
-                                                <rect key="frame" x="361" y="0.0" width="53" height="34"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Font"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5A-HH-NK9">
+                                                <rect key="frame" x="344" y="0.0" width="30" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Font"/>
                                                 <connections>
                                                     <action selector="touchUpInsideFontButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="Br4-dy-LMH"/>
                                                 </connections>
@@ -2214,24 +2191,25 @@ EFNGaWxsA
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Obg-XV-AkI">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="31"/>
+                                        <rect key="frame" x="0.0" y="72" width="374" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FontSize: 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-cF-wqo">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="30"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IVZ-hG-kIl">
-                                                <rect key="frame" x="101.99999999999999" y="0.0" width="252.66666666666663" height="32"/>
+                                                <rect key="frame" x="102" y="0.0" width="234" height="31"/>
                                                 <connections>
                                                     <action selector="valueChangedFontSizeSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="9Hg-dw-pHZ"/>
                                                 </connections>
                                             </slider>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nQ-gm-b3d">
-                                                <rect key="frame" x="362.66666666666669" y="0.0" width="51.333333333333314" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Size"/>
+                                                <rect key="frame" x="344" y="0.0" width="30" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Size"/>
                                                 <connections>
                                                     <action selector="touchUpInsideFontSizeButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="Zdv-0f-qsq"/>
                                                 </connections>
@@ -2239,24 +2217,25 @@ EFNGaWxsA
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4jM-VO-Gcg">
-                                        <rect key="frame" x="0.0" y="105" width="414" height="31"/>
+                                        <rect key="frame" x="0.0" y="104" width="374" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScaleFactor: 2.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXe-cf-7No">
-                                                <rect key="frame" x="0.0" y="0.0" width="123" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xXB-fk-CXM">
-                                                <rect key="frame" x="131" y="0.0" width="215.66666666666663" height="32"/>
+                                                <rect key="frame" x="131" y="0.0" width="204" height="31"/>
                                                 <connections>
                                                     <action selector="valueChangedScaleFactorSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="MKq-x8-H1X"/>
                                                 </connections>
                                             </slider>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKx-eh-vR1">
-                                                <rect key="frame" x="354.66666666666669" y="0.0" width="59.333333333333314" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Scale"/>
+                                                <rect key="frame" x="343" y="0.0" width="31" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Scale"/>
                                                 <connections>
                                                     <action selector="touchUpInsideScaleFactorButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="TdW-gP-0NW"/>
                                                 </connections>
@@ -2264,26 +2243,116 @@ EFNGaWxsA
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eKh-yT-atO">
-                                        <rect key="frame" x="0.0" y="138" width="414" height="31"/>
+                                        <rect key="frame" x="0.0" y="136" width="374" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle: 0.75" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgP-Oa-oDh">
-                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="30"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="-6" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="T9V-uB-xDH">
-                                                <rect key="frame" x="87.666666666666686" y="0.0" width="257.33333333333337" height="32"/>
+                                                <rect key="frame" x="87.666666666666671" y="0.0" width="245.33333333333331" height="31"/>
                                                 <connections>
                                                     <action selector="valueChangedAngleSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="GSb-2k-Qf9"/>
                                                 </connections>
                                             </slider>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tL-YP-p3R">
-                                                <rect key="frame" x="353" y="0.0" width="61" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Angle"/>
+                                                <rect key="frame" x="341" y="0.0" width="33" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Angle"/>
                                                 <connections>
                                                     <action selector="touchUpInsideAngleButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="oAb-mP-i2z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QeG-Y5-bDE">
+                                <rect key="frame" x="20" y="631" width="374" height="65"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gzv-KN-EA9">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zoom: 1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKv-20-T5G">
+                                                <rect key="frame" x="0.0" y="0.0" width="72.333333333333329" height="31"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="jll-II-viV">
+                                                <rect key="frame" x="80.333333333333329" y="0.0" width="224.33333333333337" height="32"/>
+                                                <connections>
+                                                    <action selector="valueChangedZoomSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="PdL-wo-okf"/>
+                                                </connections>
+                                            </slider>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JN0-Ck-pGT">
+                                                <rect key="frame" x="312.66666666666669" y="0.0" width="61.333333333333314" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Zoom"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideZoomButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="Q0C-1h-DKL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BJJ-W2-4p3">
+                                        <rect key="frame" x="0.0" y="41" width="374" height="24"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB0-F8-KAe">
+                                                <rect key="frame" x="0.0" y="0.0" width="58.333333333333336" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Start"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideStartButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="8Iw-gD-FP4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tC-0Q-O8j">
+                                                <rect key="frame" x="63.333333333333329" y="0.0" width="58" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Stop"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideStopButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="Ul8-t7-dlU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqQ-bj-DnR">
+                                                <rect key="frame" x="126.33333333333333" y="0.0" width="58.333333333333329" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Photo"/>
+                                                <connections>
+                                                    <action selector="touchUpInsidePhotoButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="afo-gy-RmX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eR-Pr-1br">
+                                                <rect key="frame" x="189.66666666666666" y="0.0" width="58" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Movie"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideMovieButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="Bsv-b6-HZQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pV-t8-e1l">
+                                                <rect key="frame" x="252.66666666666671" y="0.0" width="58.333333333333343" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Front"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideFrontButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="FCQ-7S-62w"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbl-4h-cfG">
+                                                <rect key="frame" x="316" y="0.0" width="58" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideBackButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="8Sb-F8-d9z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2293,14 +2362,14 @@ EFNGaWxsA
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
-                            <constraint firstItem="lYg-j9-NpM" firstAttribute="leading" secondItem="j7F-su-evh" secondAttribute="leading" id="VqE-AI-bl1"/>
-                            <constraint firstItem="Gzv-KN-EA9" firstAttribute="top" secondItem="1Vs-4a-kdU" secondAttribute="bottom" constant="20" id="aRV-jp-QoD"/>
-                            <constraint firstAttribute="trailing" secondItem="lYg-j9-NpM" secondAttribute="trailing" id="eNb-3l-2KA"/>
-                            <constraint firstItem="Gzv-KN-EA9" firstAttribute="leading" secondItem="j7F-su-evh" secondAttribute="leadingMargin" id="ewB-zw-nCp"/>
+                            <constraint firstItem="QeG-Y5-bDE" firstAttribute="top" secondItem="1Vs-4a-kdU" secondAttribute="bottom" constant="20" id="E1C-MR-6ue"/>
+                            <constraint firstItem="lYg-j9-NpM" firstAttribute="leading" secondItem="j7F-su-evh" secondAttribute="leadingMargin" id="VqE-AI-bl1"/>
+                            <constraint firstItem="QeG-Y5-bDE" firstAttribute="leading" secondItem="j7F-su-evh" secondAttribute="leadingMargin" id="YCC-f3-vnv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lYg-j9-NpM" secondAttribute="trailing" id="eNb-3l-2KA"/>
                             <constraint firstAttribute="trailing" secondItem="1Vs-4a-kdU" secondAttribute="trailing" id="ezf-ln-Uyo"/>
                             <constraint firstItem="1Vs-4a-kdU" firstAttribute="leading" secondItem="j7F-su-evh" secondAttribute="leading" id="gy9-bs-buh"/>
                             <constraint firstItem="lYg-j9-NpM" firstAttribute="top" secondItem="b8c-LJ-b24" secondAttribute="bottom" constant="4" id="ohd-sC-Hw9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Gzv-KN-EA9" secondAttribute="trailing" id="yY9-Lm-JCA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QeG-Y5-bDE" secondAttribute="trailing" id="zfp-UZ-tMD"/>
                             <constraint firstItem="1Vs-4a-kdU" firstAttribute="centerY" secondItem="j7F-su-evh" secondAttribute="centerY" id="zyX-RZ-V0l"/>
                         </constraints>
                     </view>
