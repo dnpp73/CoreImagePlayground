@@ -2134,22 +2134,194 @@ EFNGaWxsA
                                     <constraint firstAttribute="width" secondItem="1Vs-4a-kdU" secondAttribute="height" multiplier="1:1" id="rg9-K6-zJI"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gzv-KN-EA9">
+                                <rect key="frame" x="20" y="631" width="374" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zoom: 1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKv-20-T5G">
+                                        <rect key="frame" x="0.0" y="0.0" width="72.333333333333329" height="31"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="jll-II-viV">
+                                        <rect key="frame" x="80.333333333333329" y="0.0" width="224.33333333333337" height="32"/>
+                                        <connections>
+                                            <action selector="valueChangedZoomSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="PdL-wo-okf"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JN0-Ck-pGT">
+                                        <rect key="frame" x="312.66666666666669" y="0.0" width="61.333333333333314" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Zoom"/>
+                                        <connections>
+                                            <action selector="touchUpInsideZoomButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="Q0C-1h-DKL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lYg-j9-NpM">
+                                <rect key="frame" x="0.0" y="4" width="414" height="169"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zfg-E1-p37">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-1p-xiw">
+                                                <rect key="frame" x="0.0" y="0.0" width="29" height="34"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CoreImage Performance\n日本語" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-2R-fBW">
+                                                <rect key="frame" x="39" y="0.0" width="313.66666666666669" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="valueChangedTextTextField:" destination="XMG-sz-NXC" eventType="valueChanged" id="0vN-Wo-thB"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toW-se-rPV">
+                                                <rect key="frame" x="362.66666666666669" y="0.0" width="51.333333333333314" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Text"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideTextButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="cxs-nD-HGC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p5H-kQ-D6g">
+                                        <rect key="frame" x="0.0" y="36" width="414" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNc-Tg-5Jk">
+                                                <rect key="frame" x="0.0" y="0.0" width="29" height="34"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oon-JI-nfT">
+                                                <rect key="frame" x="39" y="0.0" width="312" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5A-HH-NK9">
+                                                <rect key="frame" x="361" y="0.0" width="53" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Font"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideFontButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="Br4-dy-LMH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Obg-XV-AkI">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FontSize: 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-cF-wqo">
+                                                <rect key="frame" x="0.0" y="0.0" width="87" height="31"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="24" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="IVZ-hG-kIl">
+                                                <rect key="frame" x="95" y="0.0" width="259.66666666666663" height="32"/>
+                                                <connections>
+                                                    <action selector="valueChangedFontSizeSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="9Hg-dw-pHZ"/>
+                                                </connections>
+                                            </slider>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nQ-gm-b3d">
+                                                <rect key="frame" x="362.66666666666669" y="0.0" width="51.333333333333314" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Size"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideFontSizeButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="Zdv-0f-qsq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4jM-VO-Gcg">
+                                        <rect key="frame" x="0.0" y="105" width="414" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScaleFactor: 1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXe-cf-7No">
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="31"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="xXB-fk-CXM">
+                                                <rect key="frame" x="131" y="0.0" width="215.66666666666663" height="32"/>
+                                                <connections>
+                                                    <action selector="valueChangedScaleFactorSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="MKq-x8-H1X"/>
+                                                </connections>
+                                            </slider>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKx-eh-vR1">
+                                                <rect key="frame" x="354.66666666666669" y="0.0" width="59.333333333333314" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Scale"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideScaleFactorButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="TdW-gP-0NW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eKh-yT-atO">
+                                        <rect key="frame" x="0.0" y="138" width="414" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle: 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgP-Oa-oDh">
+                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="31"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-6" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="T9V-uB-xDH">
+                                                <rect key="frame" x="87.666666666666686" y="0.0" width="257.33333333333337" height="32"/>
+                                                <connections>
+                                                    <action selector="valueChangedAngleSlider:" destination="XMG-sz-NXC" eventType="valueChanged" id="GSb-2k-Qf9"/>
+                                                </connections>
+                                            </slider>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tL-YP-p3R">
+                                                <rect key="frame" x="353" y="0.0" width="61" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Angle"/>
+                                                <connections>
+                                                    <action selector="touchUpInsideAngleButton:" destination="XMG-sz-NXC" eventType="touchUpInside" id="oAb-mP-i2z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
+                            <constraint firstItem="lYg-j9-NpM" firstAttribute="leading" secondItem="j7F-su-evh" secondAttribute="leading" id="VqE-AI-bl1"/>
+                            <constraint firstItem="Gzv-KN-EA9" firstAttribute="top" secondItem="1Vs-4a-kdU" secondAttribute="bottom" constant="20" id="aRV-jp-QoD"/>
+                            <constraint firstAttribute="trailing" secondItem="lYg-j9-NpM" secondAttribute="trailing" id="eNb-3l-2KA"/>
+                            <constraint firstItem="Gzv-KN-EA9" firstAttribute="leading" secondItem="j7F-su-evh" secondAttribute="leadingMargin" id="ewB-zw-nCp"/>
                             <constraint firstAttribute="trailing" secondItem="1Vs-4a-kdU" secondAttribute="trailing" id="ezf-ln-Uyo"/>
                             <constraint firstItem="1Vs-4a-kdU" firstAttribute="leading" secondItem="j7F-su-evh" secondAttribute="leading" id="gy9-bs-buh"/>
+                            <constraint firstItem="lYg-j9-NpM" firstAttribute="top" secondItem="b8c-LJ-b24" secondAttribute="bottom" constant="4" id="ohd-sC-Hw9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gzv-KN-EA9" secondAttribute="trailing" id="yY9-Lm-JCA"/>
                             <constraint firstItem="1Vs-4a-kdU" firstAttribute="centerY" secondItem="j7F-su-evh" secondAttribute="centerY" id="zyX-RZ-V0l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q4e-AB-E1Q"/>
                     <connections>
+                        <outlet property="angleLabel" destination="PgP-Oa-oDh" id="rfW-Cv-B2R"/>
+                        <outlet property="angleSlider" destination="T9V-uB-xDH" id="2hO-qd-SyK"/>
+                        <outlet property="fontSizeLabel" destination="8hX-cF-wqo" id="zNC-d7-TR6"/>
+                        <outlet property="fontSizeSlider" destination="IVZ-hG-kIl" id="EfT-ha-Wtb"/>
+                        <outlet property="fontTextField" destination="oon-JI-nfT" id="UR3-OT-Rre"/>
                         <outlet property="imageView" destination="1Vs-4a-kdU" id="Zls-p0-kYa"/>
+                        <outlet property="scaleFactorLabel" destination="kXe-cf-7No" id="opg-Zv-r8K"/>
+                        <outlet property="scaleFactorSlider" destination="xXB-fk-CXM" id="nnE-l8-9u8"/>
+                        <outlet property="textTextField" destination="6zu-2R-fBW" id="JM2-aS-BVa"/>
+                        <outlet property="zoomLabel" destination="QKv-20-T5G" id="Wq1-Er-jja"/>
+                        <outlet property="zoomSlider" destination="jll-II-viV" id="oYk-n7-fjP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuF-wX-HCy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="4237"/>
+            <point key="canvasLocation" x="408.69565217391306" y="4236.8303571428569"/>
         </scene>
         <!--CIImage Camera Filter-->
         <scene sceneID="bua-M7-5sp">

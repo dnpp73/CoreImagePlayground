@@ -8,8 +8,21 @@ final class CIImagePerformanceViewController: UIViewController {
 
     @IBOutlet private var imageView: MTCIImageView!
 
+    @IBOutlet private var textTextField: UITextField!
+    @IBOutlet private var fontTextField: UITextField!
+    @IBOutlet private var fontSizeLabel: UILabel!
+    @IBOutlet private var fontSizeSlider: UISlider!
+    @IBOutlet private var scaleFactorLabel: UILabel!
+    @IBOutlet private var scaleFactorSlider: UISlider!
+    @IBOutlet private var angleLabel: UILabel!
+    @IBOutlet private var angleSlider: UISlider!
+
+    @IBOutlet fileprivate var zoomLabel: UILabel!
+    @IBOutlet fileprivate var zoomSlider: UISlider!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        SimpleCamera.shared.add(simpleCameraObserver: self)
         SimpleCamera.shared.add(videoDataOutputObserver: self)
     }
 
@@ -22,6 +35,76 @@ final class CIImagePerformanceViewController: UIViewController {
         super.viewWillDisappear(animated)
         SimpleCamera.shared.stopRunning()
     }
+
+    // MARK: IBActions
+
+    @IBAction private func valueChangedTextTextField(_ sender: UITextField) {
+    }
+
+    @IBAction private func touchUpInsideTextButton(_ sender: UIButton) {
+        textTextField.text = "CoreImage Performance\\n日本語"
+        textTextField.resignFirstResponder()
+    }
+
+    @IBAction private func touchUpInsideFontButton(_ sender: UIButton) {
+    }
+
+    @IBAction private func valueChangedFontSizeSlider(_ sender: UISlider) {
+        let fontSize = Int(roundf(fontSizeSlider.value))
+        fontSizeLabel.text = "FontSize: \(fontSize)"
+    }
+
+    @IBAction private func touchUpInsideFontSizeButton(_ sender: UIButton) {
+        let fontSize = 24
+        fontSizeLabel.text = "FontSize: \(fontSize)"
+        if fontSizeSlider.isTracking == false {
+            fontSizeSlider.value = Float(fontSize)
+        }
+    }
+
+    @IBAction private func valueChangedScaleFactorSlider(_ sender: UISlider) {
+        let scaleFactor = Double(scaleFactorSlider.value)
+        scaleFactorLabel.text = String(format: "ScaleFactor: %.2f", scaleFactor)
+    }
+
+    @IBAction private func touchUpInsideScaleFactorButton(_ sender: UIButton) {
+        let scaleFactor = 1.0
+        scaleFactorLabel.text = String(format: "ScaleFactor: %.2f", scaleFactor)
+        if scaleFactorSlider.isTracking == false {
+            scaleFactorSlider.value = Float(scaleFactor)
+        }
+    }
+
+    @IBAction private func valueChangedAngleSlider(_ sender: UISlider) {
+        let angle = Double(angleSlider.value)
+        angleLabel.text = String(format: "Angle: %.2f", angle)
+    }
+
+    @IBAction private func touchUpInsideAngleButton(_ sender: UIButton) {
+        let angle = 0.0
+        angleLabel.text = String(format: "Angle: %.2f", angle)
+        if angleSlider.isTracking == false {
+            angleSlider.value = Float(angle)
+        }
+    }
+
+    @IBAction private func valueChangedZoomSlider(_ sender: UISlider) {
+        SimpleCamera.shared.zoomFactor = CGFloat(sender.value)
+
+    }
+
+    @IBAction private func touchUpInsideZoomButton(_ sender: UIButton) {
+        let zoomFactor: CGFloat
+        switch SimpleCamera.shared.zoomFactor {
+        case 0.5: zoomFactor = 1.0
+        case 1.0: zoomFactor = 2.0
+        case 2.0: zoomFactor = 3.0
+        default: zoomFactor = 1.0
+        }
+        SimpleCamera.shared.zoomFactor = zoomFactor
+    }
+
+    // MARK: Vars for SimpleCamera
 
     fileprivate var dropCount: UInt64 = 0
 
@@ -70,13 +153,13 @@ extension CIImagePerformanceViewController: SimpleCameraVideoDataOutputObservabl
             }
         }
 
-        if let image = Pixellate.filterWithClampAndCrop()(imageMatrix[0][0]) {
+        if let image = Pixellate.filterWithClampAndCrop(inputScale: 30.0)(imageMatrix[0][0]) {
             imageMatrix[0][0] = image
         }
-        if let image = Crystallize.filterWithClampAndCrop()(imageMatrix[0][1]) {
+        if let image = Crystallize.filterWithClampAndCrop(inputRadius: 30.0)(imageMatrix[0][1]) {
             imageMatrix[0][1] = image
         }
-        if let image = Pointillize.filterWithClampAndCrop()(imageMatrix[0][2]) {
+        if let image = Pointillize.filterWithClampAndCrop(inputRadius: 30.0)(imageMatrix[0][2]) {
             imageMatrix[0][2] = image
         }
         if let image = EdgeWork.filterWithClampAndCrop()(imageMatrix[0][3]) {
@@ -99,10 +182,10 @@ extension CIImagePerformanceViewController: SimpleCameraVideoDataOutputObservabl
         if let image = GaussianBlur.filterWithClampAndCrop(inputRadius: 20.0)(imageMatrix[2][1]) {
             imageMatrix[2][1] = image
         }
-        if let image = DiscBlur.filterWithClampAndCrop(inputRadius: 20.0)(imageMatrix[2][2]) {
+        if let image = DiscBlur.filterWithClampAndCrop(inputRadius: 40.0)(imageMatrix[2][2]) {
             imageMatrix[2][2] = image
         }
-        if let image = ZoomBlur.filterWithClampAndCrop(inputRadius: 20.0)(imageMatrix[2][3]) {
+        if let image = ZoomBlur.filterWithClampAndCrop(inputCenter: XYPosition(x: imageMatrix[2][3].extent.midX, y: imageMatrix[2][3].extent.midY), inputRadius: 20.0)(imageMatrix[2][3]) {
             imageMatrix[2][3] = image
         }
 
@@ -135,4 +218,34 @@ extension CIImagePerformanceViewController: SimpleCameraVideoDataOutputObservabl
         print(dropCount)
     }
 
+}
+
+extension CIImagePerformanceViewController: SimpleCameraObservable {
+    func simpleCameraDidStartRunning(simpleCamera: SimpleCamera) {
+    }
+
+    func simpleCameraDidStopRunning(simpleCamera: SimpleCamera) {
+    }
+
+    func simpleCameraDidChangeZoomFactor(simpleCamera: SimpleCamera) {
+        zoomLabel.text = String(format: "Zoom: %.2f", simpleCamera.zoomFactor)
+        if zoomSlider.isTracking == false {
+            zoomSlider.value = Float(simpleCamera.zoomFactor)
+        }
+    }
+
+    func simpleCameraDidChangeFocusPointOfInterest(simpleCamera: SimpleCamera) {
+    }
+
+    func simpleCameraDidChangeExposurePointOfInterest(simpleCamera: SimpleCamera) {
+    }
+
+    func simpleCameraDidResetFocusAndExposure(simpleCamera: SimpleCamera) {
+    }
+
+    func simpleCameraDidSwitchCameraInput(simpleCamera: SimpleCamera) {
+    }
+
+    func simpleCameraSessionInterruptionEnded(simpleCamera: SimpleCamera) {
+    }
 }
