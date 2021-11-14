@@ -25,6 +25,7 @@ final class CIImagePerformanceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.waitUntilCompleted = false
         updateTextImage()
         SimpleCamera.shared.add(simpleCameraObserver: self)
         SimpleCamera.shared.add(videoDataOutputObserver: self)
